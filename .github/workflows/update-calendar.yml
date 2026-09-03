@@ -1,0 +1,25 @@
+name: Update Giants calendar
+
+on:
+  schedule:
+    - cron: "10 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-calendar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements.txt
+      - run: python scripts/generate_calendar.py
+      - name: Commit generated calendar
+        run: |
+          git add giants.ics data/source
+          git diff --cached --quiet || git commit -m "Update Giants calendar"
+          git push
