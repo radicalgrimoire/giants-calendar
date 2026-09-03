@@ -86,14 +86,13 @@ def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> N
 
     home_name = TEAM_NAMES.get(home, home)
     away_name = TEAM_NAMES.get(away, away)
-    event["SUMMARY"] = f"{home_name} 対 {away_name} {counters[counter_key]}回戦"
+    title = f"{home_name} vs {away_name} {counters[counter_key]}回戦"
 
     away_score = extract_score(raw_away)
     home_score = extract_score(raw_home)
     if away_score is not None and home_score is not None:
-        description = str(event.get("DESCRIPTION", "")).strip()
-        result = f"試合結果: {home_name} {home_score} - {away_score} {away_name}"
-        event["DESCRIPTION"] = f"{description}\n\n{result}".strip()
+        title += f" （{home_score} - {away_score}）"
+    event["SUMMARY"] = title
 
 
 def build_calendar(source: Calendar) -> Calendar:
