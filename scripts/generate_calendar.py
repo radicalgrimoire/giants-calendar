@@ -53,6 +53,20 @@ PACIFIC_LEAGUE_TEAMS = {
     "オリックス・バファローズ",
     "埼玉西武ライオンズ",
 }
+TEAM_ABBREVIATIONS = {
+    "読売ジャイアンツ": "G",
+    "阪神タイガース": "T",
+    "広島東洋カープ": "C",
+    "中日ドラゴンズ": "D",
+    "横浜DeNAベイスターズ": "DB",
+    "東京ヤクルトスワローズ": "S",
+    "福岡ソフトバンクホークス": "H",
+    "北海道日本ハムファイターズ": "F",
+    "千葉ロッテマリーンズ": "M",
+    "東北楽天ゴールデンイーグルス": "E",
+    "オリックス・バファローズ": "B",
+    "埼玉西武ライオンズ": "L",
+}
 
 
 def fetch_source() -> bytes:
@@ -186,7 +200,23 @@ def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> N
     if away_score is not None and home_score is not None:
         title += f" （{home_score} - {away_score}）"
         description = str(event.get("DESCRIPTION", "")).strip()
-        result = f"試合結果: {home_name} {home_score} - {away_score} {away_name}"
+        home_abbreviation = TEAM_ABBREVIATIONS.get(home_name, home_name)
+        away_abbreviation = TEAM_ABBREVIATIONS.get(away_name, away_name)
+        giants_score = home_score if home_name == "読売ジャイアンツ" else away_score
+        opponent_score = away_score if home_name == "読売ジャイアンツ" else home_score
+        if giants_score > opponent_score:
+            result_status = "勝利"
+        elif giants_score < opponent_score:
+            result_status = "敗北"
+        else:
+            result_status = "引き分け"
+        result = "\n".join(
+            [
+                f"試合結果: {home_abbreviation}{home_score} - {away_abbreviation}{away_score} {result_status}",
+                f"（HOME）{home_name}",
+                f"（VISIT）{away_name}",
+            ]
+        )
         event["DESCRIPTION"] = f"{description}\n\n{result}".strip()
     event["SUMMARY"] = title
 
