@@ -212,7 +212,7 @@ def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> N
             result_status = "引き分け"
         result = "\n".join(
             [
-                f"試合結果: {home_abbreviation}{home_score} - {away_abbreviation}{away_score} {result_status}",
+                f"試合結果：{home_abbreviation}{home_score} - {away_abbreviation}{away_score} {result_status}",
                 f"（HOME）{home_name}",
                 f"（VISIT）{away_name}",
             ]
