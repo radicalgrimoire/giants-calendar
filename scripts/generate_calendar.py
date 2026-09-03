@@ -28,6 +28,7 @@ TEAM_NAMES = {
     "Hiroshima": "広島東洋カープ",
     "Chunichi": "中日ドラゴンズ",
     "Yokohama DeNA": "横浜DeNAベイスターズ",
+    "DeNA": "横浜DeNAベイスターズ",
     "Yakult": "東京ヤクルトスワローズ",
     "Fukuoka SoftBank": "福岡ソフトバンクホークス",
     "SoftBank": "福岡ソフトバンクホークス",
