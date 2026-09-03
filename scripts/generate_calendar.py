@@ -65,13 +65,20 @@ def normalize_team_name(team: str) -> str:
     return re.sub(r"\s+\(\d+\)$", "", team).strip()
 
 
+def extract_score(team: str) -> int | None:
+    match = re.search(r"\s+\((\d+)\)$", team)
+    return int(match.group(1)) if match else None
+
+
 def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> None:
     summary = str(event.get("SUMMARY", ""))
     match = MATCHUP_PATTERN.match(summary)
     if not match:
         return
 
-    away, home = (normalize_team_name(team) for team in match.groups())
+    raw_away, raw_home = match.groups()
+    away = normalize_team_name(raw_away)
+    home = normalize_team_name(raw_home)
     start = event_start(event)
     matchup = tuple(sorted((away, home)))
     counter_key = (start.year, matchup)
@@ -80,6 +87,13 @@ def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> N
     home_name = TEAM_NAMES.get(home, home)
     away_name = TEAM_NAMES.get(away, away)
     event["SUMMARY"] = f"{home_name} 対 {away_name} {counters[counter_key]}回戦"
+
+    away_score = extract_score(raw_away)
+    home_score = extract_score(raw_home)
+    if away_score is not None and home_score is not None:
+        description = str(event.get("DESCRIPTION", "")).strip()
+        result = f"試合結果: {away_name} {away_score} - {home_score} {home_name}"
+        event["DESCRIPTION"] = f"{description}\n\n{result}".strip()
 
 
 def build_calendar(source: Calendar) -> Calendar:
