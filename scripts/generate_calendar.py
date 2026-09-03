@@ -92,6 +92,9 @@ def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> N
     home_score = extract_score(raw_home)
     if away_score is not None and home_score is not None:
         title += f" （{home_score} - {away_score}）"
+        description = str(event.get("DESCRIPTION", "")).strip()
+        result = f"試合結果: {home_name} {home_score} - {away_score} {away_name}"
+        event["DESCRIPTION"] = f"{description}\n\n{result}".strip()
     event["SUMMARY"] = title
 
 
