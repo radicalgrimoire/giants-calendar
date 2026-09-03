@@ -19,6 +19,7 @@ SOURCE_URL = (
 )
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT / "giants.ics"
+BACKLOG_DIRECTORY = ROOT / "backlog"
 GAMES_PATH = ROOT / "data" / "games.json"
 SNAPSHOT_DIRECTORY = ROOT / "data" / "snapshots"
 JST = ZoneInfo("Asia/Tokyo")
@@ -129,6 +130,21 @@ def merge_source_events(source_events: list[Event], games: dict[str, Event]) -> 
     return merged
 
 
+def current_calendar_year() -> int:
+    return datetime.now(JST).year
+
+
+def archive_previous_calendar() -> None:
+    now = datetime.now(JST)
+    if (now.month, now.day) != (1, 1) or not OUTPUT_PATH.exists():
+        return
+    archive_path = BACKLOG_DIRECTORY / f"giants-{now.year - 1}.ics"
+    if archive_path.exists():
+        return
+    BACKLOG_DIRECTORY.mkdir(parents=True, exist_ok=True)
+    OUTPUT_PATH.replace(archive_path)
+
+
 def normalize_team_name(team: str) -> str:
     return re.sub(r"\s+\(\d+\)$", "", team).strip()
 
@@ -166,15 +182,18 @@ def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> N
     event["SUMMARY"] = title
 
 
-def build_calendar(events: list[Event], timezones: list) -> Calendar:
+def build_calendar(events: list[Event], timezones: list, year: int) -> Calendar:
     calendar = Calendar()
     calendar.add("PRODID", "-//radicalgrimoire//Giants Calendar//JA")
     calendar.add("VERSION", "2.0")
     calendar.add("CALSCALE", "GREGORIAN")
-    calendar.add("X-WR-CALNAME", "読売ジャイアンツ日程")
+    calendar.add("X-WR-CALNAME", f"読売ジャイアンツ日程 {year}")
     calendar.add("X-WR-TIMEZONE", "Asia/Tokyo")
 
-    events = sorted(events, key=event_start)
+    events = sorted(
+        (event for event in events if event_start(event).astimezone(JST).year == year),
+        key=event_start,
+    )
     counters: dict[tuple[int, tuple[str, str]], int] = {}
     for event in events:
         output_event = copy.deepcopy(event)
@@ -198,7 +217,11 @@ def main() -> None:
     timezones = [
         component for component in source.subcomponents if component.name == "VTIMEZONE"
     ]
-    OUTPUT_PATH.write_bytes(build_calendar(list(games.values()), timezones).to_ical())
+    year = current_calendar_year()
+    archive_previous_calendar()
+    OUTPUT_PATH.write_bytes(
+        build_calendar(list(games.values()), timezones, year).to_ical()
+    )
     print(f"Generated {OUTPUT_PATH.relative_to(ROOT)}")
 
 
