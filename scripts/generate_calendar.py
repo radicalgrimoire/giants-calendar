@@ -30,11 +30,16 @@ TEAM_NAMES = {
     "Yokohama DeNA": "横浜DeNAベイスターズ",
     "Yakult": "東京ヤクルトスワローズ",
     "Fukuoka SoftBank": "福岡ソフトバンクホークス",
+    "SoftBank": "福岡ソフトバンクホークス",
     "Hokkaido Nippon-Ham": "北海道日本ハムファイターズ",
+    "Nippon-Ham": "北海道日本ハムファイターズ",
     "Chiba Lotte": "千葉ロッテマリーンズ",
+    "Lotte": "千葉ロッテマリーンズ",
     "Tohoku Rakuten": "東北楽天ゴールデンイーグルス",
+    "Rakuten": "東北楽天ゴールデンイーグルス",
     "Orix": "オリックス・バファローズ",
     "Saitama Seibu": "埼玉西武ライオンズ",
+    "Seibu": "埼玉西武ライオンズ",
 }
 
 
@@ -55,13 +60,17 @@ def event_start(event) -> datetime:
     raise ValueError("VEVENT に DTSTART がありません")
 
 
+def normalize_team_name(team: str) -> str:
+    return re.sub(r"\s+\(\d+\)$", "", team).strip()
+
+
 def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> None:
     summary = str(event.get("SUMMARY", ""))
     match = MATCHUP_PATTERN.match(summary)
     if not match:
         return
 
-    away, home = match.groups()
+    away, home = (normalize_team_name(team) for team in match.groups())
     start = event_start(event)
     matchup = tuple(sorted((away, home)))
     counter_key = (start.year, matchup)
