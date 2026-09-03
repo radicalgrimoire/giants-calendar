@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import json
 import re
 import sys
 from datetime import date, datetime, time, timezone
@@ -8,7 +9,7 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
-from icalendar import Calendar
+from icalendar import Calendar, Event
 
 
 SOURCE_URL = (
@@ -18,7 +19,8 @@ SOURCE_URL = (
 )
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT / "giants.ics"
-SOURCE_DIRECTORY = ROOT / "data" / "source"
+GAMES_PATH = ROOT / "data" / "games.json"
+SNAPSHOT_DIRECTORY = ROOT / "data" / "snapshots"
 JST = ZoneInfo("Asia/Tokyo")
 MATCHUP_PATTERN = re.compile(r"^\s*(.+?)\s+@\s+(.+?)\s*$")
 
@@ -61,6 +63,72 @@ def event_start(event) -> datetime:
     raise ValueError("VEVENT に DTSTART がありません")
 
 
+def event_uid(event) -> str:
+    uid = event.get("UID")
+    if uid is None:
+        raise ValueError("VEVENT に UID がありません")
+    return str(uid)
+
+
+def event_to_record(event) -> dict[str, str]:
+    return {
+        "uid": event_uid(event),
+        "start": event_start(event).isoformat(),
+        "ical": event.to_ical().decode("utf-8"),
+    }
+
+
+def write_json(path: Path, contents: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(contents, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+
+def load_games() -> dict[str, Event]:
+    if not GAMES_PATH.exists():
+        return {}
+    contents = json.loads(GAMES_PATH.read_text(encoding="utf-8"))
+    return {
+        record["uid"]: Event.from_ical(record["ical"].encode("utf-8"))
+        for record in contents["events"]
+    }
+
+
+def save_games(events: dict[str, Event]) -> None:
+    records = sorted(
+        (event_to_record(event) for event in events.values()),
+        key=lambda record: (record["start"], record["uid"]),
+    )
+    write_json(GAMES_PATH, {"schema_version": 1, "events": records})
+
+
+def save_weekly_snapshot(events: list[Event]) -> None:
+    now = datetime.now(JST)
+    if now.weekday() != 0:
+        return
+    records = sorted(
+        (event_to_record(event) for event in events),
+        key=lambda record: (record["start"], record["uid"]),
+    )
+    snapshot_path = SNAPSHOT_DIRECTORY / f"games-{now:%Y-%m-%d}.json"
+    write_json(snapshot_path, {"schema_version": 1, "events": records})
+
+
+def merge_source_events(source_events: list[Event], games: dict[str, Event]) -> dict[str, Event]:
+    observed_uids = {event_uid(event) for event in source_events}
+    merged = {uid: copy.deepcopy(event) for uid, event in games.items()}
+    for event in source_events:
+        merged[event_uid(event)] = copy.deepcopy(event)
+
+    now = datetime.now(timezone.utc)
+    for uid, event in list(merged.items()):
+        if uid not in observed_uids and event_start(event) >= now:
+            del merged[uid]
+    return merged
+
+
 def normalize_team_name(team: str) -> str:
     return re.sub(r"\s+\(\d+\)$", "", team).strip()
 
@@ -98,7 +166,7 @@ def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> N
     event["SUMMARY"] = title
 
 
-def build_calendar(source: Calendar) -> Calendar:
+def build_calendar(events: list[Event], timezones: list) -> Calendar:
     calendar = Calendar()
     calendar.add("PRODID", "-//radicalgrimoire//Giants Calendar//JA")
     calendar.add("VERSION", "2.0")
@@ -106,35 +174,31 @@ def build_calendar(source: Calendar) -> Calendar:
     calendar.add("X-WR-CALNAME", "読売ジャイアンツ日程")
     calendar.add("X-WR-TIMEZONE", "Asia/Tokyo")
 
-    events = sorted(
-        (component for component in source.walk() if component.name == "VEVENT"),
-        key=event_start,
-    )
+    events = sorted(events, key=event_start)
     counters: dict[tuple[int, tuple[str, str]], int] = {}
     for event in events:
         output_event = copy.deepcopy(event)
         update_summary(output_event, counters)
         calendar.add_component(output_event)
 
-    for component in source.subcomponents:
-        if component.name == "VTIMEZONE":
-            calendar.add_component(copy.deepcopy(component))
+    for timezone_component in timezones:
+        calendar.add_component(copy.deepcopy(timezone_component))
     return calendar
-
-
-def save_weekly_snapshot(source_data: bytes) -> None:
-    if datetime.now(JST).weekday() != 0:
-        return
-    SOURCE_DIRECTORY.mkdir(parents=True, exist_ok=True)
-    snapshot_path = SOURCE_DIRECTORY / f"{datetime.now(JST):%Y-%m-%d}.ics"
-    snapshot_path.write_bytes(source_data)
 
 
 def main() -> None:
     source_data = fetch_source()
     source = Calendar.from_ical(source_data)
-    save_weekly_snapshot(source_data)
-    OUTPUT_PATH.write_bytes(build_calendar(source).to_ical())
+    source_events = [
+        component for component in source.walk() if component.name == "VEVENT"
+    ]
+    save_weekly_snapshot(source_events)
+    games = merge_source_events(source_events, load_games())
+    save_games(games)
+    timezones = [
+        component for component in source.subcomponents if component.name == "VTIMEZONE"
+    ]
+    OUTPUT_PATH.write_bytes(build_calendar(list(games.values()), timezones).to_ical())
     print(f"Generated {OUTPUT_PATH.relative_to(ROOT)}")
 
 
