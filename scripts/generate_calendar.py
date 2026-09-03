@@ -45,6 +45,14 @@ TEAM_NAMES = {
     "Saitama Seibu": "埼玉西武ライオンズ",
     "Seibu": "埼玉西武ライオンズ",
 }
+PACIFIC_LEAGUE_TEAMS = {
+    "福岡ソフトバンクホークス",
+    "北海道日本ハムファイターズ",
+    "千葉ロッテマリーンズ",
+    "東北楽天ゴールデンイーグルス",
+    "オリックス・バファローズ",
+    "埼玉西武ライオンズ",
+}
 
 
 def fetch_source() -> bytes:
@@ -170,7 +178,8 @@ def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> N
 
     home_name = TEAM_NAMES.get(home, home)
     away_name = TEAM_NAMES.get(away, away)
-    title = f"{home_name} vs {away_name} {counters[counter_key]}回戦"
+    subtitle = " 【交流戦】" if {home_name, away_name} & PACIFIC_LEAGUE_TEAMS else ""
+    title = f"{home_name} vs {away_name}{subtitle} {counters[counter_key]}回戦"
 
     away_score = extract_score(raw_away)
     home_score = extract_score(raw_home)
