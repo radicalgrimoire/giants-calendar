@@ -67,6 +67,13 @@ TEAM_ABBREVIATIONS = {
     "オリックス・バファローズ": "Bs",
     "埼玉西武ライオンズ": "L",
 }
+MATCHUP_INITIAL_COUNTS = {
+    (2026, tuple(sorted(("読売ジャイアンツ", "中日ドラゴンズ")))): 8,
+    (2026, tuple(sorted(("読売ジャイアンツ", "広島東洋カープ")))): 7,
+    (2026, tuple(sorted(("読売ジャイアンツ", "横浜DeNAベイスターズ")))): 9,
+    (2026, tuple(sorted(("読売ジャイアンツ", "東京ヤクルトスワローズ")))): 11,
+    (2026, tuple(sorted(("読売ジャイアンツ", "阪神タイガース")))): 11,
+}
 
 
 def fetch_source() -> bytes:
@@ -186,12 +193,13 @@ def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> N
     away = normalize_team_name(raw_away)
     home = normalize_team_name(raw_home)
     start = event_start(event)
-    matchup = tuple(sorted((away, home)))
-    counter_key = (start.year, matchup)
-    counters[counter_key] = counters.get(counter_key, 0) + 1
-
     home_name = TEAM_NAMES.get(home, home)
     away_name = TEAM_NAMES.get(away, away)
+    matchup = tuple(sorted((away_name, home_name)))
+    counter_key = (start.year, matchup)
+    counters[counter_key] = counters.get(
+        counter_key, MATCHUP_INITIAL_COUNTS.get(counter_key, 0)
+    ) + 1
     subtitle = " 【交流戦】" if {home_name, away_name} & PACIFIC_LEAGUE_TEAMS else ""
     title = f"{home_name} vs {away_name}{subtitle} {counters[counter_key]}回戦"
 
