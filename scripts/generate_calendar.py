@@ -22,27 +22,37 @@ OUTPUT_PATH = ROOT / "giants.ics"
 BACKLOG_DIRECTORY = ROOT / "backlog"
 GAMES_PATH = ROOT / "data" / "games.json"
 SNAPSHOT_DIRECTORY = ROOT / "data" / "snapshots"
+LOCAL_STADIUM_PATH = ROOT / "data" / "local-stadium.env"
 JST = ZoneInfo("Asia/Tokyo")
 MATCHUP_PATTERN = re.compile(r"^\s*(.+?)\s+@\s+(.+?)\s*$")
+LOCAL_STADIUM_PATTERN = re.compile(r"(\d{4}-\d{2}-\d{2})\s*=\s*(.+)")
+HOME_STADIUMS = {
+    "Yomiuri": "東京ドーム, 日本、〒112-0004 東京都文京区後楽１丁目３−６１",
+    "Hanshin": "阪神甲子園球場, 日本、〒663-8152 兵庫県西宮市甲子園町１−８２",
+    "Hiroshima": "MAZDA Zoom-Zoom スタジアム広島(広島市民球場), 日本、〒732-0803 広島県広島市南区南蟹屋２丁目３−１",
+    "Chunichi": "バンテリンドーム ナゴヤ, 日本、〒461-0047 愛知県名古屋市東区大幸南１丁目１−１",
+    "DeNA": "横浜スタジアム, 日本、〒231-0022 神奈川県横浜市中区横浜公園",
+    "Yakult": "明治神宮野球場, 日本、〒160-0013 東京都新宿区霞ヶ丘町３−１",
+    "SoftBank": "みずほPayPayドーム福岡, 日本、〒810-8660 福岡県福岡市中央区地行浜２丁目２−２",
+    "Nippon-Ham": "エスコンフィールドHOKKAIDO, 日本、〒061-1116 北海道北広島市Ｆビレッジ１番地",
+    "Lotte": "ZOZOマリンスタジアム, 日本、〒261-0022 千葉県千葉市美浜区美浜１",
+    "Rakuten": "楽天モバイル 最強パーク宮城, 日本、〒983-0045 宮城県仙台市宮城野区宮城野２丁目１１−６",
+    "Orix": "京セラドーム大阪, 日本、〒550-0023 大阪府大阪市西区千代崎３丁目中２−中２−１",
+    "Seibu": "ベルーナドーム, 日本、〒359-1153 埼玉県所沢市上山口２１３５",
+}
 
 TEAM_NAMES = {
     "Yomiuri": "読売ジャイアンツ",
     "Hanshin": "阪神タイガース",
     "Hiroshima": "広島東洋カープ",
     "Chunichi": "中日ドラゴンズ",
-    "Yokohama DeNA": "横浜DeNAベイスターズ",
     "DeNA": "横浜DeNAベイスターズ",
     "Yakult": "東京ヤクルトスワローズ",
-    "Fukuoka SoftBank": "福岡ソフトバンクホークス",
     "SoftBank": "福岡ソフトバンクホークス",
-    "Hokkaido Nippon-Ham": "北海道日本ハムファイターズ",
     "Nippon-Ham": "北海道日本ハムファイターズ",
-    "Chiba Lotte": "千葉ロッテマリーンズ",
     "Lotte": "千葉ロッテマリーンズ",
-    "Tohoku Rakuten": "東北楽天ゴールデンイーグルス",
     "Rakuten": "東北楽天ゴールデンイーグルス",
     "Orix": "オリックス・バファローズ",
-    "Saitama Seibu": "埼玉西武ライオンズ",
     "Seibu": "埼玉西武ライオンズ",
 }
 PACIFIC_LEAGUE_TEAMS = {
@@ -163,6 +173,27 @@ def current_calendar_year() -> int:
     return datetime.now(JST).year
 
 
+def load_local_stadiums() -> dict[date, str]:
+    if not LOCAL_STADIUM_PATH.exists():
+        return {}
+
+    stadiums: dict[date, str] = {}
+    for line_number, raw_line in enumerate(
+        LOCAL_STADIUM_PATH.read_text(encoding="utf-8").splitlines(), start=1
+    ):
+        line = raw_line.strip()
+        if not line or line.startswith("#"):
+            continue
+        match = LOCAL_STADIUM_PATTERN.fullmatch(line)
+        if not match:
+            raise ValueError(
+                f"{LOCAL_STADIUM_PATH.name}:{line_number} の形式が不正です"
+            )
+        game_date, stadium = match.groups()
+        stadiums[date.fromisoformat(game_date)] = stadium.strip()
+    return stadiums
+
+
 def archive_previous_calendar() -> None:
     now = datetime.now(JST)
     if (now.month, now.day) != (1, 1) or not OUTPUT_PATH.exists():
@@ -229,7 +260,24 @@ def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> N
     event["SUMMARY"] = title
 
 
-def build_calendar(events: list[Event], timezones: list, year: int) -> Calendar:
+def update_location(event, local_stadiums: dict[date, str]) -> None:
+    summary = str(event.get("SUMMARY", ""))
+    match = MATCHUP_PATTERN.match(summary)
+    if not match:
+        return
+
+    _, raw_home = match.groups()
+    game_date = event_start(event).astimezone(JST).date()
+    stadium = local_stadiums.get(game_date)
+    if stadium is not None:
+        event["LOCATION"] = stadium
+    elif stadium := HOME_STADIUMS.get(normalize_team_name(raw_home)):
+        event["LOCATION"] = stadium
+
+
+def build_calendar(
+    events: list[Event], timezones: list, year: int, local_stadiums: dict[date, str]
+) -> Calendar:
     calendar = Calendar()
     calendar.add("PRODID", "-//radicalgrimoire//Giants Calendar//JA")
     calendar.add("VERSION", "2.0")
@@ -244,6 +292,7 @@ def build_calendar(events: list[Event], timezones: list, year: int) -> Calendar:
     counters: dict[tuple[int, tuple[str, str]], int] = {}
     for event in events:
         output_event = copy.deepcopy(event)
+        update_location(output_event, local_stadiums)
         update_summary(output_event, counters)
         calendar.add_component(output_event)
 
@@ -267,7 +316,9 @@ def main() -> None:
     year = current_calendar_year()
     archive_previous_calendar()
     OUTPUT_PATH.write_bytes(
-        build_calendar(list(games.values()), timezones, year).to_ical()
+        build_calendar(
+            list(games.values()), timezones, year, load_local_stadiums()
+        ).to_ical()
     )
     print(f"Generated {OUTPUT_PATH.relative_to(ROOT)}")
 
