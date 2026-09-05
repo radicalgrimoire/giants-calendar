@@ -202,7 +202,10 @@ def archive_previous_calendar() -> None:
     if archive_path.exists():
         return
     BACKLOG_DIRECTORY.mkdir(parents=True, exist_ok=True)
-    OUTPUT_PATH.replace(archive_path)
+    calendar = Calendar.from_ical(OUTPUT_PATH.read_bytes())
+    calendar["X-WR-CALNAME"] = f"Yomiuri Giants Calender {now.year - 1}"
+    archive_path.write_bytes(calendar.to_ical())
+    OUTPUT_PATH.unlink()
 
 
 def normalize_team_name(team: str) -> str:
@@ -282,7 +285,7 @@ def build_calendar(
     calendar.add("PRODID", "-//radicalgrimoire//Giants Calendar//JA")
     calendar.add("VERSION", "2.0")
     calendar.add("CALSCALE", "GREGORIAN")
-    calendar.add("X-WR-CALNAME", f"読売ジャイアンツ日程 {year}")
+    calendar.add("X-WR-CALNAME", "Yomiuri Giants Calender")
     calendar.add("X-WR-TIMEZONE", "Asia/Tokyo")
 
     events = sorted(
