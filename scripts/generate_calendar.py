@@ -230,7 +230,7 @@ def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> N
     home_name = TEAM_NAMES.get(home, home)
     away_name = TEAM_NAMES.get(away, away)
     matchup = tuple(sorted((away_name, home_name)))
-    counter_key = (start.year, matchup)
+    counter_key = (start.astimezone(JST).year, matchup)
     counters[counter_key] = counters.get(
         counter_key, MATCHUP_INITIAL_COUNTS.get(counter_key, 0)
     ) + 1
