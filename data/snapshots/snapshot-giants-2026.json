@@ -21,119 +21,119 @@
       "uid": "npb-613f73bc529ddb07890284e3@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi (5) @ Yomiuri (6)\r\nDTSTART;TZID=Asia/Tokyo:20260401T180000\r\nDTEND;TZID=Asia/Tokyo:20260401T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-5c2fed41a08c04c28e81770c@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (6) @ Chunichi (5)\r\nDTSTART;TZID=Asia/Tokyo:20260401T180000\r\nDTEND;TZID=Asia/Tokyo:20260401T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-cbe8fb3a218f4b3b5b4a52a3@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-01T09:00:00+00:00",
-      "uid": "npb-5c2fed41a08c04c28e81770c@giants-calendar.local"
+      "uid": "npb-cbe8fb3a218f4b3b5b4a52a3@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi (2) @ Yomiuri (1)\r\nDTSTART;TZID=Asia/Tokyo:20260402T180000\r\nDTEND;TZID=Asia/Tokyo:20260402T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-285f8b243f5a986e03576461@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (1) @ Chunichi (2)\r\nDTSTART;TZID=Asia/Tokyo:20260402T180000\r\nDTEND;TZID=Asia/Tokyo:20260402T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-ab9c63b67dda69f2ce6bd8fc@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-02T09:00:00+00:00",
-      "uid": "npb-285f8b243f5a986e03576461@giants-calendar.local"
+      "uid": "npb-ab9c63b67dda69f2ce6bd8fc@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (1) @ DeNA (3)\r\nDTSTART;TZID=Asia/Tokyo:20260403T180000\r\nDTEND;TZID=Asia/Tokyo:20260403T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-ec6c85906c69dc324faf7b66@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA (3) @ Yomiuri (1)\r\nDTSTART;TZID=Asia/Tokyo:20260403T180000\r\nDTEND;TZID=Asia/Tokyo:20260403T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-a42f57319188c602074ef17d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-03T09:00:00+00:00",
-      "uid": "npb-ec6c85906c69dc324faf7b66@giants-calendar.local"
+      "uid": "npb-a42f57319188c602074ef17d@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (8) @ DeNA (4)\r\nDTSTART;TZID=Asia/Tokyo:20260404T140000\r\nDTEND;TZID=Asia/Tokyo:20260404T170000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-4424288e0318da283bcae21c@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA (4) @ Yomiuri (8)\r\nDTSTART;TZID=Asia/Tokyo:20260404T140000\r\nDTEND;TZID=Asia/Tokyo:20260404T170000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-23d24bc141161f44be6d089e@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-04T05:00:00+00:00",
-      "uid": "npb-4424288e0318da283bcae21c@giants-calendar.local"
+      "uid": "npb-23d24bc141161f44be6d089e@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (3) @ DeNA (2)\r\nDTSTART;TZID=Asia/Tokyo:20260405T140000\r\nDTEND;TZID=Asia/Tokyo:20260405T170000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-36a9c4d8ef288e6da7423b5b@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA (2) @ Yomiuri (3)\r\nDTSTART;TZID=Asia/Tokyo:20260405T140000\r\nDTEND;TZID=Asia/Tokyo:20260405T170000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-7a3761284aac9ac195cb6157@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-05T05:00:00+00:00",
-      "uid": "npb-36a9c4d8ef288e6da7423b5b@giants-calendar.local"
+      "uid": "npb-7a3761284aac9ac195cb6157@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima (5) @ Yomiuri (2)\r\nDTSTART;TZID=Asia/Tokyo:20260407T180000\r\nDTEND;TZID=Asia/Tokyo:20260407T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-b150170107f64b918cbd1ab4@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (2) @ Hiroshima (5)\r\nDTSTART;TZID=Asia/Tokyo:20260407T180000\r\nDTEND;TZID=Asia/Tokyo:20260407T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-0ea7b390397cd31c10bdd3c7@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-07T09:00:00+00:00",
-      "uid": "npb-b150170107f64b918cbd1ab4@giants-calendar.local"
+      "uid": "npb-0ea7b390397cd31c10bdd3c7@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima (1) @ Yomiuri (2)\r\nDTSTART;TZID=Asia/Tokyo:20260408T180000\r\nDTEND;TZID=Asia/Tokyo:20260408T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-cebc202c234fce2eddec959c@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (2) @ Hiroshima (1)\r\nDTSTART;TZID=Asia/Tokyo:20260408T180000\r\nDTEND;TZID=Asia/Tokyo:20260408T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-30451f2eabe3fd1e262478eb@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-08T09:00:00+00:00",
-      "uid": "npb-cebc202c234fce2eddec959c@giants-calendar.local"
+      "uid": "npb-30451f2eabe3fd1e262478eb@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (3) @ Yakult (2)\r\nDTSTART;TZID=Asia/Tokyo:20260410T180000\r\nDTEND;TZID=Asia/Tokyo:20260410T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-392c5133607c863f377b6643@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult (2) @ Yomiuri (3)\r\nDTSTART;TZID=Asia/Tokyo:20260410T180000\r\nDTEND;TZID=Asia/Tokyo:20260410T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-a5b903cc47a4754ab073b6d4@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-10T09:00:00+00:00",
-      "uid": "npb-392c5133607c863f377b6643@giants-calendar.local"
+      "uid": "npb-a5b903cc47a4754ab073b6d4@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (2) @ Yakult (3)\r\nDTSTART;TZID=Asia/Tokyo:20260411T180000\r\nDTEND;TZID=Asia/Tokyo:20260411T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-9301637b82faf2e5f3a3c05d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult (3) @ Yomiuri (2)\r\nDTSTART;TZID=Asia/Tokyo:20260411T180000\r\nDTEND;TZID=Asia/Tokyo:20260411T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-5dc2006d1310867e9aa2fb45@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-11T09:00:00+00:00",
-      "uid": "npb-9301637b82faf2e5f3a3c05d@giants-calendar.local"
+      "uid": "npb-5dc2006d1310867e9aa2fb45@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (0) @ Yakult (2)\r\nDTSTART;TZID=Asia/Tokyo:20260412T140000\r\nDTEND;TZID=Asia/Tokyo:20260412T170000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-64d6f2ebe0e666afe20143a8@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult (2) @ Yomiuri (0)\r\nDTSTART;TZID=Asia/Tokyo:20260412T140000\r\nDTEND;TZID=Asia/Tokyo:20260412T170000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-8c01696035c5ca49dfd60efb@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-12T05:00:00+00:00",
-      "uid": "npb-64d6f2ebe0e666afe20143a8@giants-calendar.local"
+      "uid": "npb-8c01696035c5ca49dfd60efb@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin (3) @ Yomiuri (4)\r\nDTSTART;TZID=Asia/Tokyo:20260414T180000\r\nDTEND;TZID=Asia/Tokyo:20260414T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-a0ad773e3fcbbeb642db0138@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (4) @ Hanshin (3)\r\nDTSTART;TZID=Asia/Tokyo:20260414T180000\r\nDTEND;TZID=Asia/Tokyo:20260414T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-bf31b45575dc10504615b09b@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-14T09:00:00+00:00",
-      "uid": "npb-a0ad773e3fcbbeb642db0138@giants-calendar.local"
+      "uid": "npb-bf31b45575dc10504615b09b@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin (3) @ Yomiuri (4)\r\nDTSTART;TZID=Asia/Tokyo:20260416T180000\r\nDTEND;TZID=Asia/Tokyo:20260416T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-a2974124ba350bfc0a2ba1ed@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (4) @ Hanshin (3)\r\nDTSTART;TZID=Asia/Tokyo:20260416T180000\r\nDTEND;TZID=Asia/Tokyo:20260416T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-115ed3b3c25105c13788e582@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-16T09:00:00+00:00",
-      "uid": "npb-a2974124ba350bfc0a2ba1ed@giants-calendar.local"
+      "uid": "npb-115ed3b3c25105c13788e582@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult (2) @ Yomiuri (8)\r\nDTSTART;TZID=Asia/Tokyo:20260417T180000\r\nDTEND;TZID=Asia/Tokyo:20260417T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-b72ef33f5571dc577d759928@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (8) @ Yakult (2)\r\nDTSTART;TZID=Asia/Tokyo:20260417T180000\r\nDTEND;TZID=Asia/Tokyo:20260417T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-cbb0fe82f8b7601027131e27@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-17T09:00:00+00:00",
-      "uid": "npb-b72ef33f5571dc577d759928@giants-calendar.local"
+      "uid": "npb-cbb0fe82f8b7601027131e27@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult (4) @ Yomiuri (3)\r\nDTSTART;TZID=Asia/Tokyo:20260418T180000\r\nDTEND;TZID=Asia/Tokyo:20260418T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-b0632eac32aa823c3214270d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (3) @ Yakult (4)\r\nDTSTART;TZID=Asia/Tokyo:20260418T180000\r\nDTEND;TZID=Asia/Tokyo:20260418T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-c2af9e28511c9129c1cbac78@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-18T09:00:00+00:00",
-      "uid": "npb-b0632eac32aa823c3214270d@giants-calendar.local"
+      "uid": "npb-c2af9e28511c9129c1cbac78@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult (3) @ Yomiuri (1)\r\nDTSTART;TZID=Asia/Tokyo:20260419T180000\r\nDTEND;TZID=Asia/Tokyo:20260419T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-2e4564836d00f42f03157870@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (1) @ Yakult (3)\r\nDTSTART;TZID=Asia/Tokyo:20260419T180000\r\nDTEND;TZID=Asia/Tokyo:20260419T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-a4b779d16f9c00ba0410563d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-19T09:00:00+00:00",
-      "uid": "npb-2e4564836d00f42f03157870@giants-calendar.local"
+      "uid": "npb-a4b779d16f9c00ba0410563d@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (2) @ Chunichi (1)\r\nDTSTART;TZID=Asia/Tokyo:20260421T180000\r\nDTEND;TZID=Asia/Tokyo:20260421T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-5ebef80e141dc2cb39bd1a63@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi (1) @ Yomiuri (2)\r\nDTSTART;TZID=Asia/Tokyo:20260421T180000\r\nDTEND;TZID=Asia/Tokyo:20260421T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-833a99f050ec7c036b2fe273@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-21T09:00:00+00:00",
-      "uid": "npb-5ebef80e141dc2cb39bd1a63@giants-calendar.local"
+      "uid": "npb-833a99f050ec7c036b2fe273@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (5) @ Chunichi (1)\r\nDTSTART;TZID=Asia/Tokyo:20260422T180000\r\nDTEND;TZID=Asia/Tokyo:20260422T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-239c82e2d71fd993b54fb767@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi (1) @ Yomiuri (5)\r\nDTSTART;TZID=Asia/Tokyo:20260422T180000\r\nDTEND;TZID=Asia/Tokyo:20260422T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-0ee662bc6b4561c71aa4f22e@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-22T09:00:00+00:00",
-      "uid": "npb-239c82e2d71fd993b54fb767@giants-calendar.local"
+      "uid": "npb-0ee662bc6b4561c71aa4f22e@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA (2) @ Yomiuri (1)\r\nDTSTART;TZID=Asia/Tokyo:20260424T180000\r\nDTEND;TZID=Asia/Tokyo:20260424T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-012277d458d0738ad8ae4c43@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (1) @ DeNA (2)\r\nDTSTART;TZID=Asia/Tokyo:20260424T180000\r\nDTEND;TZID=Asia/Tokyo:20260424T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-afb905a6d3634a2fec42a3d1@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-24T09:00:00+00:00",
-      "uid": "npb-012277d458d0738ad8ae4c43@giants-calendar.local"
+      "uid": "npb-afb905a6d3634a2fec42a3d1@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA (2) @ Yomiuri (7)\r\nDTSTART;TZID=Asia/Tokyo:20260425T140000\r\nDTEND;TZID=Asia/Tokyo:20260425T170000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-2ddecf40d95861dfcd8643c0@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (7) @ DeNA (2)\r\nDTSTART;TZID=Asia/Tokyo:20260425T140000\r\nDTEND;TZID=Asia/Tokyo:20260425T170000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-8c72afc2158ed21e0a53d513@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-25T05:00:00+00:00",
-      "uid": "npb-2ddecf40d95861dfcd8643c0@giants-calendar.local"
+      "uid": "npb-8c72afc2158ed21e0a53d513@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA (1) @ Yomiuri (4)\r\nDTSTART;TZID=Asia/Tokyo:20260426T140000\r\nDTEND;TZID=Asia/Tokyo:20260426T170000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-c5950df2ec95599b4baec3d5@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (4) @ DeNA (1)\r\nDTSTART;TZID=Asia/Tokyo:20260426T140000\r\nDTEND;TZID=Asia/Tokyo:20260426T170000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-d9d524c4f3dc2447e8a84d22@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-26T05:00:00+00:00",
-      "uid": "npb-c5950df2ec95599b4baec3d5@giants-calendar.local"
+      "uid": "npb-d9d524c4f3dc2447e8a84d22@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (1) @ Hiroshima (11)\r\nDTSTART;TZID=Asia/Tokyo:20260428T180000\r\nDTEND;TZID=Asia/Tokyo:20260428T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-5c92f05e812bea319c9e32cc@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima (11) @ Yomiuri (1)\r\nDTSTART;TZID=Asia/Tokyo:20260428T180000\r\nDTEND;TZID=Asia/Tokyo:20260428T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-f14894b2c31987ea72462ad0@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-28T09:00:00+00:00",
-      "uid": "npb-5c92f05e812bea319c9e32cc@giants-calendar.local"
+      "uid": "npb-f14894b2c31987ea72462ad0@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (4) @ Hiroshima (2)\r\nDTSTART;TZID=Asia/Tokyo:20260429T180000\r\nDTEND;TZID=Asia/Tokyo:20260429T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-dcc248dcabeed619c06ed311@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima (2) @ Yomiuri (4)\r\nDTSTART;TZID=Asia/Tokyo:20260429T180000\r\nDTEND;TZID=Asia/Tokyo:20260429T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-4ead73a57a10c6201d0df3a1@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-29T09:00:00+00:00",
-      "uid": "npb-dcc248dcabeed619c06ed311@giants-calendar.local"
+      "uid": "npb-4ead73a57a10c6201d0df3a1@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (2) @ Hiroshima (3)\r\nDTSTART;TZID=Asia/Tokyo:20260430T180000\r\nDTEND;TZID=Asia/Tokyo:20260430T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-e06c238655eee747274a017f@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima (3) @ Yomiuri (2)\r\nDTSTART;TZID=Asia/Tokyo:20260430T180000\r\nDTEND;TZID=Asia/Tokyo:20260430T210000\r\nDTSTAMP:20260909T043343Z\r\nUID:npb-03595927a9dbce91b7c6b069@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-04-30T09:00:00+00:00",
-      "uid": "npb-e06c238655eee747274a017f@giants-calendar.local"
+      "uid": "npb-03595927a9dbce91b7c6b069@giants-calendar.local"
     },
     {
       "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (5) @ Hanshin (3)\r\nDTSTART;TZID=Asia/Tokyo:20260501T180000\r\nDTEND;TZID=Asia/Tokyo:20260501T210000\r\nDTSTAMP:20260909T042708Z\r\nUID:npb-cbcd55610576e57003d7e7e9@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
