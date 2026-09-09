@@ -2,7 +2,7 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//radicalgrimoire//Giants Calendar//JA
 CALSCALE:GREGORIAN
-X-WR-CALNAME:Yomiuri Giants Calender
+X-WR-CALNAME:Yomiuri Giants
 X-WR-TIMEZONE:Asia/Tokyo
 BEGIN:VEVENT
 SUMMARY:読売ジャイアンツ vs 阪神タイガース 12回戦 （3 - 
