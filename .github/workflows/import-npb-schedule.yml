@@ -27,7 +27,7 @@ jobs:
         run: |
           set -euo pipefail
           curl --fail --location --proto '=https' --tlsv1.2 --output data/npb-schedule-source.html "$SOURCE_URL"
-      - name: Extract Giants games and regenerate calendar
+      - name: Extract Giants games and merge snapshot
         env:
           GEMINI_APIKEY: ${{ secrets.GEMINI_APIKEY }}
         run: |
@@ -38,6 +38,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add giants.ics data/games.json data/snapshots data/npb-schedule-source.html data/npb-schedule-games.json
+          git add data/snapshots data/npb-schedule-source.html data/npb-schedule-games.json
           git diff --cached --quiet || git commit -m "Import NPB schedule"
           git push

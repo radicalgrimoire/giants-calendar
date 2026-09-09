@@ -24,7 +24,7 @@ Google 側が URL を定期取得するため、ICS ファイルの更新は後�
 
 ## NPB日程からの補完
 
-公式Google Calendarにない期間は、GitHub Actions の **Import NPB schedule** を手動実行し、NPB日程詳細ページのHTTPS URLを `source_url` に入力します。ワークフローはHTMLを保存し、Geminiに巨人戦だけをJSONへ抽出させ、日付・時刻・チーム・得点を検証してから年度別スナップショットへマージします。その後、`data/games.json` と `giants.ics` を再生成してコミットします。
+公式Google Calendarにない期間は、GitHub Actions の **Import NPB schedule** を手動実行し、NPB日程詳細ページのHTTPS URLを `source_url` に入力します。ワークフローはHTMLを保存し、Geminiに巨人戦だけをJSONへ抽出させ、日付・時刻・チーム・得点を検証してから年度別スナップショットへマージします。`data/games.json` と `giants.ics` はこのワークフローでは更新せず、既存の定時生成で更新します。
 
 リポジトリのActions secretに `GEMINI_APIKEY` が必要です。たとえば2026年3月分は次のURLです。
 

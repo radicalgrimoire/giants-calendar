@@ -16,12 +16,7 @@ from pathlib import Path
 from icalendar import Event
 
 from generate_calendar import (
-    GAMES_PATH,
     JST,
-    OUTPUT_PATH,
-    build_calendar,
-    filter_games,
-    load_local_stadiums,
     write_json,
 )
 from save_snapshot import event_start, event_to_record, load_snapshot, snapshot_path
@@ -149,11 +144,6 @@ def save_snapshot_events(events: dict[str, Event], year: int) -> None:
     write_json(snapshot_path(year), {"schema_version": 1, "events": records})
 
 
-def save_games(events: dict[str, Event]) -> None:
-    records = sorted((event_to_record(event) for event in events.values()), key=lambda record: (record["start"], record["uid"]))
-    write_json(GAMES_PATH, {"schema_version": 1, "events": records})
-
-
 def main() -> None:
     parser = argparse.ArgumentParser(description="NPB日程ページから巨人戦を取り込みます。")
     source = parser.add_mutually_exclusive_group(required=True)
@@ -185,10 +175,7 @@ def main() -> None:
     imported = [build_event(game) for game in games]
     snapshot.update({str(event["UID"]): event for event in imported})
     save_snapshot_events(snapshot, year)
-    current_games = filter_games(snapshot, datetime.now(timezone.utc))
-    save_games(current_games)
-    OUTPUT_PATH.write_bytes(build_calendar(list(current_games.values()), year, load_local_stadiums()).to_ical())
-    print(f"Imported {len(imported)} games into {GAMES_PATH.relative_to(ROOT)}")
+    print(f"Imported {len(imported)} games into {snapshot_path(year).relative_to(ROOT)}")
 
 
 if __name__ == "__main__":
