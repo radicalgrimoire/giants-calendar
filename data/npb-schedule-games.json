@@ -1,0 +1,37 @@
+{
+  "games": [
+    {
+      "away": "巨人",
+      "away_score": 3,
+      "date": "2026-03-27",
+      "home": "阪神",
+      "home_score": 1,
+      "start_at": "18:15"
+    },
+    {
+      "away": "巨人",
+      "away_score": 0,
+      "date": "2026-03-28",
+      "home": "阪神",
+      "home_score": 2,
+      "start_at": "14:00"
+    },
+    {
+      "away": "巨人",
+      "away_score": 6,
+      "date": "2026-03-29",
+      "home": "阪神",
+      "home_score": 12,
+      "start_at": "14:00"
+    },
+    {
+      "away": "中日",
+      "away_score": 2,
+      "date": "2026-03-31",
+      "home": "巨人",
+      "home_score": 5,
+      "start_at": "18:15"
+    }
+  ],
+  "schema_version": 1
+}
