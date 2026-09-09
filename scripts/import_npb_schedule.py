@@ -18,6 +18,8 @@ from icalendar import Event
 
 from generate_calendar import (
     JST,
+    MATCHUP_PATTERN,
+    normalize_team_name,
     write_json,
 )
 from save_snapshot import event_start, event_to_record, load_snapshot, snapshot_path
@@ -60,10 +62,10 @@ def request_games(source: str, year: int, api_key: str) -> dict:
         (
             "あなたはNPB公式戦の日程詳細HTMLを構造化するアシスタントです。",
             "読売ジャイアンツ（巨人・読売を含む）の試合だけを漏れなく抽出し、JSONだけを返してください。",
-            "表の左側のチームを away、右側を home とします。得点は各チームの横の数値です。",
+            "表の左側のチームを home、右側を away とします。得点は各チームの横の数値です。",
             "日付、開始時刻、対戦チーム、得点のいずれかがページに明記されていない試合は除外してください。推測しないでください。",
             "同じ試合を重複して出力しないでください。",
-            '{"schema_version":1,"games":[{"date":"2026-03-27","away":"巨人","home":"阪神","away_score":3,"home_score":1,"start_at":"18:15"}]}',
+            '{"schema_version":1,"games":[{"date":"2026-03-27","home":"巨人","away":"阪神","home_score":3,"away_score":1,"start_at":"18:15"}]}',
             f"対象年: {year}",
             "HTML:",
             source,
@@ -148,6 +150,15 @@ def build_event(game: dict[str, object]) -> Event:
     return event
 
 
+def matchup_key(event: Event) -> tuple[str, frozenset[str]] | None:
+    match = MATCHUP_PATTERN.match(str(event.get("SUMMARY", "")))
+    if not match:
+        return None
+    away, home = (normalize_team_name(team) for team in match.groups())
+    game_date = event_start(event).astimezone(JST).date().isoformat()
+    return game_date, frozenset((away, home))
+
+
 def save_snapshot_events(events: dict[str, Event], year: int) -> None:
     records = sorted((event_to_record(event) for event in events.values()), key=lambda record: (record["start"], record["uid"]))
     write_json(snapshot_path(year), {"schema_version": 1, "events": records})
@@ -182,7 +193,23 @@ def main() -> None:
     year = years.pop()
     snapshot = load_snapshot(year)
     imported = [build_event(game) for game in games]
-    snapshot.update({str(event["UID"]): event for event in imported})
+    imported_keys = {matchup_key(event) for event in imported}
+    snapshot = {
+        uid: event
+        for uid, event in snapshot.items()
+        if not (
+            str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) == "npb"
+            and matchup_key(event) in imported_keys
+        )
+    }
+    existing_keys = {matchup_key(event) for event in snapshot.values()}
+    snapshot.update(
+        {
+            str(event["UID"]): event
+            for event in imported
+            if matchup_key(event) not in existing_keys
+        }
+    )
     save_snapshot_events(snapshot, year)
     print(f"Imported {len(imported)} games into {snapshot_path(year).relative_to(ROOT)}")
 
