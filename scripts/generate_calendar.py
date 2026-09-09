@@ -8,7 +8,7 @@ from datetime import date, datetime, time, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from icalendar import Calendar, Event
+from icalendar import Calendar, Event, Timezone
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -270,6 +270,7 @@ def build_calendar(
     calendar.add("CALSCALE", "GREGORIAN")
     calendar.add("X-WR-CALNAME", "Yomiuri Giants")
     calendar.add("X-WR-TIMEZONE", "Asia/Tokyo")
+    calendar.add_component(Timezone.from_tzinfo(JST))
 
     events = sorted(
         (event for event in events if event_start(event).astimezone(JST).year == year),
