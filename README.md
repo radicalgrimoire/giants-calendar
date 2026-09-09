@@ -22,6 +22,22 @@ Google 側が URL を定期取得するため、ICS ファイルの更新は後�
 - 回戦数は年と対戦カードごとに、日付順で付与します。
 - ジャイアンツ主催試合の場所には `東京ドーム` を設定します。地方開催日は `data/local-stadium.env` に `YYYY-MM-DD=球場名` を追記すると、JST の試合日で照合してその球場名を優先設定します。空行と `#` から始まるコメント行は無視します。
 
+## NPB日程からの補完
+
+公式Google Calendarにない期間は、GitHub Actions の **Import NPB schedule** を手動実行し、NPB日程詳細ページのHTTPS URLを `source_url` に入力します。ワークフローはHTMLを保存し、Geminiに巨人戦だけをJSONへ抽出させ、日付・時刻・チーム・得点を検証してから年度別スナップショットへマージします。その後、`data/games.json` と `giants.ics` を再生成してコミットします。
+
+リポジトリのActions secretに `GEMINI_APIKEY` が必要です。たとえば2026年3月分は次のURLです。
+
+```text
+https://npb.jp/games/2026/schedule_03_detail.html
+```
+
+Geminiを呼ばずに、保存済みのJSONを検証して取り込む場合は次を実行します。
+
+```powershell
+py scripts/import_npb_schedule.py --games-json data/npb-schedule-games.json
+```
+
 ローカルで実行する場合は、Python 3.11 以降で次を実行します。
 
 ```powershell

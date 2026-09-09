@@ -1,0 +1,43 @@
+name: Import NPB schedule
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_url:
+        description: NPB日程詳細ページのHTTPS URL
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  import-schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements.txt
+      - name: Fetch NPB schedule page
+        shell: bash
+        env:
+          SOURCE_URL: ${{ inputs.source_url }}
+        run: |
+          set -euo pipefail
+          curl --fail --location --proto '=https' --tlsv1.2 --output data/npb-schedule-source.html "$SOURCE_URL"
+      - name: Extract Giants games and regenerate calendar
+        env:
+          GEMINI_APIKEY: ${{ secrets.GEMINI_APIKEY }}
+        run: |
+          python scripts/import_npb_schedule.py \
+            --source data/npb-schedule-source.html \
+            --json-output data/npb-schedule-games.json
+      - name: Commit imported schedule
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add giants.ics data/games.json data/snapshots data/npb-schedule-source.html data/npb-schedule-games.json
+          git diff --cached --quiet || git commit -m "Import NPB schedule"
+          git push
