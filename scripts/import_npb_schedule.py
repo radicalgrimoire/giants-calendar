@@ -25,7 +25,7 @@ from save_snapshot import event_start, event_to_record, load_snapshot, snapshot_
 
 ROOT = Path(__file__).resolve().parents[1]
 GIANTS = "読売ジャイアンツ"
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.6-flash")
 TEAM_ALIASES = {
     "巨人": ("Yomiuri", GIANTS),
     "読売": ("Yomiuri", GIANTS),
