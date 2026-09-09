@@ -5,6 +5,696 @@ CALSCALE:GREGORIAN
 X-WR-CALNAME:Yomiuri Giants Calender
 X-WR-TIMEZONE:Asia/Tokyo
 BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 阪神タイガース 12回戦 （3 - 
+ 1）
+DTSTART;TZID=Asia/Tokyo:20260327T181500
+DTEND;TZID=Asia/Tokyo:20260327T211500
+DTSTAMP:20260909T043208Z
+UID:npb-bf73c17330fc84cedce36bc7@giants-calendar.local
+DESCRIPTION:試合結果：G3 - T1 勝利\n（HOME）読売ジャイアン
+ ツ\n（VISIT）阪神タイガース
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 阪神タイガース 13回戦 （0 - 
+ 2）
+DTSTART;TZID=Asia/Tokyo:20260328T140000
+DTEND;TZID=Asia/Tokyo:20260328T170000
+DTSTAMP:20260909T043208Z
+UID:npb-41e38770b23fe72f5f872c32@giants-calendar.local
+DESCRIPTION:試合結果：G0 - T2 敗北\n（HOME）読売ジャイアン
+ ツ\n（VISIT）阪神タイガース
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 阪神タイガース 14回戦 （6 - 
+ 12）
+DTSTART;TZID=Asia/Tokyo:20260329T140000
+DTEND;TZID=Asia/Tokyo:20260329T170000
+DTSTAMP:20260909T043208Z
+UID:npb-c572e55388ba59e771083477@giants-calendar.local
+DESCRIPTION:試合結果：G6 - T12 敗北\n（HOME）読売ジャイア
+ ンツ\n（VISIT）阪神タイガース
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 9回戦 （2 - 5
+ ）
+DTSTART;TZID=Asia/Tokyo:20260331T181500
+DTEND;TZID=Asia/Tokyo:20260331T211500
+DTSTAMP:20260909T043208Z
+UID:npb-613f73bc529ddb07890284e3@giants-calendar.local
+DESCRIPTION:試合結果：D2 - G5 勝利\n（HOME）中日ドラゴンズ
+ \n（VISIT）読売ジャイアンツ
+LOCATION:バンテリンドーム ナゴヤ\, 日本、〒461-0047 愛知
+ 県名古屋市東区大幸南１丁目１−１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 10回戦 （5 - 
+ 6）
+DTSTART;TZID=Asia/Tokyo:20260401T180000
+DTEND;TZID=Asia/Tokyo:20260401T210000
+DTSTAMP:20260909T043343Z
+UID:npb-cbe8fb3a218f4b3b5b4a52a3@giants-calendar.local
+DESCRIPTION:試合結果：D5 - G6 勝利\n（HOME）中日ドラゴンズ
+ \n（VISIT）読売ジャイアンツ
+LOCATION:バンテリンドーム ナゴヤ\, 日本、〒461-0047 愛知
+ 県名古屋市東区大幸南１丁目１−１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 11回戦 （2 - 
+ 1）
+DTSTART;TZID=Asia/Tokyo:20260402T180000
+DTEND;TZID=Asia/Tokyo:20260402T210000
+DTSTAMP:20260909T043343Z
+UID:npb-ab9c63b67dda69f2ce6bd8fc@giants-calendar.local
+DESCRIPTION:試合結果：D2 - G1 敗北\n（HOME）中日ドラゴンズ
+ \n（VISIT）読売ジャイアンツ
+LOCATION:バンテリンドーム ナゴヤ\, 日本、〒461-0047 愛知
+ 県名古屋市東区大幸南１丁目１−１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 10回戦 
+ （1 - 3）
+DTSTART;TZID=Asia/Tokyo:20260403T180000
+DTEND;TZID=Asia/Tokyo:20260403T210000
+DTSTAMP:20260909T043343Z
+UID:npb-a42f57319188c602074ef17d@giants-calendar.local
+DESCRIPTION:試合結果：G1 - DB3 敗北\n（HOME）読売ジャイア
+ ンツ\n（VISIT）横浜DeNAベイスターズ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 11回戦 
+ （8 - 4）
+DTSTART;TZID=Asia/Tokyo:20260404T140000
+DTEND;TZID=Asia/Tokyo:20260404T170000
+DTSTAMP:20260909T043343Z
+UID:npb-23d24bc141161f44be6d089e@giants-calendar.local
+DESCRIPTION:試合結果：G8 - DB4 勝利\n（HOME）読売ジャイア
+ ンツ\n（VISIT）横浜DeNAベイスターズ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 12回戦 
+ （3 - 2）
+DTSTART;TZID=Asia/Tokyo:20260405T140000
+DTEND;TZID=Asia/Tokyo:20260405T170000
+DTSTAMP:20260909T043343Z
+UID:npb-7a3761284aac9ac195cb6157@giants-calendar.local
+DESCRIPTION:試合結果：G3 - DB2 勝利\n（HOME）読売ジャイア
+ ンツ\n（VISIT）横浜DeNAベイスターズ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:広島東洋カープ vs 読売ジャイアンツ 8回戦 （5 - 2
+ ）
+DTSTART;TZID=Asia/Tokyo:20260407T180000
+DTEND;TZID=Asia/Tokyo:20260407T210000
+DTSTAMP:20260909T043343Z
+UID:npb-0ea7b390397cd31c10bdd3c7@giants-calendar.local
+DESCRIPTION:試合結果：C5 - G2 敗北\n（HOME）広島東洋カープ
+ \n（VISIT）読売ジャイアンツ
+LOCATION:MAZDA Zoom-Zoom スタジアム広島(広島市民球場)\, 日
+ 本、〒732-0803 広島県広島市南区南蟹屋２丁目３−１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:広島東洋カープ vs 読売ジャイアンツ 9回戦 （1 - 2
+ ）
+DTSTART;TZID=Asia/Tokyo:20260408T180000
+DTEND;TZID=Asia/Tokyo:20260408T210000
+DTSTAMP:20260909T043343Z
+UID:npb-30451f2eabe3fd1e262478eb@giants-calendar.local
+DESCRIPTION:試合結果：C1 - G2 勝利\n（HOME）広島東洋カープ
+ \n（VISIT）読売ジャイアンツ
+LOCATION:MAZDA Zoom-Zoom スタジアム広島(広島市民球場)\, 日
+ 本、〒732-0803 広島県広島市南区南蟹屋２丁目３−１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 12
+ 回戦 （3 - 2）
+DTSTART;TZID=Asia/Tokyo:20260410T180000
+DTEND;TZID=Asia/Tokyo:20260410T210000
+DTSTAMP:20260909T043343Z
+UID:npb-a5b903cc47a4754ab073b6d4@giants-calendar.local
+DESCRIPTION:試合結果：G3 - S2 勝利\n（HOME）読売ジャイアン
+ ツ\n（VISIT）東京ヤクルトスワローズ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 13
+ 回戦 （2 - 3）
+DTSTART;TZID=Asia/Tokyo:20260411T180000
+DTEND;TZID=Asia/Tokyo:20260411T210000
+DTSTAMP:20260909T043343Z
+UID:npb-5dc2006d1310867e9aa2fb45@giants-calendar.local
+DESCRIPTION:試合結果：G2 - S3 敗北\n（HOME）読売ジャイアン
+ ツ\n（VISIT）東京ヤクルトスワローズ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 14
+ 回戦 （0 - 2）
+DTSTART;TZID=Asia/Tokyo:20260412T140000
+DTEND;TZID=Asia/Tokyo:20260412T170000
+DTSTAMP:20260909T043343Z
+UID:npb-8c01696035c5ca49dfd60efb@giants-calendar.local
+DESCRIPTION:試合結果：G0 - S2 敗北\n（HOME）読売ジャイアン
+ ツ\n（VISIT）東京ヤクルトスワローズ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:阪神タイガース vs 読売ジャイアンツ 15回戦 （3 - 
+ 4）
+DTSTART;TZID=Asia/Tokyo:20260414T180000
+DTEND;TZID=Asia/Tokyo:20260414T210000
+DTSTAMP:20260909T043343Z
+UID:npb-bf31b45575dc10504615b09b@giants-calendar.local
+DESCRIPTION:試合結果：T3 - G4 勝利\n（HOME）阪神タイガース
+ \n（VISIT）読売ジャイアンツ
+LOCATION:阪神甲子園球場\, 日本、〒663-8152 兵庫県西宮市
+ 甲子園町１−８２
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:阪神タイガース vs 読売ジャイアンツ 16回戦 （3 - 
+ 4）
+DTSTART;TZID=Asia/Tokyo:20260416T180000
+DTEND;TZID=Asia/Tokyo:20260416T210000
+DTSTAMP:20260909T043343Z
+UID:npb-115ed3b3c25105c13788e582@giants-calendar.local
+DESCRIPTION:試合結果：T3 - G4 勝利\n（HOME）阪神タイガース
+ \n（VISIT）読売ジャイアンツ
+LOCATION:阪神甲子園球場\, 日本、〒663-8152 兵庫県西宮市
+ 甲子園町１−８２
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 15
+ 回戦 （2 - 8）
+DTSTART;TZID=Asia/Tokyo:20260417T180000
+DTEND;TZID=Asia/Tokyo:20260417T210000
+DTSTAMP:20260909T043343Z
+UID:npb-cbb0fe82f8b7601027131e27@giants-calendar.local
+DESCRIPTION:試合結果：S2 - G8 勝利\n（HOME）東京ヤクルトス
+ ワローズ\n（VISIT）読売ジャイアンツ
+LOCATION:明治神宮野球場\, 日本、〒160-0013 東京都新宿区
+ 霞ヶ丘町３−１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 16
+ 回戦 （4 - 3）
+DTSTART;TZID=Asia/Tokyo:20260418T180000
+DTEND;TZID=Asia/Tokyo:20260418T210000
+DTSTAMP:20260909T043343Z
+UID:npb-c2af9e28511c9129c1cbac78@giants-calendar.local
+DESCRIPTION:試合結果：S4 - G3 敗北\n（HOME）東京ヤクルトス
+ ワローズ\n（VISIT）読売ジャイアンツ
+LOCATION:明治神宮野球場\, 日本、〒160-0013 東京都新宿区
+ 霞ヶ丘町３−１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 17
+ 回戦 （3 - 1）
+DTSTART;TZID=Asia/Tokyo:20260419T180000
+DTEND;TZID=Asia/Tokyo:20260419T210000
+DTSTAMP:20260909T043343Z
+UID:npb-a4b779d16f9c00ba0410563d@giants-calendar.local
+DESCRIPTION:試合結果：S3 - G1 敗北\n（HOME）東京ヤクルトス
+ ワローズ\n（VISIT）読売ジャイアンツ
+LOCATION:明治神宮野球場\, 日本、〒160-0013 東京都新宿区
+ 霞ヶ丘町３−１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 12回戦 （2 - 
+ 1）
+DTSTART;TZID=Asia/Tokyo:20260421T180000
+DTEND;TZID=Asia/Tokyo:20260421T210000
+DTSTAMP:20260909T043343Z
+UID:npb-833a99f050ec7c036b2fe273@giants-calendar.local
+DESCRIPTION:試合結果：G2 - D1 勝利\n（HOME）読売ジャイアン
+ ツ\n（VISIT）中日ドラゴンズ
+LOCATION:長野オリンピックスタジアム\, 日本、〒381-2221 
+ 長野県長野市篠ノ井東福寺３２０
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 13回戦 （5 - 
+ 1）
+DTSTART;TZID=Asia/Tokyo:20260422T180000
+DTEND;TZID=Asia/Tokyo:20260422T210000
+DTSTAMP:20260909T043343Z
+UID:npb-0ee662bc6b4561c71aa4f22e@giants-calendar.local
+DESCRIPTION:試合結果：G5 - D1 勝利\n（HOME）読売ジャイアン
+ ツ\n（VISIT）中日ドラゴンズ
+LOCATION:上毛新聞敷島球場\, 日本、〒371-0036 群馬県前橋
+ 市敷島町６６
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 13回戦 
+ （2 - 1）
+DTSTART;TZID=Asia/Tokyo:20260424T180000
+DTEND;TZID=Asia/Tokyo:20260424T210000
+DTSTAMP:20260909T043343Z
+UID:npb-afb905a6d3634a2fec42a3d1@giants-calendar.local
+DESCRIPTION:試合結果：DB2 - G1 敗北\n（HOME）横浜DeNAベイス
+ ターズ\n（VISIT）読売ジャイアンツ
+LOCATION:横浜スタジアム\, 日本、〒231-0022 神奈川県横浜
+ 市中区横浜公園
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 14回戦 
+ （2 - 7）
+DTSTART;TZID=Asia/Tokyo:20260425T140000
+DTEND;TZID=Asia/Tokyo:20260425T170000
+DTSTAMP:20260909T043343Z
+UID:npb-8c72afc2158ed21e0a53d513@giants-calendar.local
+DESCRIPTION:試合結果：DB2 - G7 勝利\n（HOME）横浜DeNAベイス
+ ターズ\n（VISIT）読売ジャイアンツ
+LOCATION:横浜スタジアム\, 日本、〒231-0022 神奈川県横浜
+ 市中区横浜公園
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 15回戦 
+ （1 - 4）
+DTSTART;TZID=Asia/Tokyo:20260426T140000
+DTEND;TZID=Asia/Tokyo:20260426T170000
+DTSTAMP:20260909T043343Z
+UID:npb-d9d524c4f3dc2447e8a84d22@giants-calendar.local
+DESCRIPTION:試合結果：DB1 - G4 勝利\n（HOME）横浜DeNAベイス
+ ターズ\n（VISIT）読売ジャイアンツ
+LOCATION:横浜スタジアム\, 日本、〒231-0022 神奈川県横浜
+ 市中区横浜公園
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 広島東洋カープ 10回戦 （1 - 
+ 11）
+DTSTART;TZID=Asia/Tokyo:20260428T180000
+DTEND;TZID=Asia/Tokyo:20260428T210000
+DTSTAMP:20260909T043343Z
+UID:npb-f14894b2c31987ea72462ad0@giants-calendar.local
+DESCRIPTION:試合結果：G1 - C11 敗北\n（HOME）読売ジャイア
+ ンツ\n（VISIT）広島東洋カープ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 広島東洋カープ 11回戦 （4 - 
+ 2）
+DTSTART;TZID=Asia/Tokyo:20260429T180000
+DTEND;TZID=Asia/Tokyo:20260429T210000
+DTSTAMP:20260909T043343Z
+UID:npb-4ead73a57a10c6201d0df3a1@giants-calendar.local
+DESCRIPTION:試合結果：G4 - C2 勝利\n（HOME）読売ジャイアン
+ ツ\n（VISIT）広島東洋カープ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 広島東洋カープ 12回戦 （2 - 
+ 3）
+DTSTART;TZID=Asia/Tokyo:20260430T180000
+DTEND;TZID=Asia/Tokyo:20260430T210000
+DTSTAMP:20260909T043343Z
+UID:npb-03595927a9dbce91b7c6b069@giants-calendar.local
+DESCRIPTION:試合結果：G2 - C3 敗北\n（HOME）読売ジャイアン
+ ツ\n（VISIT）広島東洋カープ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:阪神タイガース vs 読売ジャイアンツ 17回戦 （3 - 
+ 5）
+DTSTART;TZID=Asia/Tokyo:20260501T180000
+DTEND;TZID=Asia/Tokyo:20260501T210000
+DTSTAMP:20260909T042708Z
+UID:npb-cbcd55610576e57003d7e7e9@giants-calendar.local
+DESCRIPTION:試合結果：T3 - G5 勝利\n（HOME）阪神タイガース
+ \n（VISIT）読売ジャイアンツ
+LOCATION:阪神甲子園球場\, 日本、〒663-8152 兵庫県西宮市
+ 甲子園町１−８２
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:阪神タイガース vs 読売ジャイアンツ 18回戦 （7 - 
+ 5）
+DTSTART;TZID=Asia/Tokyo:20260502T140000
+DTEND;TZID=Asia/Tokyo:20260502T170000
+DTSTAMP:20260909T042708Z
+UID:npb-b776ff2321c61e48f9bdd8ed@giants-calendar.local
+DESCRIPTION:試合結果：T7 - G5 敗北\n（HOME）阪神タイガース
+ \n（VISIT）読売ジャイアンツ
+LOCATION:阪神甲子園球場\, 日本、〒663-8152 兵庫県西宮市
+ 甲子園町１−８２
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:阪神タイガース vs 読売ジャイアンツ 19回戦 （3 - 
+ 0）
+DTSTART;TZID=Asia/Tokyo:20260503T140000
+DTEND;TZID=Asia/Tokyo:20260503T170000
+DTSTAMP:20260909T042708Z
+UID:npb-c085e102417dae63f7ca168f@giants-calendar.local
+DESCRIPTION:試合結果：T3 - G0 敗北\n（HOME）阪神タイガース
+ \n（VISIT）読売ジャイアンツ
+LOCATION:阪神甲子園球場\, 日本、〒663-8152 兵庫県西宮市
+ 甲子園町１−８２
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 18
+ 回戦 （1 - 5）
+DTSTART;TZID=Asia/Tokyo:20260504T180000
+DTEND;TZID=Asia/Tokyo:20260504T210000
+DTSTAMP:20260909T042708Z
+UID:npb-4e873a32f2ba0fddb59cbfbd@giants-calendar.local
+DESCRIPTION:試合結果：G1 - S5 敗北\n（HOME）読売ジャイアン
+ ツ\n（VISIT）東京ヤクルトスワローズ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 19
+ 回戦 （3 - 2）
+DTSTART;TZID=Asia/Tokyo:20260505T140000
+DTEND;TZID=Asia/Tokyo:20260505T170000
+DTSTAMP:20260909T042708Z
+UID:npb-cc7384998dfad4a99662a603@giants-calendar.local
+DESCRIPTION:試合結果：G3 - S2 勝利\n（HOME）読売ジャイアン
+ ツ\n（VISIT）東京ヤクルトスワローズ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 20
+ 回戦 （0 - 5）
+DTSTART;TZID=Asia/Tokyo:20260506T140000
+DTEND;TZID=Asia/Tokyo:20260506T170000
+DTSTAMP:20260909T042708Z
+UID:npb-3c7bc311403f6c26ed0c21e8@giants-calendar.local
+DESCRIPTION:試合結果：G0 - S5 敗北\n（HOME）読売ジャイアン
+ ツ\n（VISIT）東京ヤクルトスワローズ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 14回戦 （9 - 
+ 2）
+DTSTART;TZID=Asia/Tokyo:20260508T180000
+DTEND;TZID=Asia/Tokyo:20260508T210000
+DTSTAMP:20260909T042708Z
+UID:npb-8d532894a8e7bb1a1eca3899@giants-calendar.local
+DESCRIPTION:試合結果：D9 - G2 敗北\n（HOME）中日ドラゴンズ
+ \n（VISIT）読売ジャイアンツ
+LOCATION:バンテリンドーム ナゴヤ\, 日本、〒461-0047 愛知
+ 県名古屋市東区大幸南１丁目１−１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 15回戦 （4 - 
+ 2）
+DTSTART;TZID=Asia/Tokyo:20260509T140000
+DTEND;TZID=Asia/Tokyo:20260509T170000
+DTSTAMP:20260909T042708Z
+UID:npb-f7c258b6590a0ef6477a313c@giants-calendar.local
+DESCRIPTION:試合結果：D4 - G2 敗北\n（HOME）中日ドラゴンズ
+ \n（VISIT）読売ジャイアンツ
+LOCATION:バンテリンドーム ナゴヤ\, 日本、〒461-0047 愛知
+ 県名古屋市東区大幸南１丁目１−１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 16回戦 （4 - 
+ 9）
+DTSTART;TZID=Asia/Tokyo:20260510T133000
+DTEND;TZID=Asia/Tokyo:20260510T163000
+DTSTAMP:20260909T042708Z
+UID:npb-147ff1c3abaf2f87bce0a5af@giants-calendar.local
+DESCRIPTION:試合結果：D4 - G9 勝利\n（HOME）中日ドラゴンズ
+ \n（VISIT）読売ジャイアンツ
+LOCATION:バンテリンドーム ナゴヤ\, 日本、〒461-0047 愛知
+ 県名古屋市東区大幸南１丁目１−１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 広島東洋カープ 13回戦 （5 - 
+ 3）
+DTSTART;TZID=Asia/Tokyo:20260512T180000
+DTEND;TZID=Asia/Tokyo:20260512T210000
+DTSTAMP:20260909T042708Z
+UID:npb-cba7523a64fcee6e1d65fbe6@giants-calendar.local
+DESCRIPTION:試合結果：G5 - C3 勝利\n（HOME）読売ジャイアン
+ ツ\n（VISIT）広島東洋カープ
+LOCATION:ぎふしん長良川球場\, 日本、〒502-0842 岐阜県岐
+ 阜市長良福光 大野２６７５−２８
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 広島東洋カープ 14回戦 （4 - 
+ 2）
+DTSTART;TZID=Asia/Tokyo:20260513T180000
+DTEND;TZID=Asia/Tokyo:20260513T210000
+DTSTAMP:20260909T042708Z
+UID:npb-6c761ce24a86b2ff840e5ca7@giants-calendar.local
+DESCRIPTION:試合結果：G4 - C2 勝利\n（HOME）読売ジャイアン
+ ツ\n（VISIT）広島東洋カープ
+LOCATION:セーレン・ドリームスタジアム\, 日本、〒918-8027
+  福井県福井市福町３−２０ 福井運動公園内
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 16回戦 
+ （2 - 0）
+DTSTART;TZID=Asia/Tokyo:20260515T180000
+DTEND;TZID=Asia/Tokyo:20260515T210000
+DTSTAMP:20260909T042708Z
+UID:npb-080af1e0079cfe512f0e449d@giants-calendar.local
+DESCRIPTION:試合結果：G2 - DB0 勝利\n（HOME）読売ジャイア
+ ンツ\n（VISIT）横浜DeNAベイスターズ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 17回戦 
+ （4 - 3）
+DTSTART;TZID=Asia/Tokyo:20260516T140000
+DTEND;TZID=Asia/Tokyo:20260516T170000
+DTSTAMP:20260909T042708Z
+UID:npb-b6323ac0131eadc77f2f23ce@giants-calendar.local
+DESCRIPTION:試合結果：G4 - DB3 勝利\n（HOME）読売ジャイア
+ ンツ\n（VISIT）横浜DeNAベイスターズ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 18回戦 
+ （1 - 0）
+DTSTART;TZID=Asia/Tokyo:20260517T140000
+DTEND;TZID=Asia/Tokyo:20260517T170000
+DTSTAMP:20260909T042708Z
+UID:npb-debf0019ca187685705be65c@giants-calendar.local
+DESCRIPTION:試合結果：G1 - DB0 勝利\n（HOME）読売ジャイア
+ ンツ\n（VISIT）横浜DeNAベイスターズ
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 21
+ 回戦 （0 - 2）
+DTSTART;TZID=Asia/Tokyo:20260519T180000
+DTEND;TZID=Asia/Tokyo:20260519T210000
+DTSTAMP:20260909T042708Z
+UID:npb-59ea901662db65893dadc460@giants-calendar.local
+DESCRIPTION:試合結果：S0 - G2 勝利\n（HOME）東京ヤクルトス
+ ワローズ\n（VISIT）読売ジャイアンツ
+LOCATION:明治神宮野球場\, 日本、〒160-0013 東京都新宿区
+ 霞ヶ丘町３−１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 22
+ 回戦 （3 - 1）
+DTSTART;TZID=Asia/Tokyo:20260521T180000
+DTEND;TZID=Asia/Tokyo:20260521T210000
+DTSTAMP:20260909T042708Z
+UID:npb-0cdee5acc36513d4e33f72e9@giants-calendar.local
+DESCRIPTION:試合結果：S3 - G1 敗北\n（HOME）東京ヤクルトス
+ ワローズ\n（VISIT）読売ジャイアンツ
+LOCATION:明治神宮野球場\, 日本、〒160-0013 東京都新宿区
+ 霞ヶ丘町３−１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 阪神タイガース 20回戦 （4 - 
+ 7）
+DTSTART;TZID=Asia/Tokyo:20260522T180000
+DTEND;TZID=Asia/Tokyo:20260522T210000
+DTSTAMP:20260909T042708Z
+UID:npb-e7f48fe9d2347bed2b37e82d@giants-calendar.local
+DESCRIPTION:試合結果：G4 - T7 敗北\n（HOME）読売ジャイアン
+ ツ\n（VISIT）阪神タイガース
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 阪神タイガース 21回戦 （0 - 
+ 3）
+DTSTART;TZID=Asia/Tokyo:20260523T180000
+DTEND;TZID=Asia/Tokyo:20260523T210000
+DTSTAMP:20260909T042708Z
+UID:npb-aca28051757755bc38f511e1@giants-calendar.local
+DESCRIPTION:試合結果：G0 - T3 敗北\n（HOME）読売ジャイアン
+ ツ\n（VISIT）阪神タイガース
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:読売ジャイアンツ vs 阪神タイガース 22回戦 （3 - 
+ 6）
+DTSTART;TZID=Asia/Tokyo:20260524T140000
+DTEND;TZID=Asia/Tokyo:20260524T170000
+DTSTAMP:20260909T042708Z
+UID:npb-916c4549c9ffbcfd6701f66c@giants-calendar.local
+DESCRIPTION:試合結果：G3 - T6 敗北\n（HOME）読売ジャイアン
+ ツ\n（VISIT）阪神タイガース
+LOCATION:東京ドーム\, 日本、〒112-0004 東京都文京区後楽
+ １丁目３−６１
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+X-GIANTS-CALENDAR-SOURCE:npb
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:読売ジャイアンツ vs 福岡ソフトバンクホークス 
  【交流戦】 1回戦 （3 - 8）
 DTSTART:20260526T090000Z
@@ -383,8 +1073,8 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 9回戦 （2 - 3
- ）
+SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 17回戦 （2 - 
+ 3）
 DTSTART:20260619T090000Z
 DTEND:20260619T120000Z
 DTSTAMP:20260909T031758Z
@@ -404,7 +1094,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 10回戦 （1 - 
+SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 18回戦 （1 - 
  0）
 DTSTART:20260620T050000Z
 DTEND:20260620T080000Z
@@ -425,7 +1115,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 11回戦 （3 - 
+SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 19回戦 （3 - 
  5）
 DTSTART:20260621T050000Z
 DTEND:20260621T080000Z
@@ -446,8 +1136,8 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:広島東洋カープ vs 読売ジャイアンツ 8回戦 （3 - 7
- ）
+SUMMARY:広島東洋カープ vs 読売ジャイアンツ 15回戦 （3 - 
+ 7）
 DTSTART:20260623T090000Z
 DTEND:20260623T120000Z
 DTSTAMP:20260909T031758Z
@@ -467,7 +1157,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 10回戦 
+SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 19回戦 
  （1 - 2）
 DTSTART:20260628T091500Z
 DTEND:20260628T121500Z
@@ -488,7 +1178,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 12
+SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 23
  回戦 （3 - 4）
 DTSTART:20260630T090000Z
 DTEND:20260630T120000Z
@@ -509,7 +1199,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 13
+SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 24
  回戦 （2 - 1）
 DTSTART:20260701T090000Z
 DTEND:20260701T120000Z
@@ -530,7 +1220,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 12回戦 （1 - 
+SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 20回戦 （1 - 
  0）
 DTSTART:20260703T090000Z
 DTEND:20260703T120000Z
@@ -551,7 +1241,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 13回戦 （2 - 
+SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 21回戦 （2 - 
  1）
 DTSTART:20260704T050000Z
 DTEND:20260704T080000Z
@@ -572,7 +1262,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 14回戦 （0 - 
+SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 22回戦 （0 - 
  1）
 DTSTART:20260705T043000Z
 DTEND:20260705T073000Z
@@ -593,7 +1283,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 阪神タイガース 12回戦 （4 - 
+SUMMARY:読売ジャイアンツ vs 阪神タイガース 23回戦 （4 - 
  3）
 DTSTART:20260707T090000Z
 DTEND:20260707T120000Z
@@ -614,7 +1304,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 阪神タイガース 13回戦 （1 - 
+SUMMARY:読売ジャイアンツ vs 阪神タイガース 24回戦 （1 - 
  4）
 DTSTART:20260708T090000Z
 DTEND:20260708T120000Z
@@ -635,7 +1325,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 阪神タイガース 14回戦 （2 - 
+SUMMARY:読売ジャイアンツ vs 阪神タイガース 25回戦 （2 - 
  10）
 DTSTART:20260709T090000Z
 DTEND:20260709T120000Z
@@ -656,7 +1346,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 11回戦 
+SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 20回戦 
  （11 - 6）
 DTSTART:20260710T091500Z
 DTEND:20260710T121500Z
@@ -677,7 +1367,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 12回戦 
+SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 21回戦 
  （4 - 5）
 DTSTART:20260711T090000Z
 DTEND:20260711T120000Z
@@ -698,7 +1388,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 13回戦 
+SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 22回戦 
  （3 - 4）
 DTSTART:20260712T090000Z
 DTEND:20260712T120000Z
@@ -719,7 +1409,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 14
+SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 25
  回戦 （5 - 4）
 DTSTART:20260714T090000Z
 DTEND:20260714T120000Z
@@ -740,7 +1430,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 15
+SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 26
  回戦 （2 - 8）
 DTSTART:20260715T090000Z
 DTEND:20260715T120000Z
@@ -761,7 +1451,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 16
+SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 27
  回戦 （1 - 3）
 DTSTART:20260716T090000Z
 DTEND:20260716T120000Z
@@ -782,7 +1472,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 15回戦 （4 - 
+SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 23回戦 （4 - 
  1）
 DTSTART:20260717T090000Z
 DTEND:20260717T120000Z
@@ -803,7 +1493,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 16回戦 （1 - 
+SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 24回戦 （1 - 
  5）
 DTSTART:20260718T050000Z
 DTEND:20260718T080000Z
@@ -824,7 +1514,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 17回戦 （6 - 
+SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 25回戦 （6 - 
  1）
 DTSTART:20260719T050000Z
 DTEND:20260719T080000Z
@@ -845,8 +1535,8 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 広島東洋カープ 9回戦 （3 - 1
- ）
+SUMMARY:読売ジャイアンツ vs 広島東洋カープ 16回戦 （3 - 
+ 1）
 DTSTART:20260720T090000Z
 DTEND:20260720T120000Z
 DTSTAMP:20260909T031758Z
@@ -866,7 +1556,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 広島東洋カープ 10回戦 （11 -
+SUMMARY:読売ジャイアンツ vs 広島東洋カープ 17回戦 （11 -
   5）
 DTSTART:20260721T090000Z
 DTEND:20260721T120000Z
@@ -887,7 +1577,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 広島東洋カープ 11回戦 （1 - 
+SUMMARY:読売ジャイアンツ vs 広島東洋カープ 18回戦 （1 - 
  6）
 DTSTART:20260722T090000Z
 DTEND:20260722T120000Z
@@ -908,7 +1598,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:阪神タイガース vs 読売ジャイアンツ 15回戦 （2 - 
+SUMMARY:阪神タイガース vs 読売ジャイアンツ 26回戦 （2 - 
  4）
 DTSTART:20260724T090000Z
 DTEND:20260724T120000Z
@@ -929,7 +1619,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:阪神タイガース vs 読売ジャイアンツ 16回戦 （1 - 
+SUMMARY:阪神タイガース vs 読売ジャイアンツ 27回戦 （1 - 
  5）
 DTSTART:20260725T090000Z
 DTEND:20260725T120000Z
@@ -950,7 +1640,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:阪神タイガース vs 読売ジャイアンツ 17回戦 （1 - 
+SUMMARY:阪神タイガース vs 読売ジャイアンツ 28回戦 （1 - 
  0）
 DTSTART:20260726T090000Z
 DTEND:20260726T120000Z
@@ -971,7 +1661,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 14回戦 
+SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 23回戦 
  （6 - 0）
 DTSTART:20260731T090000Z
 DTEND:20260731T120000Z
@@ -992,7 +1682,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 15回戦 
+SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 24回戦 
  （7 - 8）
 DTSTART:20260801T090000Z
 DTEND:20260801T120000Z
@@ -1013,7 +1703,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 16回戦 
+SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 25回戦 
  （1 - 2）
 DTSTART:20260802T050000Z
 DTEND:20260802T080000Z
@@ -1034,7 +1724,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:広島東洋カープ vs 読売ジャイアンツ 12回戦 （4 - 
+SUMMARY:広島東洋カープ vs 読売ジャイアンツ 19回戦 （4 - 
  3）
 DTSTART:20260804T090000Z
 DTEND:20260804T120000Z
@@ -1055,7 +1745,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:広島東洋カープ vs 読売ジャイアンツ 13回戦 （0 - 
+SUMMARY:広島東洋カープ vs 読売ジャイアンツ 20回戦 （0 - 
  4）
 DTSTART:20260805T090000Z
 DTEND:20260805T120000Z
@@ -1076,7 +1766,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:広島東洋カープ vs 読売ジャイアンツ 14回戦 （7 - 
+SUMMARY:広島東洋カープ vs 読売ジャイアンツ 21回戦 （7 - 
  11）
 DTSTART:20260806T090000Z
 DTEND:20260806T120000Z
@@ -1097,7 +1787,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 17
+SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 28
  回戦 （0 - 1）
 DTSTART:20260807T090000Z
 DTEND:20260807T120000Z
@@ -1118,7 +1808,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 18
+SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 29
  回戦 （8 - 2）
 DTSTART:20260808T060000Z
 DTEND:20260808T090000Z
@@ -1139,7 +1829,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 19
+SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 30
  回戦 （7 - 3）
 DTSTART:20260809T050000Z
 DTEND:20260809T080000Z
@@ -1160,7 +1850,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 阪神タイガース 18回戦 （1 - 
+SUMMARY:読売ジャイアンツ vs 阪神タイガース 29回戦 （1 - 
  9）
 DTSTART:20260811T050000Z
 DTEND:20260811T080000Z
@@ -1181,7 +1871,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 阪神タイガース 19回戦 （1 - 
+SUMMARY:読売ジャイアンツ vs 阪神タイガース 30回戦 （1 - 
  5）
 DTSTART:20260812T090000Z
 DTEND:20260812T120000Z
@@ -1202,7 +1892,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 阪神タイガース 20回戦 （2 - 
+SUMMARY:読売ジャイアンツ vs 阪神タイガース 31回戦 （2 - 
  3）
 DTSTART:20260813T090000Z
 DTEND:20260813T120000Z
@@ -1223,7 +1913,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 18回戦 （0 - 
+SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 26回戦 （0 - 
  1）
 DTSTART:20260814T090000Z
 DTEND:20260814T120000Z
@@ -1244,7 +1934,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 19回戦 （11 -
+SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 27回戦 （11 -
   2）
 DTSTART:20260815T050000Z
 DTEND:20260815T080000Z
@@ -1265,7 +1955,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 20回戦 （0 - 
+SUMMARY:中日ドラゴンズ vs 読売ジャイアンツ 28回戦 （0 - 
  11）
 DTSTART:20260816T043000Z
 DTEND:20260816T073000Z
@@ -1286,7 +1976,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 17回戦 
+SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 26回戦 
  （4 - 3）
 DTSTART:20260818T084500Z
 DTEND:20260818T114500Z
@@ -1307,7 +1997,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 18回戦 
+SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 27回戦 
  （1 - 0）
 DTSTART:20260819T084500Z
 DTEND:20260819T114500Z
@@ -1328,7 +2018,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 19回戦 
+SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 28回戦 
  （3 - 6）
 DTSTART:20260820T084500Z
 DTEND:20260820T114500Z
@@ -1349,7 +2039,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 広島東洋カープ 15回戦 （2 - 
+SUMMARY:読売ジャイアンツ vs 広島東洋カープ 22回戦 （2 - 
  0）
 DTSTART:20260821T090000Z
 DTEND:20260821T120000Z
@@ -1370,7 +2060,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 広島東洋カープ 16回戦 （5 - 
+SUMMARY:読売ジャイアンツ vs 広島東洋カープ 23回戦 （5 - 
  0）
 DTSTART:20260822T050000Z
 DTEND:20260822T080000Z
@@ -1391,7 +2081,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 広島東洋カープ 17回戦 （2 - 
+SUMMARY:読売ジャイアンツ vs 広島東洋カープ 24回戦 （2 - 
  3）
 DTSTART:20260823T050000Z
 DTEND:20260823T080000Z
@@ -1412,7 +2102,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 20
+SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 31
  回戦 （6 - 8）
 DTSTART:20260825T090000Z
 DTEND:20260825T120000Z
@@ -1433,7 +2123,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 21
+SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 32
  回戦 （3 - 5）
 DTSTART:20260826T090000Z
 DTEND:20260826T120000Z
@@ -1454,7 +2144,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 22
+SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 33
  回戦 （2 - 9）
 DTSTART:20260827T090000Z
 DTEND:20260827T120000Z
@@ -1475,7 +2165,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:阪神タイガース vs 読売ジャイアンツ 21回戦 （4 - 
+SUMMARY:阪神タイガース vs 読売ジャイアンツ 32回戦 （4 - 
  1）
 DTSTART:20260828T090000Z
 DTEND:20260828T120000Z
@@ -1496,7 +2186,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:阪神タイガース vs 読売ジャイアンツ 22回戦 （4 - 
+SUMMARY:阪神タイガース vs 読売ジャイアンツ 33回戦 （4 - 
  1）
 DTSTART:20260829T090000Z
 DTEND:20260829T120000Z
@@ -1517,7 +2207,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:阪神タイガース vs 読売ジャイアンツ 23回戦 （3 - 
+SUMMARY:阪神タイガース vs 読売ジャイアンツ 34回戦 （3 - 
  1）
 DTSTART:20260830T090000Z
 DTEND:20260830T120000Z
@@ -1538,7 +2228,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 20回戦 
+SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 29回戦 
  （4 - 3）
 DTSTART:20260901T090000Z
 DTEND:20260901T120000Z
@@ -1559,7 +2249,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 21回戦 
+SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 30回戦 
  （1 - 2）
 DTSTART:20260902T090000Z
 DTEND:20260902T120000Z
@@ -1580,7 +2270,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:広島東洋カープ vs 読売ジャイアンツ 18回戦 （1 - 
+SUMMARY:広島東洋カープ vs 読売ジャイアンツ 25回戦 （1 - 
  3）
 DTSTART:20260904T090000Z
 DTEND:20260904T120000Z
@@ -1601,7 +2291,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:広島東洋カープ vs 読売ジャイアンツ 19回戦 （5 - 
+SUMMARY:広島東洋カープ vs 読売ジャイアンツ 26回戦 （5 - 
  10）
 DTSTART:20260905T090000Z
 DTEND:20260905T120000Z
@@ -1622,7 +2312,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:広島東洋カープ vs 読売ジャイアンツ 20回戦 （0 - 
+SUMMARY:広島東洋カープ vs 読売ジャイアンツ 27回戦 （0 - 
  4）
 DTSTART:20260906T090000Z
 DTEND:20260906T120000Z
@@ -1643,7 +2333,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 21回戦 （0 - 
+SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 29回戦 （0 - 
  3）
 DTSTART:20260908T090000Z
 DTEND:20260908T120000Z
@@ -1664,7 +2354,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 22回戦
+SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 30回戦
 DTSTART:20260909T090000Z
 DTEND:20260909T120000Z
 DTSTAMP:20260909T031758Z
@@ -1682,7 +2372,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 23回戦
+SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 31回戦
 DTSTART:20260910T090000Z
 DTEND:20260910T120000Z
 DTSTAMP:20260909T031758Z
@@ -1700,7 +2390,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 阪神タイガース 24回戦
+SUMMARY:読売ジャイアンツ vs 阪神タイガース 35回戦
 DTSTART:20260912T050000Z
 DTEND:20260912T080000Z
 DTSTAMP:20260909T031758Z
@@ -1718,7 +2408,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 22回戦
+SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 31回戦
 DTSTART:20260913T090000Z
 DTEND:20260913T120000Z
 DTSTAMP:20260909T031758Z
@@ -1736,7 +2426,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 23回戦
+SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 32回戦
 DTSTART:20260914T090000Z
 DTEND:20260914T120000Z
 DTSTAMP:20260909T031758Z
@@ -1754,7 +2444,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 24回戦
+SUMMARY:横浜DeNAベイスターズ vs 読売ジャイアンツ 33回戦
 DTSTART:20260915T090000Z
 DTEND:20260915T120000Z
 DTSTAMP:20260909T031758Z
@@ -1772,7 +2462,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 24回戦
+SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 32回戦
 DTSTART:20260918T090000Z
 DTEND:20260918T120000Z
 DTSTAMP:20260909T031758Z
@@ -1790,7 +2480,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 25回戦
+SUMMARY:読売ジャイアンツ vs 中日ドラゴンズ 33回戦
 DTSTART:20260919T050000Z
 DTEND:20260919T080000Z
 DTSTAMP:20260909T031758Z
@@ -1808,7 +2498,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 23
+SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 34
  回戦
 DTSTART:20260920T050000Z
 DTEND:20260920T080000Z
@@ -1827,7 +2517,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:広島東洋カープ vs 読売ジャイアンツ 21回戦
+SUMMARY:広島東洋カープ vs 読売ジャイアンツ 28回戦
 DTSTART:20260922T060000Z
 DTEND:20260922T090000Z
 DTSTAMP:20260909T031758Z
@@ -1845,7 +2535,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:広島東洋カープ vs 読売ジャイアンツ 22回戦
+SUMMARY:広島東洋カープ vs 読売ジャイアンツ 29回戦
 DTSTART:20260923T060000Z
 DTEND:20260923T090000Z
 DTSTAMP:20260909T031758Z
@@ -1863,7 +2553,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:広島東洋カープ vs 読売ジャイアンツ 23回戦
+SUMMARY:広島東洋カープ vs 読売ジャイアンツ 30回戦
 DTSTART:20260924T090000Z
 DTEND:20260924T120000Z
 DTSTAMP:20260909T031758Z
@@ -1881,7 +2571,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:広島東洋カープ vs 読売ジャイアンツ 24回戦
+SUMMARY:広島東洋カープ vs 読売ジャイアンツ 31回戦
 DTSTART:20260925T090000Z
 DTEND:20260925T120000Z
 DTSTAMP:20260909T031758Z
@@ -1899,7 +2589,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 24
+SUMMARY:読売ジャイアンツ vs 東京ヤクルトスワローズ 35
  回戦
 DTSTART:20260927T090000Z
 DTEND:20260927T120000Z
@@ -1918,7 +2608,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 広島東洋カープ 25回戦
+SUMMARY:読売ジャイアンツ vs 広島東洋カープ 32回戦
 DTSTART:20260929T090000Z
 DTEND:20260929T120000Z
 DTSTAMP:20260909T031758Z
@@ -1936,7 +2626,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:阪神タイガース vs 読売ジャイアンツ 25回戦
+SUMMARY:阪神タイガース vs 読売ジャイアンツ 36回戦
 DTSTART:20261001T090000Z
 DTEND:20261001T120000Z
 DTSTAMP:20260909T031758Z
@@ -1954,7 +2644,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 25
+SUMMARY:東京ヤクルトスワローズ vs 読売ジャイアンツ 36
  回戦
 DTSTART:20261002T090000Z
 DTEND:20261002T120000Z
@@ -1973,7 +2663,7 @@ X-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/
  images/sport_baseball.png
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 25回戦
+SUMMARY:読売ジャイアンツ vs 横浜DeNAベイスターズ 34回戦
 DTSTART:20261003T090000Z
 DTEND:20261003T120000Z
 DTSTAMP:20260909T031758Z
