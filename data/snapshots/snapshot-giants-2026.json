@@ -1,24 +1,24 @@
 {
   "events": [
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (3) @ Hanshin (1)\r\nDTSTART;TZID=Asia/Tokyo:20260327T181500\r\nDTEND;TZID=Asia/Tokyo:20260327T211500\r\nDTSTAMP:20260909T042048Z\r\nUID:npb-9b844ce660c19290d1e83859@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin (1) @ Yomiuri (3)\r\nDTSTART;TZID=Asia/Tokyo:20260327T181500\r\nDTEND;TZID=Asia/Tokyo:20260327T211500\r\nDTSTAMP:20260909T042948Z\r\nUID:npb-bf73c17330fc84cedce36bc7@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-03-27T09:15:00+00:00",
-      "uid": "npb-9b844ce660c19290d1e83859@giants-calendar.local"
+      "uid": "npb-bf73c17330fc84cedce36bc7@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (0) @ Hanshin (2)\r\nDTSTART;TZID=Asia/Tokyo:20260328T140000\r\nDTEND;TZID=Asia/Tokyo:20260328T170000\r\nDTSTAMP:20260909T042048Z\r\nUID:npb-595b0ccdc924d77d2ef413bb@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin (2) @ Yomiuri (0)\r\nDTSTART;TZID=Asia/Tokyo:20260328T140000\r\nDTEND;TZID=Asia/Tokyo:20260328T170000\r\nDTSTAMP:20260909T042948Z\r\nUID:npb-41e38770b23fe72f5f872c32@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-03-28T05:00:00+00:00",
-      "uid": "npb-595b0ccdc924d77d2ef413bb@giants-calendar.local"
+      "uid": "npb-41e38770b23fe72f5f872c32@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (6) @ Hanshin (12)\r\nDTSTART;TZID=Asia/Tokyo:20260329T140000\r\nDTEND;TZID=Asia/Tokyo:20260329T170000\r\nDTSTAMP:20260909T042048Z\r\nUID:npb-95fe3e06aeb8ac09270e7630@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin (12) @ Yomiuri (6)\r\nDTSTART;TZID=Asia/Tokyo:20260329T140000\r\nDTEND;TZID=Asia/Tokyo:20260329T170000\r\nDTSTAMP:20260909T042948Z\r\nUID:npb-c572e55388ba59e771083477@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-03-29T05:00:00+00:00",
-      "uid": "npb-95fe3e06aeb8ac09270e7630@giants-calendar.local"
+      "uid": "npb-c572e55388ba59e771083477@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi (2) @ Yomiuri (5)\r\nDTSTART;TZID=Asia/Tokyo:20260331T181500\r\nDTEND;TZID=Asia/Tokyo:20260331T211500\r\nDTSTAMP:20260909T042048Z\r\nUID:npb-471e63b09631457dcc3fe093@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (5) @ Chunichi (2)\r\nDTSTART;TZID=Asia/Tokyo:20260331T181500\r\nDTEND;TZID=Asia/Tokyo:20260331T211500\r\nDTSTAMP:20260909T042948Z\r\nUID:npb-613f73bc529ddb07890284e3@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-03-31T09:15:00+00:00",
-      "uid": "npb-471e63b09631457dcc3fe093@giants-calendar.local"
+      "uid": "npb-613f73bc529ddb07890284e3@giants-calendar.local"
     },
     {
       "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi (5) @ Yomiuri (6)\r\nDTSTART;TZID=Asia/Tokyo:20260401T180000\r\nDTEND;TZID=Asia/Tokyo:20260401T210000\r\nDTSTAMP:20260909T042204Z\r\nUID:npb-5c2fed41a08c04c28e81770c@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",

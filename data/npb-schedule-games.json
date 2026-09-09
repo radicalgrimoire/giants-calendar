@@ -1,204 +1,36 @@
 {
   "games": [
     {
-      "away": "巨人",
-      "away_score": 5,
-      "date": "2026-05-01",
-      "home": "阪神",
-      "home_score": 3,
-      "start_at": "18:00"
-    },
-    {
-      "away": "巨人",
-      "away_score": 5,
-      "date": "2026-05-02",
-      "home": "阪神",
-      "home_score": 7,
-      "start_at": "14:00"
-    },
-    {
-      "away": "巨人",
-      "away_score": 0,
-      "date": "2026-05-03",
-      "home": "阪神",
-      "home_score": 3,
-      "start_at": "14:00"
-    },
-    {
-      "away": "ヤクルト",
-      "away_score": 5,
-      "date": "2026-05-04",
-      "home": "巨人",
-      "home_score": 1,
-      "start_at": "18:00"
-    },
-    {
-      "away": "ヤクルト",
-      "away_score": 2,
-      "date": "2026-05-05",
-      "home": "巨人",
-      "home_score": 3,
-      "start_at": "14:00"
-    },
-    {
-      "away": "ヤクルト",
-      "away_score": 5,
-      "date": "2026-05-06",
-      "home": "巨人",
-      "home_score": 0,
-      "start_at": "14:00"
-    },
-    {
-      "away": "巨人",
-      "away_score": 2,
-      "date": "2026-05-08",
-      "home": "中日",
-      "home_score": 9,
-      "start_at": "18:00"
-    },
-    {
-      "away": "巨人",
-      "away_score": 2,
-      "date": "2026-05-09",
-      "home": "中日",
-      "home_score": 4,
-      "start_at": "14:00"
-    },
-    {
-      "away": "巨人",
-      "away_score": 9,
-      "date": "2026-05-10",
-      "home": "中日",
-      "home_score": 4,
-      "start_at": "13:30"
-    },
-    {
-      "away": "広島",
-      "away_score": 3,
-      "date": "2026-05-12",
-      "home": "巨人",
-      "home_score": 5,
-      "start_at": "18:00"
-    },
-    {
-      "away": "広島",
-      "away_score": 2,
-      "date": "2026-05-13",
-      "home": "巨人",
-      "home_score": 4,
-      "start_at": "18:00"
-    },
-    {
-      "away": "DeNA",
-      "away_score": 0,
-      "date": "2026-05-15",
-      "home": "巨人",
-      "home_score": 2,
-      "start_at": "18:00"
-    },
-    {
-      "away": "DeNA",
-      "away_score": 3,
-      "date": "2026-05-16",
-      "home": "巨人",
-      "home_score": 4,
-      "start_at": "14:00"
-    },
-    {
-      "away": "DeNA",
-      "away_score": 0,
-      "date": "2026-05-17",
-      "home": "巨人",
-      "home_score": 1,
-      "start_at": "14:00"
-    },
-    {
-      "away": "巨人",
-      "away_score": 2,
-      "date": "2026-05-19",
-      "home": "ヤクルト",
-      "home_score": 0,
-      "start_at": "18:00"
-    },
-    {
-      "away": "巨人",
+      "away": "阪神",
       "away_score": 1,
-      "date": "2026-05-21",
-      "home": "ヤクルト",
-      "home_score": 3,
-      "start_at": "18:00"
-    },
-    {
-      "away": "阪神",
-      "away_score": 7,
-      "date": "2026-05-22",
+      "date": "2026-03-27",
       "home": "巨人",
-      "home_score": 4,
-      "start_at": "18:00"
+      "home_score": 3,
+      "start_at": "18:15"
     },
     {
       "away": "阪神",
-      "away_score": 3,
-      "date": "2026-05-23",
+      "away_score": 2,
+      "date": "2026-03-28",
       "home": "巨人",
       "home_score": 0,
-      "start_at": "18:00"
-    },
-    {
-      "away": "阪神",
-      "away_score": 6,
-      "date": "2026-05-24",
-      "home": "巨人",
-      "home_score": 3,
       "start_at": "14:00"
     },
     {
-      "away": "ソフトバンク",
-      "away_score": 8,
-      "date": "2026-05-26",
+      "away": "阪神",
+      "away_score": 12,
+      "date": "2026-03-29",
       "home": "巨人",
-      "home_score": 3,
-      "start_at": "18:00"
-    },
-    {
-      "away": "ソフトバンク",
-      "away_score": 1,
-      "date": "2026-05-27",
-      "home": "巨人",
-      "home_score": 5,
-      "start_at": "18:00"
-    },
-    {
-      "away": "ソフトバンク",
-      "away_score": 8,
-      "date": "2026-05-28",
-      "home": "巨人",
-      "home_score": 4,
-      "start_at": "18:00"
-    },
-    {
-      "away": "巨人",
-      "away_score": 4,
-      "date": "2026-05-29",
-      "home": "日本ハム",
-      "home_score": 2,
-      "start_at": "18:00"
+      "home_score": 6,
+      "start_at": "14:00"
     },
     {
       "away": "巨人",
       "away_score": 5,
-      "date": "2026-05-30",
-      "home": "日本ハム",
-      "home_score": 3,
-      "start_at": "14:00"
-    },
-    {
-      "away": "巨人",
-      "away_score": 0,
-      "date": "2026-05-31",
-      "home": "日本ハム",
-      "home_score": 3,
-      "start_at": "13:00"
+      "date": "2026-03-31",
+      "home": "中日",
+      "home_score": 2,
+      "start_at": "18:15"
     }
   ],
   "schema_version": 1
