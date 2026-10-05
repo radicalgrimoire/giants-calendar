@@ -699,6 +699,21 @@
       "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima (1) @ Yomiuri (3)\r\nDTSTART:20260929T090000Z\r\nDTEND:20260929T120000Z\r\nDTSTAMP:20261005T032427Z\r\nUID:jm23j6uoekscs1aoeq4ri3mmjc@google.com\r\nSEQUENCE:0\r\nCLASS:PUBLIC\r\nCREATED:20260807T131801Z\r\nLAST-MODIFIED:20260929T114424Z\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GOOGLE-CALENDAR-CONTENT-DISPLAY:CHIP\r\nX-GOOGLE-CALENDAR-CONTENT-ICON:https://calendar.google.com/googlecalendar/\r\n images/sport_baseball.png\r\nEND:VEVENT\r\n",
       "start": "2026-09-29T09:00:00+00:00",
       "uid": "jm23j6uoekscs1aoeq4ri3mmjc@google.com"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (2) @ Hanshin (2)\r\nDTSTART;TZID=Asia/Tokyo:20261001T180000\r\nDTEND;TZID=Asia/Tokyo:20261001T210000\r\nDTSTAMP:20261005T221326Z\r\nUID:npb-45c0f93005fdde2f3218c370@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2026-10-01T09:00:00+00:00",
+      "uid": "npb-45c0f93005fdde2f3218c370@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri (1) @ Yakult (5)\r\nDTSTART;TZID=Asia/Tokyo:20261002T180000\r\nDTEND;TZID=Asia/Tokyo:20261002T210000\r\nDTSTAMP:20261005T221326Z\r\nUID:npb-dec9320d7f24bd76041e404a@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2026-10-02T09:00:00+00:00",
+      "uid": "npb-dec9320d7f24bd76041e404a@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA (5) @ Yomiuri (2)\r\nDTSTART;TZID=Asia/Tokyo:20261003T180000\r\nDTEND;TZID=Asia/Tokyo:20261003T210000\r\nDTSTAMP:20261005T221326Z\r\nUID:npb-de05d522b7b128ab53074504@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2026-10-03T09:00:00+00:00",
+      "uid": "npb-de05d522b7b128ab53074504@giants-calendar.local"
     }
   ],
   "schema_version": 1
