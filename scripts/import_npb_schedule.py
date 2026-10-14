@@ -18,11 +18,9 @@ from icalendar import Event
 
 from generate_calendar import (
     JST,
-    MATCHUP_PATTERN,
-    normalize_team_name,
     write_json,
 )
-from save_snapshot import event_start, event_to_record, load_snapshot, snapshot_path
+from save_snapshot import event_to_record, load_snapshot, matchup_key, snapshot_path
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -150,15 +148,6 @@ def build_event(game: dict[str, object]) -> Event:
     return event
 
 
-def matchup_key(event: Event) -> tuple[str, frozenset[str]] | None:
-    match = MATCHUP_PATTERN.match(str(event.get("SUMMARY", "")))
-    if not match:
-        return None
-    away, home = (normalize_team_name(team) for team in match.groups())
-    game_date = event_start(event).astimezone(JST).date().isoformat()
-    return game_date, frozenset((away, home))
-
-
 def save_snapshot_events(events: dict[str, Event], year: int) -> None:
     records = sorted((event_to_record(event) for event in events.values()), key=lambda record: (record["start"], record["uid"]))
     write_json(snapshot_path(year), {"schema_version": 1, "events": records})
@@ -197,17 +186,12 @@ def main() -> None:
     snapshot = {
         uid: event
         for uid, event in snapshot.items()
-        if not (
-            str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) == "npb"
-            and matchup_key(event) in imported_keys
-        )
+        if matchup_key(event) not in imported_keys
     }
-    existing_keys = {matchup_key(event) for event in snapshot.values()}
     snapshot.update(
         {
             str(event["UID"]): event
             for event in imported
-            if matchup_key(event) not in existing_keys
         }
     )
     save_snapshot_events(snapshot, year)

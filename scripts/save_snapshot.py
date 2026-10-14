@@ -7,6 +7,8 @@ from zoneinfo import ZoneInfo
 
 from icalendar import Calendar, Event
 
+from generate_calendar import MATCHUP_PATTERN, TEAM_NAMES, normalize_team_name
+
 
 SOURCE_URL = (
     "https://calendar.google.com/calendar/ical/"
@@ -65,9 +67,38 @@ def load_snapshot(year: int) -> dict[str, Event]:
     }
 
 
+def matchup_key(event: Event) -> tuple[str, str, str] | None:
+    match = MATCHUP_PATTERN.match(str(event.get("SUMMARY", "")))
+    if not match:
+        return None
+    away, home = (
+        TEAM_NAMES.get(normalize_team_name(team), normalize_team_name(team))
+        for team in match.groups()
+    )
+    game_date = event_start(event).astimezone(JST).date().isoformat()
+    return game_date, away, home
+
+
 def merge_source_events(source_events: list[Event], snapshot: dict[str, Event]) -> dict[str, Event]:
     merged = {uid: copy.deepcopy(event) for uid, event in snapshot.items()}
+    npb_keys = {
+        key
+        for event in merged.values()
+        if str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) == "npb"
+        if (key := matchup_key(event)) is not None
+    }
+    merged = {
+        uid: event
+        for uid, event in merged.items()
+        if (
+            str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) == "npb"
+            or matchup_key(event) not in npb_keys
+        )
+    }
     for event in source_events:
+        key = matchup_key(event)
+        if key is not None and key in npb_keys:
+            continue
         merged[event_uid(event)] = copy.deepcopy(event)
     return merged
 

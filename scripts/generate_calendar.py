@@ -20,6 +20,8 @@ LOCAL_STADIUM_PATH = ROOT / "data" / "local-stadium.env"
 JST = ZoneInfo("Asia/Tokyo")
 MATCHUP_PATTERN = re.compile(r"^\s*(.+?)\s+@\s+(.+?)\s*$")
 LOCAL_STADIUM_PATTERN = re.compile(r"(\d{4}-\d{2}-\d{2})\s*=\s*(.+)")
+REGULAR_SEASON_GAMES_PER_MATCHUP = 25
+INTERLEAGUE_GAMES_PER_MATCHUP = 3
 HOME_STADIUMS = {
     "Yomiuri": "東京ドーム, 日本、〒112-0004 東京都文京区後楽１丁目３−６１",
     "Hanshin": "阪神甲子園球場, 日本、〒663-8152 兵庫県西宮市甲子園町１−８２",
@@ -191,7 +193,55 @@ def filter_games(events: dict[str, Event], now: datetime) -> dict[str, Event]:
     }
 
 
-def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> None:
+def regular_season_end(events: list[Event]) -> datetime | None:
+    expected = {
+        name: (
+            INTERLEAGUE_GAMES_PER_MATCHUP
+            if name in PACIFIC_LEAGUE_TEAMS
+            else REGULAR_SEASON_GAMES_PER_MATCHUP
+        )
+        for name in TEAM_NAMES.values()
+        if name != TEAM_NAMES["Yomiuri"]
+    }
+    completed = dict.fromkeys(expected, 0)
+    seen: set[tuple[datetime, str, str]] = set()
+    for event in sorted(events, key=event_start):
+        match = MATCHUP_PATTERN.match(str(event.get("SUMMARY", "")))
+        if not match:
+            continue
+        raw_away, raw_home = match.groups()
+        if extract_score(raw_away) is None or extract_score(raw_home) is None:
+            continue
+        away, home = (
+            TEAM_NAMES.get(normalize_team_name(team), normalize_team_name(team))
+            for team in (raw_away, raw_home)
+        )
+        if TEAM_NAMES["Yomiuri"] not in (away, home):
+            continue
+        opponent = away if home == TEAM_NAMES["Yomiuri"] else home
+        if opponent not in expected:
+            continue
+        start = event_start(event)
+        identity = (start, away, home)
+        if identity in seen:
+            continue
+        seen.add(identity)
+        completed[opponent] += 1
+        if completed[opponent] > expected[opponent]:
+            print(
+                f"CS classification skipped: {opponent} exceeds its "
+                "regular-season game count before all 143 games are complete.",
+                file=sys.stderr,
+            )
+            return None
+        if completed == expected:
+            return start
+    return None
+
+
+def update_summary(
+    event, counters: dict[tuple[int, tuple[str, str]], int], *, is_cs: bool = False
+) -> None:
     summary = str(event.get("SUMMARY", ""))
     match = MATCHUP_PATTERN.match(summary)
     if not match:
@@ -206,8 +256,12 @@ def update_summary(event, counters: dict[tuple[int, tuple[str, str]], int]) -> N
     matchup = tuple(sorted((away_name, home_name)))
     counter_key = (start.astimezone(JST).year, matchup)
     counters[counter_key] = counters.get(counter_key, 0) + 1
-    subtitle = " 【交流戦】" if {home_name, away_name} & PACIFIC_LEAGUE_TEAMS else ""
-    title = f"{home_name} vs {away_name}{subtitle} {counters[counter_key]}回戦"
+    game_number = counters[counter_key]
+    if is_cs:
+        title = f"【CS】{home_name} vs {away_name} 第{game_number}戦"
+    else:
+        subtitle = " 【交流戦】" if {home_name, away_name} & PACIFIC_LEAGUE_TEAMS else ""
+        title = f"{home_name} vs {away_name}{subtitle} {game_number}回戦"
 
     away_score = extract_score(raw_away)
     home_score = extract_score(raw_home)
@@ -265,11 +319,16 @@ def build_calendar(
         (event for event in events if event_start(event).astimezone(JST).year == year),
         key=event_start,
     )
+    season_end = regular_season_end(events)
     counters: dict[tuple[int, tuple[str, str]], int] = {}
+    cs_counters: dict[tuple[int, tuple[str, str]], int] = {}
     for event in events:
+        is_cs = season_end is not None and event_start(event) > season_end
         output_event = copy.deepcopy(event)
         update_location(output_event, local_stadiums)
-        update_summary(output_event, counters)
+        update_summary(
+            output_event, cs_counters if is_cs else counters, is_cs=is_cs
+        )
         calendar.add_component(output_event)
 
     return calendar
