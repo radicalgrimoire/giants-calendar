@@ -7,7 +7,8 @@ on:
       - "requirements.txt"
       - "scripts/**"
   schedule:
-    - cron: "0 7 * * *"
+    - cron: "0 7 2-31 1 *"
+    - cron: "0 7 * 2-12 *"
   workflow_dispatch:
 
 permissions:

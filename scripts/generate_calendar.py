@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import copy
 import json
 import re
@@ -13,7 +14,6 @@ from icalendar import Calendar, Event, Timezone
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT / "giants.ics"
-BACKLOG_DIRECTORY = ROOT / "backlog"
 GAMES_PATH = ROOT / "data" / "games.json"
 SNAPSHOT_DIRECTORY = ROOT / "data" / "snapshots"
 LOCAL_STADIUM_PATH = ROOT / "data" / "local-stadium.env"
@@ -149,20 +149,6 @@ def load_local_stadiums() -> dict[date, str]:
         game_date, stadium = match.groups()
         stadiums[date.fromisoformat(game_date)] = stadium.strip()
     return stadiums
-
-
-def archive_previous_calendar() -> None:
-    now = datetime.now(JST)
-    if (now.month, now.day) != (1, 1) or not OUTPUT_PATH.exists():
-        return
-    archive_path = BACKLOG_DIRECTORY / f"giants-{now.year - 1}.ics"
-    if archive_path.exists():
-        return
-    BACKLOG_DIRECTORY.mkdir(parents=True, exist_ok=True)
-    calendar = Calendar.from_ical(OUTPUT_PATH.read_bytes())
-    calendar["X-WR-CALNAME"] = f"Yomiuri Giants {now.year - 1}"
-    archive_path.write_bytes(calendar.to_ical())
-    OUTPUT_PATH.unlink()
 
 
 def normalize_team_name(team: str) -> str:
@@ -334,17 +320,34 @@ def build_calendar(
     return calendar
 
 
-def main() -> None:
-    year = current_calendar_year()
+def generate_calendar(year: int) -> tuple[dict[str, Event], Calendar]:
     games = filter_games(load_snapshot(year), datetime.now(timezone.utc))
-    save_games(games)
-    archive_previous_calendar()
-    OUTPUT_PATH.write_bytes(
-        build_calendar(
-            list(games.values()), year, load_local_stadiums()
-        ).to_ical()
+    calendar = build_calendar(
+        list(games.values()), year, load_local_stadiums()
     )
-    print(f"Generated {OUTPUT_PATH.relative_to(ROOT)}")
+    return games, calendar
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="年度別の巨人戦ICSを生成します。")
+    parser.add_argument("--year", type=int, default=current_calendar_year())
+    parser.add_argument("--output", type=Path, help="生成するICSファイルの出力先")
+    args = parser.parse_args()
+
+    current_year = current_calendar_year()
+    if args.year != current_year and args.output is None:
+        parser.error("過去年を生成する場合は --output を指定してください。")
+
+    output_path = args.output or OUTPUT_PATH
+    if not output_path.is_absolute():
+        output_path = ROOT / output_path
+
+    games, calendar = generate_calendar(args.year)
+    if args.year == current_year and output_path == OUTPUT_PATH:
+        save_games(games)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_bytes(calendar.to_ical())
+    print(f"Generated {output_path.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

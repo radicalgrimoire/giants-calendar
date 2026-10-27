@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import os
+import random
 import sys
 import time
 import urllib.error
@@ -26,6 +27,7 @@ from save_snapshot import event_to_record, load_snapshot, matchup_key, snapshot_
 ROOT = Path(__file__).resolve().parents[1]
 GIANTS = "読売ジャイアンツ"
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.6-flash")
+GEMINI_REQUEST_ATTEMPTS = 6
 TEAM_ALIASES = {
     "巨人": ("Yomiuri", GIANTS),
     "読売": ("Yomiuri", GIANTS),
@@ -79,29 +81,42 @@ def request_games(source: str, year: int, api_key: str) -> dict:
         headers={"Content-Type": "application/json", "X-goog-api-key": api_key},
         method="POST",
     )
-    for attempt in range(3):
+    for attempt in range(GEMINI_REQUEST_ATTEMPTS):
         try:
             with urllib.request.urlopen(request, timeout=60) as response:
                 text = json.load(response)["candidates"][0]["content"]["parts"][0]["text"]
             return json.loads(text)
         except urllib.error.HTTPError as error:
             detail = error.read().decode("utf-8", errors="replace")
-            if error.code not in (429, 500, 502, 503, 504) or attempt == 2:
+            if (
+                error.code not in (429, 500, 502, 503, 504)
+                or attempt == GEMINI_REQUEST_ATTEMPTS - 1
+            ):
                 raise RuntimeError(f"Gemini API 呼び出しに失敗しました: HTTP {error.code} {detail[:400]}") from error
             retry_after = error.headers.get("Retry-After")
-            delay = int(retry_after) if retry_after and retry_after.isdigit() else 2**attempt
-            print(f"Gemini API returned HTTP {error.code}; retrying in {delay} seconds.", file=sys.stderr)
+            delay = (
+                float(retry_after)
+                if retry_after and retry_after.replace(".", "", 1).isdigit()
+                else 2**attempt
+            )
+            delay += random.uniform(0, 1)
+            print(
+                f"Gemini API returned HTTP {error.code}; retrying in {delay:.1f} seconds.",
+                file=sys.stderr,
+            )
             time.sleep(delay)
         except (urllib.error.URLError, TimeoutError, KeyError, IndexError, TypeError, json.JSONDecodeError) as error:
             raise RuntimeError(f"Gemini の試合 JSON 生成に失敗しました: {error}") from error
     raise RuntimeError("Gemini API の再試行回数を超えました")
 
 
-def validate_games(contents: object) -> list[dict[str, object]]:
+def validate_games(
+    contents: object, *, allow_empty: bool = False
+) -> list[dict[str, object]]:
     if not isinstance(contents, dict) or contents.get("schema_version") != 1:
         raise ValueError("試合 JSON の schema_version が不正です")
     records = contents.get("games")
-    if not isinstance(records, list) or not records:
+    if not isinstance(records, list) or (not records and not allow_empty):
         raise ValueError("試合 JSON に games がありません")
 
     games: list[dict[str, object]] = []
