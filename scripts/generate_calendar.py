@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT / "giants.ics"
 GAMES_PATH = ROOT / "data" / "games.json"
 SNAPSHOT_DIRECTORY = ROOT / "data" / "snapshots"
+CALENDAR_YEAR_PATH = ROOT / "data" / "calendar-year.txt"
 LOCAL_STADIUM_PATH = ROOT / "data" / "local-stadium.env"
 JST = ZoneInfo("Asia/Tokyo")
 MATCHUP_PATTERN = re.compile(r"^\s*(.+?)\s+@\s+(.+?)\s*$")
@@ -128,6 +129,16 @@ def load_snapshot(year: int) -> dict[str, Event]:
 
 def current_calendar_year() -> int:
     return datetime.now(JST).year
+
+
+def active_calendar_year() -> int:
+    if not CALENDAR_YEAR_PATH.exists():
+        return current_calendar_year()
+
+    value = CALENDAR_YEAR_PATH.read_text(encoding="utf-8").strip()
+    if not re.fullmatch(r"\d{4}", value):
+        raise ValueError(f"{CALENDAR_YEAR_PATH.name} の年度が不正です")
+    return int(value)
 
 
 def load_local_stadiums() -> dict[date, str]:
@@ -286,6 +297,11 @@ def update_location(event, local_stadiums: dict[date, str]) -> None:
     stadium = local_stadiums.get(game_date)
     if stadium is not None:
         event["LOCATION"] = stadium
+    elif (
+        str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) == "npb"
+        and event.get("LOCATION")
+    ):
+        return
     elif stadium := HOME_STADIUMS.get(normalize_team_name(raw_home)):
         event["LOCATION"] = stadium
 
@@ -330,20 +346,20 @@ def generate_calendar(year: int) -> tuple[dict[str, Event], Calendar]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="年度別の巨人戦ICSを生成します。")
-    parser.add_argument("--year", type=int, default=current_calendar_year())
+    parser.add_argument("--year", type=int, default=active_calendar_year())
     parser.add_argument("--output", type=Path, help="生成するICSファイルの出力先")
     args = parser.parse_args()
 
-    current_year = current_calendar_year()
-    if args.year != current_year and args.output is None:
-        parser.error("過去年を生成する場合は --output を指定してください。")
+    active_year = active_calendar_year()
+    if args.year != active_year and args.output is None:
+        parser.error("配信年度以外を生成する場合は --output を指定してください。")
 
     output_path = args.output or OUTPUT_PATH
     if not output_path.is_absolute():
         output_path = ROOT / output_path
 
     games, calendar = generate_calendar(args.year)
-    if args.year == current_year and output_path == OUTPUT_PATH:
+    if args.year == active_year and output_path == OUTPUT_PATH:
         save_games(games)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_bytes(calendar.to_ical())

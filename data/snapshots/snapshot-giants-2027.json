@@ -1,0 +1,715 @@
+{
+  "events": [
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi @ Yomiuri\r\nDTSTART;VALUE=DATE:20270326\r\nDTEND;VALUE=DATE:20270327\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-dced3d0da226e09707b3fc7f@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-03-26T00:00:00+00:00",
+      "uid": "npb-dced3d0da226e09707b3fc7f@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi @ Yomiuri\r\nDTSTART;VALUE=DATE:20270327\r\nDTEND;VALUE=DATE:20270328\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-f33d3397bd52fd0013b3a31c@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-03-27T00:00:00+00:00",
+      "uid": "npb-f33d3397bd52fd0013b3a31c@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi @ Yomiuri\r\nDTSTART;VALUE=DATE:20270328\r\nDTEND;VALUE=DATE:20270329\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-faeb3ff162e776fd245328c4@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-03-28T00:00:00+00:00",
+      "uid": "npb-faeb3ff162e776fd245328c4@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270330\r\nDTEND;VALUE=DATE:20270331\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-d6e0866773be2f621ee7631d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-03-30T00:00:00+00:00",
+      "uid": "npb-d6e0866773be2f621ee7631d@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270331\r\nDTEND;VALUE=DATE:20270401\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-42d5a65cf27250111eeac023@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-03-31T00:00:00+00:00",
+      "uid": "npb-42d5a65cf27250111eeac023@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270401\r\nDTEND;VALUE=DATE:20270402\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-5a54a7b9b4de8627d075ad76@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-01T00:00:00+00:00",
+      "uid": "npb-5a54a7b9b4de8627d075ad76@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin @ Yomiuri\r\nDTSTART;VALUE=DATE:20270402\r\nDTEND;VALUE=DATE:20270403\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-9ef042a1c3400aad1510e2fe@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-02T00:00:00+00:00",
+      "uid": "npb-9ef042a1c3400aad1510e2fe@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin @ Yomiuri\r\nDTSTART;VALUE=DATE:20270403\r\nDTEND;VALUE=DATE:20270404\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-4ce8d6a87cfef37c286dc0a0@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-03T00:00:00+00:00",
+      "uid": "npb-4ce8d6a87cfef37c286dc0a0@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin @ Yomiuri\r\nDTSTART;VALUE=DATE:20270404\r\nDTEND;VALUE=DATE:20270405\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-36174b668d5ba20fd0dbe6a5@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-04T00:00:00+00:00",
+      "uid": "npb-36174b668d5ba20fd0dbe6a5@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ DeNA\r\nDTSTART;VALUE=DATE:20270406\r\nDTEND;VALUE=DATE:20270407\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-548617f035bf000ed70b21f1@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-06T00:00:00+00:00",
+      "uid": "npb-548617f035bf000ed70b21f1@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ DeNA\r\nDTSTART;VALUE=DATE:20270407\r\nDTEND;VALUE=DATE:20270408\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-f19f9ceca8e0120f1333ac0d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-07T00:00:00+00:00",
+      "uid": "npb-f19f9ceca8e0120f1333ac0d@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ DeNA\r\nDTSTART;VALUE=DATE:20270408\r\nDTEND;VALUE=DATE:20270409\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-416372bfe235293e42be6686@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-08T00:00:00+00:00",
+      "uid": "npb-416372bfe235293e42be6686@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima @ Yomiuri\r\nDTSTART;VALUE=DATE:20270409\r\nDTEND;VALUE=DATE:20270410\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-ab73f78e737d13b8a899e9c1@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-09T00:00:00+00:00",
+      "uid": "npb-ab73f78e737d13b8a899e9c1@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima @ Yomiuri\r\nDTSTART;VALUE=DATE:20270410\r\nDTEND;VALUE=DATE:20270411\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-4af8ab6fffa7e5da51af51e5@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-10T00:00:00+00:00",
+      "uid": "npb-4af8ab6fffa7e5da51af51e5@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima @ Yomiuri\r\nDTSTART;VALUE=DATE:20270411\r\nDTEND;VALUE=DATE:20270412\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-0382a3634f5ac8f204697ce5@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-11T00:00:00+00:00",
+      "uid": "npb-0382a3634f5ac8f204697ce5@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Chunichi\r\nDTSTART;VALUE=DATE:20270413\r\nDTEND;VALUE=DATE:20270414\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-c968571f256a956e4c737223@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-13T00:00:00+00:00",
+      "uid": "npb-c968571f256a956e4c737223@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Chunichi\r\nDTSTART;VALUE=DATE:20270414\r\nDTEND;VALUE=DATE:20270415\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-53095e48f5e6dd7509233001@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-14T00:00:00+00:00",
+      "uid": "npb-53095e48f5e6dd7509233001@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Chunichi\r\nDTSTART;VALUE=DATE:20270415\r\nDTEND;VALUE=DATE:20270416\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-4e095fdefe22c96292e4269c@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-15T00:00:00+00:00",
+      "uid": "npb-4e095fdefe22c96292e4269c@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270416\r\nDTEND;VALUE=DATE:20270417\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-5b66cbe6641d368a4b4456b4@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-16T00:00:00+00:00",
+      "uid": "npb-5b66cbe6641d368a4b4456b4@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270417\r\nDTEND;VALUE=DATE:20270418\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-10c1f9d7d396bba26c2b4327@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-17T00:00:00+00:00",
+      "uid": "npb-10c1f9d7d396bba26c2b4327@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270418\r\nDTEND;VALUE=DATE:20270419\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-c8f7e1b4ec4bcb7731060837@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-18T00:00:00+00:00",
+      "uid": "npb-c8f7e1b4ec4bcb7731060837@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult @ Yomiuri\r\nDTSTART;VALUE=DATE:20270420\r\nDTEND;VALUE=DATE:20270421\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-3e04e2daca1559620808de6b@giants-calendar.local\r\nLOCATION:長崎\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-20T00:00:00+00:00",
+      "uid": "npb-3e04e2daca1559620808de6b@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult @ Yomiuri\r\nDTSTART;VALUE=DATE:20270422\r\nDTEND;VALUE=DATE:20270423\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-31dcc42fd2ac92c356e58757@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-22T00:00:00+00:00",
+      "uid": "npb-31dcc42fd2ac92c356e58757@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hanshin\r\nDTSTART;VALUE=DATE:20270423\r\nDTEND;VALUE=DATE:20270424\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-d75ad6e280b8c23d674b6cb6@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-23T00:00:00+00:00",
+      "uid": "npb-d75ad6e280b8c23d674b6cb6@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hanshin\r\nDTSTART;VALUE=DATE:20270424\r\nDTEND;VALUE=DATE:20270425\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-f889aab6604cb6c8ccc61963@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-24T00:00:00+00:00",
+      "uid": "npb-f889aab6604cb6c8ccc61963@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hanshin\r\nDTSTART;VALUE=DATE:20270425\r\nDTEND;VALUE=DATE:20270426\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-b2449e30f01b92d3613c1a24@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-25T00:00:00+00:00",
+      "uid": "npb-b2449e30f01b92d3613c1a24@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA @ Yomiuri\r\nDTSTART;VALUE=DATE:20270427\r\nDTEND;VALUE=DATE:20270428\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-24ae9a0e98a927419d4ec32a@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-27T00:00:00+00:00",
+      "uid": "npb-24ae9a0e98a927419d4ec32a@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA @ Yomiuri\r\nDTSTART;VALUE=DATE:20270428\r\nDTEND;VALUE=DATE:20270429\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-a49072d75fee8233d4dfdb78@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-28T00:00:00+00:00",
+      "uid": "npb-a49072d75fee8233d4dfdb78@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA @ Yomiuri\r\nDTSTART;VALUE=DATE:20270429\r\nDTEND;VALUE=DATE:20270430\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-31c39977dfd009555bb3f40b@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-04-29T00:00:00+00:00",
+      "uid": "npb-31c39977dfd009555bb3f40b@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Chunichi\r\nDTSTART;VALUE=DATE:20270501\r\nDTEND;VALUE=DATE:20270502\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-bb85172c3507eb88c30d2fd9@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-01T00:00:00+00:00",
+      "uid": "npb-bb85172c3507eb88c30d2fd9@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Chunichi\r\nDTSTART;VALUE=DATE:20270502\r\nDTEND;VALUE=DATE:20270503\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-7117d59e07d64c694da1e0c2@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-02T00:00:00+00:00",
+      "uid": "npb-7117d59e07d64c694da1e0c2@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima @ Yomiuri\r\nDTSTART;VALUE=DATE:20270503\r\nDTEND;VALUE=DATE:20270504\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-e76a2f6182b1ac37863d22d4@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-03T00:00:00+00:00",
+      "uid": "npb-e76a2f6182b1ac37863d22d4@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima @ Yomiuri\r\nDTSTART;VALUE=DATE:20270504\r\nDTEND;VALUE=DATE:20270505\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-f862f6dd761bedcbc9228269@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-04T00:00:00+00:00",
+      "uid": "npb-f862f6dd761bedcbc9228269@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima @ Yomiuri\r\nDTSTART;VALUE=DATE:20270505\r\nDTEND;VALUE=DATE:20270506\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-d1f760fb8a20b06abf9a521a@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-05T00:00:00+00:00",
+      "uid": "npb-d1f760fb8a20b06abf9a521a@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270507\r\nDTEND;VALUE=DATE:20270508\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-6b110b0db3b76718c2bbcacd@giants-calendar.local\r\nLOCATION:静岡\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-07T00:00:00+00:00",
+      "uid": "npb-6b110b0db3b76718c2bbcacd@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270508\r\nDTEND;VALUE=DATE:20270509\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-967d0a588e403c1a85b25d5b@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-08T00:00:00+00:00",
+      "uid": "npb-967d0a588e403c1a85b25d5b@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270509\r\nDTEND;VALUE=DATE:20270510\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-87db1c999dca6a80ce3839a0@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-09T00:00:00+00:00",
+      "uid": "npb-87db1c999dca6a80ce3839a0@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ DeNA\r\nDTSTART;VALUE=DATE:20270511\r\nDTEND;VALUE=DATE:20270512\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-b1a4256bd5321ba8296d487b@giants-calendar.local\r\nLOCATION:ハードオフ新潟\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-11T00:00:00+00:00",
+      "uid": "npb-b1a4256bd5321ba8296d487b@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ DeNA\r\nDTSTART;VALUE=DATE:20270513\r\nDTEND;VALUE=DATE:20270514\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-89ce392aa3b8fb059aec00dd@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-13T00:00:00+00:00",
+      "uid": "npb-89ce392aa3b8fb059aec00dd@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi @ Yomiuri\r\nDTSTART;VALUE=DATE:20270514\r\nDTEND;VALUE=DATE:20270515\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-c2906a0b116f05d3a772e5ad@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-14T00:00:00+00:00",
+      "uid": "npb-c2906a0b116f05d3a772e5ad@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi @ Yomiuri\r\nDTSTART;VALUE=DATE:20270515\r\nDTEND;VALUE=DATE:20270516\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-9b4158ce4480139ea8f81961@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-15T00:00:00+00:00",
+      "uid": "npb-9b4158ce4480139ea8f81961@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi @ Yomiuri\r\nDTSTART;VALUE=DATE:20270516\r\nDTEND;VALUE=DATE:20270517\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-06457fdabfe87e786fc32ade@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-16T00:00:00+00:00",
+      "uid": "npb-06457fdabfe87e786fc32ade@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270518\r\nDTEND;VALUE=DATE:20270519\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-7c185574a652afb750d2af95@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-18T00:00:00+00:00",
+      "uid": "npb-7c185574a652afb750d2af95@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270519\r\nDTEND;VALUE=DATE:20270520\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-716a50869b2199af10d235dd@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-19T00:00:00+00:00",
+      "uid": "npb-716a50869b2199af10d235dd@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult @ Yomiuri\r\nDTSTART;VALUE=DATE:20270521\r\nDTEND;VALUE=DATE:20270522\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-69b541141a70bcddaf87eae7@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-21T00:00:00+00:00",
+      "uid": "npb-69b541141a70bcddaf87eae7@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult @ Yomiuri\r\nDTSTART;VALUE=DATE:20270522\r\nDTEND;VALUE=DATE:20270523\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-a2cb5f27efe1d644cfec8c3f@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-22T00:00:00+00:00",
+      "uid": "npb-a2cb5f27efe1d644cfec8c3f@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult @ Yomiuri\r\nDTSTART;VALUE=DATE:20270523\r\nDTEND;VALUE=DATE:20270524\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-59f4cb09fe28f4f444bc2c0c@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-23T00:00:00+00:00",
+      "uid": "npb-59f4cb09fe28f4f444bc2c0c@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA @ Yomiuri\r\nDTSTART;VALUE=DATE:20270525\r\nDTEND;VALUE=DATE:20270526\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-23fd769173542df5dcf0ca28@giants-calendar.local\r\nLOCATION:ひたちなか\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-25T00:00:00+00:00",
+      "uid": "npb-23fd769173542df5dcf0ca28@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA @ Yomiuri\r\nDTSTART;VALUE=DATE:20270527\r\nDTEND;VALUE=DATE:20270528\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-62afe4ebee2937e17ad467b5@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-27T00:00:00+00:00",
+      "uid": "npb-62afe4ebee2937e17ad467b5@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hanshin\r\nDTSTART;VALUE=DATE:20270529\r\nDTEND;VALUE=DATE:20270530\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-10021e54bb32821e2c743e53@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-29T00:00:00+00:00",
+      "uid": "npb-10021e54bb32821e2c743e53@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hanshin\r\nDTSTART;VALUE=DATE:20270530\r\nDTEND;VALUE=DATE:20270531\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-f548b37815efb9f4276fdb69@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-05-30T00:00:00+00:00",
+      "uid": "npb-f548b37815efb9f4276fdb69@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Lotte\r\nDTSTART;VALUE=DATE:20270601\r\nDTEND;VALUE=DATE:20270602\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-57a0874a42431e8fe21be6f0@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-01T00:00:00+00:00",
+      "uid": "npb-57a0874a42431e8fe21be6f0@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Lotte\r\nDTSTART;VALUE=DATE:20270602\r\nDTEND;VALUE=DATE:20270603\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-6611643aa36365db19d5556a@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-02T00:00:00+00:00",
+      "uid": "npb-6611643aa36365db19d5556a@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Lotte\r\nDTSTART;VALUE=DATE:20270603\r\nDTEND;VALUE=DATE:20270604\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-49affed2baac5b960a65fde3@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-03T00:00:00+00:00",
+      "uid": "npb-49affed2baac5b960a65fde3@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Nippon-Ham @ Yomiuri\r\nDTSTART;VALUE=DATE:20270604\r\nDTEND;VALUE=DATE:20270605\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-6182ed71a0ae61fb0a32700a@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-04T00:00:00+00:00",
+      "uid": "npb-6182ed71a0ae61fb0a32700a@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Nippon-Ham @ Yomiuri\r\nDTSTART;VALUE=DATE:20270605\r\nDTEND;VALUE=DATE:20270606\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-6f51ae13a3df7cc455e56435@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-05T00:00:00+00:00",
+      "uid": "npb-6f51ae13a3df7cc455e56435@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Nippon-Ham @ Yomiuri\r\nDTSTART;VALUE=DATE:20270606\r\nDTEND;VALUE=DATE:20270607\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-98f1c878bd68c3516ca49c0b@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-06T00:00:00+00:00",
+      "uid": "npb-98f1c878bd68c3516ca49c0b@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ SoftBank\r\nDTSTART;VALUE=DATE:20270608\r\nDTEND;VALUE=DATE:20270609\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-c80a7860fb9a2b83ab5c78f5@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-08T00:00:00+00:00",
+      "uid": "npb-c80a7860fb9a2b83ab5c78f5@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ SoftBank\r\nDTSTART;VALUE=DATE:20270609\r\nDTEND;VALUE=DATE:20270610\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-c7a96763e14cd89ddcce2307@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-09T00:00:00+00:00",
+      "uid": "npb-c7a96763e14cd89ddcce2307@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ SoftBank\r\nDTSTART;VALUE=DATE:20270610\r\nDTEND;VALUE=DATE:20270611\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-08156c6400ff1448b2bfb35e@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-10T00:00:00+00:00",
+      "uid": "npb-08156c6400ff1448b2bfb35e@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Orix\r\nDTSTART;VALUE=DATE:20270611\r\nDTEND;VALUE=DATE:20270612\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-84aceaf56d9447776d08cbf1@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-11T00:00:00+00:00",
+      "uid": "npb-84aceaf56d9447776d08cbf1@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Orix\r\nDTSTART;VALUE=DATE:20270612\r\nDTEND;VALUE=DATE:20270613\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-df9312a3dbe5102c4ab83d4a@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-12T00:00:00+00:00",
+      "uid": "npb-df9312a3dbe5102c4ab83d4a@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Orix\r\nDTSTART;VALUE=DATE:20270613\r\nDTEND;VALUE=DATE:20270614\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-2b51112cb40dd02e76d78b9f@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-13T00:00:00+00:00",
+      "uid": "npb-2b51112cb40dd02e76d78b9f@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Rakuten @ Yomiuri\r\nDTSTART;VALUE=DATE:20270615\r\nDTEND;VALUE=DATE:20270616\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-62b01be6dcc1d62a7cd98166@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-15T00:00:00+00:00",
+      "uid": "npb-62b01be6dcc1d62a7cd98166@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Rakuten @ Yomiuri\r\nDTSTART;VALUE=DATE:20270616\r\nDTEND;VALUE=DATE:20270617\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-55b1579aa70dfb7ca6496330@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-16T00:00:00+00:00",
+      "uid": "npb-55b1579aa70dfb7ca6496330@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Rakuten @ Yomiuri\r\nDTSTART;VALUE=DATE:20270617\r\nDTEND;VALUE=DATE:20270618\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-f3e1928aa66bbdba4788a07b@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-17T00:00:00+00:00",
+      "uid": "npb-f3e1928aa66bbdba4788a07b@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Seibu @ Yomiuri\r\nDTSTART;VALUE=DATE:20270618\r\nDTEND;VALUE=DATE:20270619\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-2007de7d64ab03ed79d61bd3@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-18T00:00:00+00:00",
+      "uid": "npb-2007de7d64ab03ed79d61bd3@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Seibu @ Yomiuri\r\nDTSTART;VALUE=DATE:20270619\r\nDTEND;VALUE=DATE:20270620\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-4cbb1b1127dedd21796b60ee@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-19T00:00:00+00:00",
+      "uid": "npb-4cbb1b1127dedd21796b60ee@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Seibu @ Yomiuri\r\nDTSTART;VALUE=DATE:20270620\r\nDTEND;VALUE=DATE:20270621\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-ef11f309e822cd1f1288485c@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-20T00:00:00+00:00",
+      "uid": "npb-ef11f309e822cd1f1288485c@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin @ Yomiuri\r\nDTSTART;VALUE=DATE:20270625\r\nDTEND;VALUE=DATE:20270626\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-e48d4acf1d83aea5296a2848@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-25T00:00:00+00:00",
+      "uid": "npb-e48d4acf1d83aea5296a2848@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin @ Yomiuri\r\nDTSTART;VALUE=DATE:20270626\r\nDTEND;VALUE=DATE:20270627\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-79d3c1056a164771b38f6f9c@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-26T00:00:00+00:00",
+      "uid": "npb-79d3c1056a164771b38f6f9c@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin @ Yomiuri\r\nDTSTART;VALUE=DATE:20270627\r\nDTEND;VALUE=DATE:20270628\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-7fa9a749d2da24e2a12d8248@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-27T00:00:00+00:00",
+      "uid": "npb-7fa9a749d2da24e2a12d8248@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ DeNA\r\nDTSTART;VALUE=DATE:20270629\r\nDTEND;VALUE=DATE:20270630\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-f2891358c64682284eeb8d26@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-29T00:00:00+00:00",
+      "uid": "npb-f2891358c64682284eeb8d26@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ DeNA\r\nDTSTART;VALUE=DATE:20270630\r\nDTEND;VALUE=DATE:20270701\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-63e9f872e1af74bfde67b836@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-06-30T00:00:00+00:00",
+      "uid": "npb-63e9f872e1af74bfde67b836@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ DeNA\r\nDTSTART;VALUE=DATE:20270701\r\nDTEND;VALUE=DATE:20270702\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-116de51df11ee459eecc4c85@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-01T00:00:00+00:00",
+      "uid": "npb-116de51df11ee459eecc4c85@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi @ Yomiuri\r\nDTSTART;VALUE=DATE:20270702\r\nDTEND;VALUE=DATE:20270703\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-763374052bd1a6d69c5f6b5d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-02T00:00:00+00:00",
+      "uid": "npb-763374052bd1a6d69c5f6b5d@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi @ Yomiuri\r\nDTSTART;VALUE=DATE:20270703\r\nDTEND;VALUE=DATE:20270704\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-d0d69f322d377819642b344d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-03T00:00:00+00:00",
+      "uid": "npb-d0d69f322d377819642b344d@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi @ Yomiuri\r\nDTSTART;VALUE=DATE:20270704\r\nDTEND;VALUE=DATE:20270705\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-a3f338a7d7ef536083adfd39@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-04T00:00:00+00:00",
+      "uid": "npb-a3f338a7d7ef536083adfd39@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima @ Yomiuri\r\nDTSTART;VALUE=DATE:20270706\r\nDTEND;VALUE=DATE:20270707\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-17e3e553a177bc61025536c2@giants-calendar.local\r\nLOCATION:富山\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-06T00:00:00+00:00",
+      "uid": "npb-17e3e553a177bc61025536c2@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima @ Yomiuri\r\nDTSTART;VALUE=DATE:20270707\r\nDTEND;VALUE=DATE:20270708\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-51defcc4f07c7aa92eb94cfa@giants-calendar.local\r\nLOCATION:金沢\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-07T00:00:00+00:00",
+      "uid": "npb-51defcc4f07c7aa92eb94cfa@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult @ Yomiuri\r\nDTSTART;VALUE=DATE:20270709\r\nDTEND;VALUE=DATE:20270710\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-9243211964ecdc6a743eadba@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-09T00:00:00+00:00",
+      "uid": "npb-9243211964ecdc6a743eadba@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult @ Yomiuri\r\nDTSTART;VALUE=DATE:20270710\r\nDTEND;VALUE=DATE:20270711\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-e8c3eb61716f926eeaf636c6@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-10T00:00:00+00:00",
+      "uid": "npb-e8c3eb61716f926eeaf636c6@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult @ Yomiuri\r\nDTSTART;VALUE=DATE:20270711\r\nDTEND;VALUE=DATE:20270712\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-347d4ec1986dff14b00c61c2@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-11T00:00:00+00:00",
+      "uid": "npb-347d4ec1986dff14b00c61c2@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hanshin\r\nDTSTART;VALUE=DATE:20270713\r\nDTEND;VALUE=DATE:20270714\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-631a318b15bfad63ef424676@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-13T00:00:00+00:00",
+      "uid": "npb-631a318b15bfad63ef424676@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hanshin\r\nDTSTART;VALUE=DATE:20270714\r\nDTEND;VALUE=DATE:20270715\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-dd411679faec6c43f8558f18@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-14T00:00:00+00:00",
+      "uid": "npb-dd411679faec6c43f8558f18@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hanshin\r\nDTSTART;VALUE=DATE:20270715\r\nDTEND;VALUE=DATE:20270716\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-8eadeb834996f50a8b09890d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-15T00:00:00+00:00",
+      "uid": "npb-8eadeb834996f50a8b09890d@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270717\r\nDTEND;VALUE=DATE:20270718\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-841f76a10ed47fe1ae3fdefa@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-17T00:00:00+00:00",
+      "uid": "npb-841f76a10ed47fe1ae3fdefa@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270718\r\nDTEND;VALUE=DATE:20270719\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-1448b6687ebe8dcc4c898f0d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-18T00:00:00+00:00",
+      "uid": "npb-1448b6687ebe8dcc4c898f0d@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270719\r\nDTEND;VALUE=DATE:20270720\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-74146b80405d735abe56a1d5@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-19T00:00:00+00:00",
+      "uid": "npb-74146b80405d735abe56a1d5@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270724\r\nDTEND;VALUE=DATE:20270725\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-6bc07d4304e64afa102fdc1d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-24T00:00:00+00:00",
+      "uid": "npb-6bc07d4304e64afa102fdc1d@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270725\r\nDTEND;VALUE=DATE:20270726\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-9e957d597d177d4c096e3341@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-25T00:00:00+00:00",
+      "uid": "npb-9e957d597d177d4c096e3341@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin @ Yomiuri\r\nDTSTART;VALUE=DATE:20270727\r\nDTEND;VALUE=DATE:20270728\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-87cba65f589a811ee80df98d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-27T00:00:00+00:00",
+      "uid": "npb-87cba65f589a811ee80df98d@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin @ Yomiuri\r\nDTSTART;VALUE=DATE:20270728\r\nDTEND;VALUE=DATE:20270729\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-354f820a23b5ae39d34a653b@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-28T00:00:00+00:00",
+      "uid": "npb-354f820a23b5ae39d34a653b@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin @ Yomiuri\r\nDTSTART;VALUE=DATE:20270729\r\nDTEND;VALUE=DATE:20270730\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-d8552b031a5b9655ad379cfa@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-29T00:00:00+00:00",
+      "uid": "npb-d8552b031a5b9655ad379cfa@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Chunichi\r\nDTSTART;VALUE=DATE:20270730\r\nDTEND;VALUE=DATE:20270731\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-211fe7921d293f9ada341b70@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-30T00:00:00+00:00",
+      "uid": "npb-211fe7921d293f9ada341b70@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Chunichi\r\nDTSTART;VALUE=DATE:20270731\r\nDTEND;VALUE=DATE:20270801\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-f32916a765c04c902933d0f8@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-07-31T00:00:00+00:00",
+      "uid": "npb-f32916a765c04c902933d0f8@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Chunichi\r\nDTSTART;VALUE=DATE:20270801\r\nDTEND;VALUE=DATE:20270802\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-6403d1e0011b12d59ac78a6f@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-01T00:00:00+00:00",
+      "uid": "npb-6403d1e0011b12d59ac78a6f@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA @ Yomiuri\r\nDTSTART;VALUE=DATE:20270803\r\nDTEND;VALUE=DATE:20270804\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-e74af7c5c5aa5bcaa94a10ad@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-03T00:00:00+00:00",
+      "uid": "npb-e74af7c5c5aa5bcaa94a10ad@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA @ Yomiuri\r\nDTSTART;VALUE=DATE:20270804\r\nDTEND;VALUE=DATE:20270805\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-3932deb8df8e7e9b0bae2114@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-04T00:00:00+00:00",
+      "uid": "npb-3932deb8df8e7e9b0bae2114@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA @ Yomiuri\r\nDTSTART;VALUE=DATE:20270805\r\nDTEND;VALUE=DATE:20270806\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-2aead3d042fa77ee6707d876@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-05T00:00:00+00:00",
+      "uid": "npb-2aead3d042fa77ee6707d876@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270806\r\nDTEND;VALUE=DATE:20270807\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-87cb6b96238ec9ba5e286e5d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-06T00:00:00+00:00",
+      "uid": "npb-87cb6b96238ec9ba5e286e5d@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270807\r\nDTEND;VALUE=DATE:20270808\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-31c0e944e061817dc77fc317@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-07T00:00:00+00:00",
+      "uid": "npb-31c0e944e061817dc77fc317@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270808\r\nDTEND;VALUE=DATE:20270809\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-d08c41e10eb1671cf6c3acc9@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-08T00:00:00+00:00",
+      "uid": "npb-d08c41e10eb1671cf6c3acc9@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult @ Yomiuri\r\nDTSTART;VALUE=DATE:20270810\r\nDTEND;VALUE=DATE:20270811\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-18c1db3d25bda2b7ab57f746@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-10T00:00:00+00:00",
+      "uid": "npb-18c1db3d25bda2b7ab57f746@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult @ Yomiuri\r\nDTSTART;VALUE=DATE:20270811\r\nDTEND;VALUE=DATE:20270812\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-e8c229cb46e047c98722f5d5@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-11T00:00:00+00:00",
+      "uid": "npb-e8c229cb46e047c98722f5d5@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yakult @ Yomiuri\r\nDTSTART;VALUE=DATE:20270812\r\nDTEND;VALUE=DATE:20270813\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-a31844747ed27c2e02392ea6@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-12T00:00:00+00:00",
+      "uid": "npb-a31844747ed27c2e02392ea6@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Chunichi\r\nDTSTART;VALUE=DATE:20270813\r\nDTEND;VALUE=DATE:20270814\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-59cbc42de3b47c1eb8151f15@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-13T00:00:00+00:00",
+      "uid": "npb-59cbc42de3b47c1eb8151f15@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Chunichi\r\nDTSTART;VALUE=DATE:20270814\r\nDTEND;VALUE=DATE:20270815\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-d48c8d89ac27b52dc7a30fe5@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-14T00:00:00+00:00",
+      "uid": "npb-d48c8d89ac27b52dc7a30fe5@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Chunichi\r\nDTSTART;VALUE=DATE:20270815\r\nDTEND;VALUE=DATE:20270816\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-3cf5c1afc55bf417eb4b166e@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-15T00:00:00+00:00",
+      "uid": "npb-3cf5c1afc55bf417eb4b166e@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin @ Yomiuri\r\nDTSTART;VALUE=DATE:20270817\r\nDTEND;VALUE=DATE:20270818\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-f946b1f6012767f2a72c9e5e@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-17T00:00:00+00:00",
+      "uid": "npb-f946b1f6012767f2a72c9e5e@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin @ Yomiuri\r\nDTSTART;VALUE=DATE:20270818\r\nDTEND;VALUE=DATE:20270819\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-5c66c6d41a74705da2209620@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-18T00:00:00+00:00",
+      "uid": "npb-5c66c6d41a74705da2209620@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hanshin @ Yomiuri\r\nDTSTART;VALUE=DATE:20270819\r\nDTEND;VALUE=DATE:20270820\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-f2b85e7a33f40fa9cbe323d7@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-19T00:00:00+00:00",
+      "uid": "npb-f2b85e7a33f40fa9cbe323d7@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA @ Yomiuri\r\nDTSTART;VALUE=DATE:20270820\r\nDTEND;VALUE=DATE:20270821\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-c8bd4674bc2010952f30df8d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-20T00:00:00+00:00",
+      "uid": "npb-c8bd4674bc2010952f30df8d@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA @ Yomiuri\r\nDTSTART;VALUE=DATE:20270821\r\nDTEND;VALUE=DATE:20270822\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-684febb1c0252705e40c3e44@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-21T00:00:00+00:00",
+      "uid": "npb-684febb1c0252705e40c3e44@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA @ Yomiuri\r\nDTSTART;VALUE=DATE:20270822\r\nDTEND;VALUE=DATE:20270823\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-e6435be1311499eae07dd354@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-22T00:00:00+00:00",
+      "uid": "npb-e6435be1311499eae07dd354@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270824\r\nDTEND;VALUE=DATE:20270825\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-9c9f7b179c0f252e81d88de1@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-24T00:00:00+00:00",
+      "uid": "npb-9c9f7b179c0f252e81d88de1@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270825\r\nDTEND;VALUE=DATE:20270826\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-029f0f3a6c72a9db81055ded@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-25T00:00:00+00:00",
+      "uid": "npb-029f0f3a6c72a9db81055ded@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270826\r\nDTEND;VALUE=DATE:20270827\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-776e85998d2a2c519e19b52c@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-26T00:00:00+00:00",
+      "uid": "npb-776e85998d2a2c519e19b52c@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ DeNA\r\nDTSTART;VALUE=DATE:20270827\r\nDTEND;VALUE=DATE:20270828\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-32994f426f58cd802551aea8@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-27T00:00:00+00:00",
+      "uid": "npb-32994f426f58cd802551aea8@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ DeNA\r\nDTSTART;VALUE=DATE:20270828\r\nDTEND;VALUE=DATE:20270829\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-d26146cb439515850bdc4e55@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-28T00:00:00+00:00",
+      "uid": "npb-d26146cb439515850bdc4e55@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ DeNA\r\nDTSTART;VALUE=DATE:20270829\r\nDTEND;VALUE=DATE:20270830\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-b801db1efe6d80d5e73f728c@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-29T00:00:00+00:00",
+      "uid": "npb-b801db1efe6d80d5e73f728c@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi @ Yomiuri\r\nDTSTART;VALUE=DATE:20270831\r\nDTEND;VALUE=DATE:20270901\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-cbe2d8021c70624c0793bfc8@giants-calendar.local\r\nLOCATION:京セラD大阪\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-08-31T00:00:00+00:00",
+      "uid": "npb-cbe2d8021c70624c0793bfc8@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi @ Yomiuri\r\nDTSTART;VALUE=DATE:20270901\r\nDTEND;VALUE=DATE:20270902\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-8f84821ffe95cd35b4a2de24@giants-calendar.local\r\nLOCATION:京セラD大阪\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-01T00:00:00+00:00",
+      "uid": "npb-8f84821ffe95cd35b4a2de24@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Chunichi @ Yomiuri\r\nDTSTART;VALUE=DATE:20270902\r\nDTEND;VALUE=DATE:20270903\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-cf01650978d3df6fe0d2a789@giants-calendar.local\r\nLOCATION:倉敷\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-02T00:00:00+00:00",
+      "uid": "npb-cf01650978d3df6fe0d2a789@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima @ Yomiuri\r\nDTSTART;VALUE=DATE:20270904\r\nDTEND;VALUE=DATE:20270905\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-1ba2dce0c7438767c3e2f993@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-04T00:00:00+00:00",
+      "uid": "npb-1ba2dce0c7438767c3e2f993@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima @ Yomiuri\r\nDTSTART;VALUE=DATE:20270905\r\nDTEND;VALUE=DATE:20270906\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-4859cb4caba75f3cd6d8ccbc@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-05T00:00:00+00:00",
+      "uid": "npb-4859cb4caba75f3cd6d8ccbc@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hanshin\r\nDTSTART;VALUE=DATE:20270907\r\nDTEND;VALUE=DATE:20270908\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-23a4768e7b298d56d011d750@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-07T00:00:00+00:00",
+      "uid": "npb-23a4768e7b298d56d011d750@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hanshin\r\nDTSTART;VALUE=DATE:20270908\r\nDTEND;VALUE=DATE:20270909\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-f526ea1ea95d4fac8a27b1f7@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-08T00:00:00+00:00",
+      "uid": "npb-f526ea1ea95d4fac8a27b1f7@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hanshin\r\nDTSTART;VALUE=DATE:20270909\r\nDTEND;VALUE=DATE:20270910\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-3434ef3dac46a08296ebc6b3@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-09T00:00:00+00:00",
+      "uid": "npb-3434ef3dac46a08296ebc6b3@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270910\r\nDTEND;VALUE=DATE:20270911\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-5112ac61696f10d753b0fb89@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-10T00:00:00+00:00",
+      "uid": "npb-5112ac61696f10d753b0fb89@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270911\r\nDTEND;VALUE=DATE:20270912\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-9c441a8cde48a10f72bcd597@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-11T00:00:00+00:00",
+      "uid": "npb-9c441a8cde48a10f72bcd597@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270912\r\nDTEND;VALUE=DATE:20270913\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-e29ec9264d6a9ce24a409186@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-12T00:00:00+00:00",
+      "uid": "npb-e29ec9264d6a9ce24a409186@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA @ Yomiuri\r\nDTSTART;VALUE=DATE:20270917\r\nDTEND;VALUE=DATE:20270918\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-db5d5aa4e91e25c6bcf92839@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-17T00:00:00+00:00",
+      "uid": "npb-db5d5aa4e91e25c6bcf92839@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA @ Yomiuri\r\nDTSTART;VALUE=DATE:20270918\r\nDTEND;VALUE=DATE:20270919\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-ff5dd886fc39e4bf9260437d@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-18T00:00:00+00:00",
+      "uid": "npb-ff5dd886fc39e4bf9260437d@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hanshin\r\nDTSTART;VALUE=DATE:20270919\r\nDTEND;VALUE=DATE:20270920\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-d7cb4b78cbdf7e04d9a462a4@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-19T00:00:00+00:00",
+      "uid": "npb-d7cb4b78cbdf7e04d9a462a4@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hanshin\r\nDTSTART;VALUE=DATE:20270920\r\nDTEND;VALUE=DATE:20270921\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-30f266228646df618f94581b@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-20T00:00:00+00:00",
+      "uid": "npb-30f266228646df618f94581b@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Chunichi\r\nDTSTART;VALUE=DATE:20270922\r\nDTEND;VALUE=DATE:20270923\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-fe36da3e2cc1b74e8d45641b@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-22T00:00:00+00:00",
+      "uid": "npb-fe36da3e2cc1b74e8d45641b@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Chunichi\r\nDTSTART;VALUE=DATE:20270923\r\nDTEND;VALUE=DATE:20270924\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-1d0e7f08aec8934374bd3a66@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-23T00:00:00+00:00",
+      "uid": "npb-1d0e7f08aec8934374bd3a66@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270925\r\nDTEND;VALUE=DATE:20270926\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-1ec842f6b376a837cb48a5e0@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-25T00:00:00+00:00",
+      "uid": "npb-1ec842f6b376a837cb48a5e0@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270926\r\nDTEND;VALUE=DATE:20270927\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-324317d5b0a0d4ac355fdd31@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-09-26T00:00:00+00:00",
+      "uid": "npb-324317d5b0a0d4ac355fdd31@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima @ Yomiuri\r\nDTSTART;VALUE=DATE:20271002\r\nDTEND;VALUE=DATE:20271003\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-28026530d1ec1a163c704438@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-10-02T00:00:00+00:00",
+      "uid": "npb-28026530d1ec1a163c704438@giants-calendar.local"
+    },
+    {
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima @ Yomiuri\r\nDTSTART;VALUE=DATE:20271003\r\nDTEND;VALUE=DATE:20271004\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-238165d21c3b60596193b8c8@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "start": "2027-10-03T00:00:00+00:00",
+      "uid": "npb-238165d21c3b60596193b8c8@giants-calendar.local"
+    }
+  ],
+  "schema_version": 1
+}

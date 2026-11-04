@@ -15,23 +15,25 @@ Google 側が URL を定期取得するため、ICS ファイルの更新は後�
 ## 更新ルール
 
 - 毎日 12:00 JST に公式カレンダーを取得し、試合の年度ごとに `data/snapshots/snapshot-giants-YYYY.json` へマージします。公式から消えた予定も削除せず、スナップショットに保持し続けます。
-- 1月1日を除く毎日 16:00 JST に **Update Giants calendar** が当年のスナップショットから `data/games.json` を更新し、`giants.ics` を全量再生成します。
-- 毎年1月1日 16:00 JST に **Renew Giants calendar year** が前年の `giants.ics` を `backlog/giants-YYYY.ics` へ退避してから、新年分の `data/games.json` と `giants.ics` を専用に再生成します。手動実行もできますが、前年ファイルを誤って退避しないよう1月1日以外は失敗します。
+- 1月1日を除く毎日 16:00 JST に **Update Giants calendar** が `data/calendar-year.txt` で指定した年度のスナップショットから `data/games.json` を更新し、`giants.ics` を全量再生成します。未設定の場合は当年を使います。
+- 毎年1月1日 16:00 JST に **Renew Giants calendar year** が前年の `giants.ics` を `backlog/giants-YYYY.ics` へ退避してから、新年を `data/calendar-year.txt` に設定し、新年分の `data/games.json` と `giants.ics` を再生成します。手動実行もできますが、前年ファイルを誤って退避しないよう1月1日以外は失敗します。
 - 毎日 16:30 JST に配信中の `giants.ics` を検査し、同一のJST日付に2試合以上がある場合は、該当イベントを表示して **Check duplicate Giants game dates** ワークフローを失敗させます。この検査はデータを変更しません。
-- `data/games.json` は当年のスナップショットを元に生成します。過去日時で得点情報のない予定は、中止または不成立の可能性があるため除外します。
-- `giants.ics` は当年の試合だけを収録します。
+- `data/games.json` と `giants.ics` は配信年度のスナップショットを元に生成します。過去日時で得点情報のない予定は、中止または不成立の可能性があるため除外します。
+- `giants.ics` は配信年度の試合だけを収録します。NPB公式で日付は発表済みでも開始時刻が未定の試合は終日予定として収録します。
 - `away @ home` の予定タイトルを解析し、ホームチームを先にした `広島東洋カープ vs 読売ジャイアンツ 16回戦` 形式へ置き換えます。パ・リーグとの対戦には `【交流戦】` を付け、終了済み試合にはホーム・ビジター順の得点を `（2 - 8）` として末尾へ追加します。
 - 回戦数は年と対戦カードごとに、日付順で付与します。得点付きの試合を重複なく数え、セ・リーグ各5球団との25試合ずつ、パ・リーグ各6球団との3試合ずつ（計143試合）の消化を確認できた場合、その後の試合をクライマックスシリーズとして `【CS】読売ジャイアンツ vs 横浜DeNAベイスターズ 第1戦` 形式で付与します。CSの戦数は通常の回戦数とは別に対戦カードごとに数えます。消化を確認できない場合は通常の表記を維持し、全カードの消化前に特定カードが規定試合数を超えた場合は警告を出します。
-- ジャイアンツ主催試合の場所には `東京ドーム` を設定します。地方開催日は `data/local-stadium.env` に `YYYY-MM-DD=球場名` を追記すると、JST の試合日で照合してその球場名を優先設定します。空行と `#` から始まるコメント行は無視します。
+- ジャイアンツ主催試合の場所には `東京ドーム` を設定します。NPB日程に球場表記がある場合はその表記を使用し、地方開催日は `data/local-stadium.env` に `YYYY-MM-DD=球場名` を追記すると、JST の試合日で照合してその球場名を優先設定します。空行と `#` から始まるコメント行は無視します。
 
 ## NPB日程からの補完
 
-公式Google Calendarにない期間は、GitHub Actions の **Import NPB schedule** を手動実行し、NPB日程詳細ページのHTTPS URLを `source_url` に入力します。ワークフローはHTMLを保存し、Geminiに巨人戦だけをJSONへ抽出させ、日付・時刻・チーム・得点を検証してから年度別スナップショットへマージします。`data/games.json` と `giants.ics` はこのワークフローでは更新せず、既存の定時生成で更新します。
+公式Google Calendarにない期間は、GitHub Actions の **Import NPB schedule** を手動実行し、NPB日程詳細ページのHTTPS URLを `source_url` に入力します。ワークフローはHTMLを保存し、Geminiに巨人戦だけをJSONへ抽出させ、日付・時刻・チーム・得点を検証してから年度別スナップショットへマージします。開始時刻や得点が未発表の場合は省略でき、開始時刻未定の試合は終日予定になります。`data/games.json` と `giants.ics` はこのワークフローでは更新せず、既存の定時生成で更新します。
+
+2027年分は3月から10月までのNPB公式月別ページを取り込み済みです。取得HTMLと抽出JSONは `data/imports/2027/` に保存し、NPBで開始時刻が未発表の試合は終日予定として配信します。
 
 リポジトリのActions secretに `GEMINI_APIKEY` が必要です。たとえば2026年3月分は次のURLです。
 
 ```text
-https://npb.jp/games/2026/schedule_03_detail.html
+https://npb.jp/games/2027/schedule_03_detail.html
 ```
 
 Geminiを呼ばずに、保存済みのJSONを検証して取り込む場合は次を実行します。

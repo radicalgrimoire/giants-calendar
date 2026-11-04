@@ -10,6 +10,7 @@ from pathlib import Path
 from icalendar import Calendar
 
 from generate_calendar import (
+    CALENDAR_YEAR_PATH,
     JST,
     OUTPUT_PATH,
     current_calendar_year,
@@ -46,6 +47,7 @@ def main() -> None:
     archive_previous_calendar(year)
     save_games(games)
     OUTPUT_PATH.write_bytes(calendar.to_ical())
+    CALENDAR_YEAR_PATH.write_text(f"{year}\n", encoding="utf-8")
     print(f"Renewed {OUTPUT_PATH.relative_to(ROOT)} for {year}")
 
 
