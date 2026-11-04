@@ -15,12 +15,14 @@ import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
+from html.parser import HTMLParser
 from pathlib import Path
 
 from icalendar import Event
 
 from generate_calendar import (
     JST,
+    TEAM_NAMES,
     has_score,
     matchup_key,
     write_json,
@@ -36,7 +38,7 @@ ROOT = Path(__file__).resolve().parents[1]
 GIANTS = "読売ジャイアンツ"
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.6-flash")
 GEMINI_REQUEST_ATTEMPTS = 6
-SOURCE_YEAR_PATTERN = re.compile(r"/games/(\d{4})/schedule_\d{2}_detail\.html")
+SOURCE_YEAR_PATTERN = re.compile(r"/games/(\d{4})/schedule_(\d{2})_detail\.html")
 TEAM_ALIASES = {
     "巨人": ("Yomiuri", GIANTS),
     "読売": ("Yomiuri", GIANTS),
@@ -73,6 +75,7 @@ def request_games(source: str, year: int, api_key: str) -> dict:
             "読売ジャイアンツ（巨人・読売を含む）の試合だけを漏れなく抽出し、JSONだけを返してください。",
             "表の左側のチームを home、右側を away とします。得点は各チームの横の数値です。",
             "日付と対戦チームが明記された試合を抽出してください。球場、開始時刻、得点が未掲載の場合は、そのフィールドを省略してください。推測しないでください。",
+            "「予備日」と表示された日程は、対戦チームが明記されていても試合に含めないでください。",
             "同じ試合を重複して出力しないでください。",
             '{"schema_version":1,"games":[{"date":"2027-03-26","home":"巨人","away":"中日","place":"東京ドーム"}]}',
             f"対象年: {year}",
@@ -126,6 +129,90 @@ def source_year(source: str) -> int:
     return int(match.group(1))
 
 
+class ReserveDateParser(HTMLParser):
+    def __init__(self, year: int, month: int) -> None:
+        super().__init__()
+        self.year = year
+        self.month = month
+        self.depth = 0
+        self.in_schedule = False
+        self.found_schedule = False
+        self.row: dict[str, str] | None = None
+        self.capture: str | None = None
+        self.capture_depth = 0
+        self.regular: set[tuple[str, str, str]] = set()
+        self.reserves: set[tuple[str, str, str]] = set()
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attributes = dict(attrs)
+        if tag == "div":
+            if not self.in_schedule and attributes.get("id") == "schedule_detail":
+                self.in_schedule = True
+                self.found_schedule = True
+                self.depth = 1
+            elif self.in_schedule:
+                self.depth += 1
+            if self.row is not None and self.capture is None:
+                classes = (attributes.get("class") or "").split()
+                for field in ("team1", "team2", "cancel", "state"):
+                    if field in classes:
+                        self.capture = field
+                        self.capture_depth = self.depth
+                        break
+        elif tag == "tr" and self.in_schedule:
+            self.row = {
+                "id": attributes.get("id") or "",
+                "team1": "",
+                "team2": "",
+                "cancel": "",
+                "state": "",
+            }
+
+    def handle_data(self, data: str) -> None:
+        if self.row is not None and self.capture is not None:
+            self.row[self.capture] += data
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "tr" and self.row is not None:
+            row = self.row
+            self.row = None
+            home, away = row["team1"].strip(), row["team2"].strip()
+            if "巨人" not in (home, away) and "読売" not in (home, away) and GIANTS not in (home, away):
+                return
+            try:
+                date_match = re.fullmatch(r"date(\d{2})(\d{2})", row["id"])
+                if date_match is None:
+                    raise ValueError("日付がありません")
+                month, day = map(int, date_match.groups())
+                if month != self.month:
+                    raise ValueError("ページと試合の月が一致しません")
+                game_date = datetime(self.year, month, day).date().isoformat()
+                home_key = TEAM_ALIASES[home][0]
+                away_key = TEAM_ALIASES[away][0]
+            except (KeyError, ValueError) as error:
+                raise ValueError("NPB HTMLの巨人戦の日付またはチームを解析できません") from error
+            key = (game_date, away_key, home_key)
+            (self.reserves if "予備日" in row["cancel"] + row["state"] else self.regular).add(key)
+        elif tag == "div" and self.in_schedule:
+            if self.capture is not None and self.capture_depth == self.depth:
+                self.capture = None
+            self.depth -= 1
+            if self.depth == 0:
+                self.in_schedule = False
+
+
+def reserve_matchups(source: str) -> set[tuple[str, str, str]]:
+    match = SOURCE_YEAR_PATTERN.search(source)
+    if not match:
+        raise ValueError("NPB HTMLから対象年と月を取得できません")
+    parser = ReserveDateParser(int(match.group(1)), int(match.group(2)))
+    parser.feed(source)
+    parser.close()
+    if not parser.found_schedule:
+        raise ValueError("NPB HTMLに日程詳細がありません")
+    return parser.reserves - parser.regular
+
+
 def validate_games(
     contents: object, *, allow_empty: bool = False
 ) -> list[dict[str, object]]:
@@ -141,6 +228,9 @@ def validate_games(
         fields = ("date", "away", "home")
         if not isinstance(record, dict) or any(not isinstance(record.get(field), str) for field in fields):
             raise ValueError(f"試合 JSON の games[{index}] が不正です")
+        is_reserve = record.get("is_reserve", False)
+        if not isinstance(is_reserve, bool):
+            raise ValueError(f"試合 JSON の games[{index}] の予備日フラグが不正です")
         start_at = record.get("start_at")
         if start_at is not None and not isinstance(start_at, str):
             raise ValueError(f"試合 JSON の games[{index}] の開始時刻が不正です")
@@ -163,6 +253,9 @@ def validate_games(
             raise ValueError(f"試合 JSON の games[{index}] の日付、時刻、またはチーム名が不正です") from error
         if GIANTS not in (away_name, home_name):
             raise ValueError(f"試合 JSON の games[{index}] は巨人戦ではありません")
+        if is_reserve:
+            print(f"Excluded reserve date: {record['date']} {away_key} @ {home_key}")
+            continue
         identity = (record["date"], away_key, home_key, start_at or "")
         if identity in seen:
             raise ValueError(f"試合 JSON の games[{index}] が重複しています")
@@ -178,6 +271,21 @@ def validate_games(
             game["away_score"], game["home_score"] = scores
         games.append(game)
     return games
+
+
+def games_for_json(games: list[dict[str, object]]) -> dict[str, object]:
+    records = []
+    for game in games:
+        record = {
+            "date": game["date"],
+            "away": TEAM_NAMES[str(game["away"])],
+            "home": TEAM_NAMES[str(game["home"])],
+        }
+        for field in ("away_score", "home_score", "start_at", "place"):
+            if field in game:
+                record[field] = game[field]
+        records.append(record)
+    return {"schema_version": 1, "games": records}
 
 
 def build_event(game: dict[str, object]) -> Event:
@@ -254,6 +362,7 @@ def main() -> None:
     parser.add_argument("--json-output", type=Path, help="Gemini出力JSONの保存先")
     args = parser.parse_args()
 
+    reserve_keys: set[tuple[str, str, str]] = set()
     if args.games_json:
         contents = json.loads(args.games_json.read_text(encoding="utf-8"))
     else:
@@ -266,17 +375,46 @@ def main() -> None:
         if not source_text.strip():
             parser.error("HTMLが空です。")
         year = source_year(source_text)
+        reserve_keys = reserve_matchups(source_text)
         contents = request_games(source_text, year, api_key)
-        write_json(args.json_output, contents)
 
-    games = validate_games(contents)
+    games = validate_games(contents, allow_empty=True)
+    before_filter = len(games)
+    games = [
+        game
+        for game in games
+        if (str(game["date"]), str(game["away"]), str(game["home"])) not in reserve_keys
+    ]
+    if before_filter != len(games):
+        print(f"Excluded {before_filter - len(games)} reserve dates from NPB output.")
     years = {datetime.strptime(str(game["date"]), "%Y-%m-%d").year for game in games}
-    if len(years) != 1:
+    if len(years) > 1:
         raise ValueError("一度に取り込めるのは同一年の試合だけです")
-    year = years.pop()
+    if not years and args.games_json:
+        print("No non-reserve games to import.")
+        return
+    year = years.pop() if years else source_year(source_text)
     if not args.games_json and year != source_year(source_text):
         raise ValueError("試合 JSON の年度がNPBページの年度と一致しません")
+    if not args.games_json:
+        write_json(args.json_output, games_for_json(games))
     snapshot = load_snapshot(year)
+    previous_count = len(snapshot)
+    reserve_event_keys = {
+        (game_date, TEAM_NAMES[away], TEAM_NAMES[home])
+        for game_date, away, home in reserve_keys
+    }
+    snapshot = {
+        uid: event
+        for uid, event in snapshot.items()
+        if not (
+            str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) == "npb"
+            and matchup_key(event) in reserve_event_keys
+            and not has_score(event)
+        )
+    }
+    if len(snapshot) != previous_count:
+        print(f"Removed {previous_count - len(snapshot)} reserve dates from the NPB snapshot.")
     imported = [build_event(game) for game in games]
     snapshot = merge_npb_events(snapshot, imported)
     save_snapshot_events(snapshot, year)

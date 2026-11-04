@@ -646,11 +646,6 @@
       "uid": "npb-3434ef3dac46a08296ebc6b3@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270910\r\nDTEND;VALUE=DATE:20270911\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-5112ac61696f10d753b0fb89@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
-      "start": "2027-09-10T00:00:00+00:00",
-      "uid": "npb-5112ac61696f10d753b0fb89@giants-calendar.local"
-    },
-    {
       "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Hiroshima\r\nDTSTART;VALUE=DATE:20270911\r\nDTEND;VALUE=DATE:20270912\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-9c441a8cde48a10f72bcd597@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2027-09-11T00:00:00+00:00",
       "uid": "npb-9c441a8cde48a10f72bcd597@giants-calendar.local"
@@ -694,11 +689,6 @@
       "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270925\r\nDTEND;VALUE=DATE:20270926\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-1ec842f6b376a837cb48a5e0@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2027-09-25T00:00:00+00:00",
       "uid": "npb-1ec842f6b376a837cb48a5e0@giants-calendar.local"
-    },
-    {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:Yomiuri @ Yakult\r\nDTSTART;VALUE=DATE:20270926\r\nDTEND;VALUE=DATE:20270927\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-324317d5b0a0d4ac355fdd31@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
-      "start": "2027-09-26T00:00:00+00:00",
-      "uid": "npb-324317d5b0a0d4ac355fdd31@giants-calendar.local"
     },
     {
       "ical": "BEGIN:VEVENT\r\nSUMMARY:Hiroshima @ Yomiuri\r\nDTSTART;VALUE=DATE:20271002\r\nDTEND;VALUE=DATE:20271003\r\nDTSTAMP:20261104T044414Z\r\nUID:npb-28026530d1ec1a163c704438@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",

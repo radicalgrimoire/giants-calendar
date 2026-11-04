@@ -65,9 +65,18 @@ def load_snapshot(year: int) -> dict[str, Event]:
 
 
 def merge_source_events(source_events: list[Event], snapshot: dict[str, Event]) -> dict[str, Event]:
-    merged = {uid: copy.deepcopy(event) for uid, event in snapshot.items()}
+    merged = {
+        uid: copy.deepcopy(event)
+        for uid, event in snapshot.items()
+        if "予備日" not in str(event.get("SUMMARY", ""))
+    }
     for event in source_events:
-        merged[event_uid(event)] = copy.deepcopy(event)
+        uid = event_uid(event)
+        if "予備日" in str(event.get("SUMMARY", "")):
+            merged.pop(uid, None)
+            print(f"Excluded reserve date: {uid}")
+        else:
+            merged[uid] = copy.deepcopy(event)
     return merged
 
 
