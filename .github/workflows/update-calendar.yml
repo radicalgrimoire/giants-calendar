@@ -6,7 +6,6 @@ on:
       - ".github/workflows/update-calendar.yml"
       - "requirements.txt"
       - "scripts/**"
-      - "data/calendar-year.txt"
   schedule:
     - cron: "0 19 28-29 2 *"
     - cron: "0 19 * 3-10 *"

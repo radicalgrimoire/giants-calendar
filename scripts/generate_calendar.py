@@ -17,7 +17,6 @@ OUTPUT_PATH = ROOT / "giants.ics"
 GAMES_PATH = ROOT / "data" / "games.json"
 SNAPSHOT_DIRECTORY = ROOT / "data" / "snapshots"
 CANCELLATION_DIRECTORY = ROOT / "data" / "cancellations"
-CALENDAR_YEAR_PATH = ROOT / "data" / "calendar-year.txt"
 LOCAL_STADIUM_PATH = ROOT / "data" / "local-stadium.env"
 JST = ZoneInfo("Asia/Tokyo")
 MATCHUP_PATTERN = re.compile(r"^\s*(.+?)\s+@\s+(.+?)\s*$")
@@ -126,20 +125,6 @@ def load_snapshot(year: int) -> dict[str, Event]:
         record["uid"]: Event.from_ical(record["ical"].encode("utf-8"))
         for record in contents["events"]
     }
-
-
-def current_calendar_year() -> int:
-    return datetime.now(JST).year
-
-
-def active_calendar_year() -> int:
-    if not CALENDAR_YEAR_PATH.exists():
-        return current_calendar_year()
-
-    value = CALENDAR_YEAR_PATH.read_text(encoding="utf-8").strip()
-    if not re.fullmatch(r"\d{4}", value):
-        raise ValueError(f"{CALENDAR_YEAR_PATH.name} の年度が不正です")
-    return int(value)
 
 
 def load_local_stadiums() -> dict[date, str]:
@@ -432,28 +417,63 @@ def build_calendar(
 
 def generate_calendar(year: int) -> tuple[dict[str, Event], Calendar]:
     games = filter_games(select_games(load_snapshot(year)), load_cancellations(year))
+    if any(event_start(event).astimezone(JST).year != year for event in games.values()):
+        raise ValueError(f"{year}年のスナップショットに別の年の試合があります")
     calendar = build_calendar(
         list(games.values()), year, load_local_stadiums()
     )
     return games, calendar
 
 
+def snapshot_years() -> list[int]:
+    years = []
+    for path in SNAPSHOT_DIRECTORY.glob("snapshot-giants-*.json"):
+        match = re.fullmatch(r"snapshot-giants-(\d{4})\.json", path.name)
+        if match is None:
+            raise ValueError(f"スナップショットのファイル名が不正です: {path.name}")
+        years.append(int(match.group(1)))
+    if not years:
+        raise FileNotFoundError(f"スナップショットがありません: {SNAPSHOT_DIRECTORY}")
+    return sorted(years)
+
+
+def generate_all_calendars() -> tuple[dict[str, Event], Calendar]:
+    years = snapshot_years()
+    all_games: dict[str, Event] = {}
+    combined = build_calendar([], years[0], {})
+    for year in years:
+        games, calendar = generate_calendar(year)
+        duplicates = all_games.keys() & games.keys()
+        if duplicates:
+            raise ValueError(f"年度をまたぐ試合UIDの重複があります: {sorted(duplicates)}")
+        all_games.update(games)
+        for component in calendar.subcomponents:
+            if component.name == "VEVENT":
+                combined.add_component(component)
+    return all_games, combined
+
+
 def main() -> None:
-    parser = argparse.ArgumentParser(description="年度別の巨人戦ICSを生成します。")
-    parser.add_argument("--year", type=int, default=active_calendar_year())
+    parser = argparse.ArgumentParser(description="巨人戦ICSを生成します。")
+    parser.add_argument("--year", type=int, help="指定年度のみ生成")
     parser.add_argument("--output", type=Path, help="生成するICSファイルの出力先")
     args = parser.parse_args()
 
-    active_year = active_calendar_year()
-    if args.year != active_year and args.output is None:
-        parser.error("配信年度以外を生成する場合は --output を指定してください。")
+    if args.year is not None and args.output is None:
+        parser.error("年度別に生成する場合は --output を指定してください。")
 
     output_path = args.output or OUTPUT_PATH
     if not output_path.is_absolute():
         output_path = ROOT / output_path
+    output_path = output_path.resolve()
 
-    games, calendar = generate_calendar(args.year)
-    if args.year == active_year and output_path == OUTPUT_PATH:
+    if args.year is not None and output_path == OUTPUT_PATH.resolve():
+        parser.error("年度別ICSの出力先に配信用ICSを指定できません。")
+
+    games, calendar = (
+        generate_calendar(args.year) if args.year is not None else generate_all_calendars()
+    )
+    if args.year is None and output_path == OUTPUT_PATH.resolve():
         save_games(games)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_bytes(calendar.to_ical())
