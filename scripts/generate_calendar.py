@@ -171,6 +171,62 @@ def extract_score(team: str) -> int | None:
     return int(match.group(1)) if match else None
 
 
+def matchup_key(event: Event) -> tuple[str, str, str] | None:
+    match = MATCHUP_PATTERN.match(str(event.get("SUMMARY", "")))
+    if not match:
+        return None
+    away, home = (
+        TEAM_NAMES.get(normalize_team_name(team), normalize_team_name(team))
+        for team in match.groups()
+    )
+    game_date = event_start(event).astimezone(JST).date().isoformat()
+    return game_date, away, home
+
+
+def has_score(event: Event) -> bool:
+    match = MATCHUP_PATTERN.match(str(event.get("SUMMARY", "")))
+    return bool(match and all(extract_score(team) is not None for team in match.groups()))
+
+
+def game_priority(event: Event) -> tuple[bool, bool, bool]:
+    return (
+        has_score(event),
+        isinstance(event.decoded("DTSTART"), datetime),
+        str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) == "npb",
+    )
+
+
+def select_games(events: dict[str, Event]) -> dict[str, Event]:
+    selected: dict[str, Event] = {}
+    matchups: dict[tuple[str, str, str], str] = {}
+    npb_venues: dict[tuple[str, str, str], Event] = {}
+    for uid, event in sorted(events.items()):
+        key = matchup_key(event)
+        if key is None:
+            selected[uid] = event
+            continue
+        if str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) == "npb" and event.get("LOCATION"):
+            previous_venue = npb_venues.get(key)
+            if previous_venue is None or game_priority(event) > game_priority(previous_venue):
+                npb_venues[key] = event
+        previous_uid = matchups.get(key)
+        if previous_uid is not None:
+            previous = selected[previous_uid]
+            if game_priority(event) <= game_priority(previous):
+                continue
+            del selected[previous_uid]
+        selected[uid] = event
+        matchups[key] = uid
+    for key, uid in matchups.items():
+        event = selected[uid]
+        if key in npb_venues and str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) != "npb":
+            event = copy.deepcopy(event)
+            event["LOCATION"] = copy.deepcopy(npb_venues[key]["LOCATION"])
+            event["X-GIANTS-CALENDAR-NPB-LOCATION"] = "true"
+            selected[uid] = event
+    return selected
+
+
 def is_unplayed_past_event(event, now: datetime) -> bool:
     if event_start(event) >= now:
         return False
@@ -298,7 +354,10 @@ def update_location(event, local_stadiums: dict[date, str]) -> None:
     if stadium is not None:
         event["LOCATION"] = stadium
     elif (
-        str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) == "npb"
+        (
+            str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) == "npb"
+            or str(event.get("X-GIANTS-CALENDAR-NPB-LOCATION", "")) == "true"
+        )
         and event.get("LOCATION")
     ):
         return
@@ -337,7 +396,7 @@ def build_calendar(
 
 
 def generate_calendar(year: int) -> tuple[dict[str, Event], Calendar]:
-    games = filter_games(load_snapshot(year), datetime.now(timezone.utc))
+    games = filter_games(select_games(load_snapshot(year)), datetime.now(timezone.utc))
     calendar = build_calendar(
         list(games.values()), year, load_local_stadiums()
     )

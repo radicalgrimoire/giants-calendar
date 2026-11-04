@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import json
 import os
@@ -20,9 +21,15 @@ from icalendar import Event
 
 from generate_calendar import (
     JST,
+    has_score,
+    matchup_key,
     write_json,
 )
-from save_snapshot import event_to_record, load_snapshot, matchup_key, snapshot_path
+from save_snapshot import (
+    event_to_record,
+    load_snapshot,
+    snapshot_path,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -212,6 +219,33 @@ def save_snapshot_events(events: dict[str, Event], year: int) -> None:
     write_json(snapshot_path(year), {"schema_version": 1, "events": records})
 
 
+def merge_npb_events(snapshot: dict[str, Event], imported: list[Event]) -> dict[str, Event]:
+    result = dict(snapshot)
+    previous_by_key = {
+        key: event
+        for event in snapshot.values()
+        if str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) == "npb"
+        if (key := matchup_key(event)) is not None
+    }
+    for event in imported:
+        previous = previous_by_key.get(matchup_key(event))
+        if previous is not None:
+            event = copy.deepcopy(event)
+            if not isinstance(event.decoded("DTSTART"), datetime) and isinstance(
+                previous.decoded("DTSTART"), datetime
+            ):
+                for field in ("DTSTART", "DTEND", "DURATION"):
+                    event.pop(field, None)
+                    if field in previous:
+                        event[field] = copy.deepcopy(previous[field])
+            if not has_score(event) and has_score(previous):
+                event["SUMMARY"] = copy.deepcopy(previous["SUMMARY"])
+            event["UID"] = copy.deepcopy(previous["UID"])
+            event.add("SEQUENCE", int(previous.get("SEQUENCE", 0)) + 1)
+        result[str(event["UID"])] = event
+    return result
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="NPB日程ページから巨人戦を取り込みます。")
     source = parser.add_mutually_exclusive_group(required=True)
@@ -244,18 +278,7 @@ def main() -> None:
         raise ValueError("試合 JSON の年度がNPBページの年度と一致しません")
     snapshot = load_snapshot(year)
     imported = [build_event(game) for game in games]
-    imported_keys = {matchup_key(event) for event in imported}
-    snapshot = {
-        uid: event
-        for uid, event in snapshot.items()
-        if matchup_key(event) not in imported_keys
-    }
-    snapshot.update(
-        {
-            str(event["UID"]): event
-            for event in imported
-        }
-    )
+    snapshot = merge_npb_events(snapshot, imported)
     save_snapshot_events(snapshot, year)
     print(f"Imported {len(imported)} games into {snapshot_path(year).relative_to(ROOT)}")
 

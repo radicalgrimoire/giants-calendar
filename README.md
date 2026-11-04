@@ -1,108 +1,15 @@
 # Giants Calendar
 
-読売ジャイアンツの公式 Google Calendar を加工し、対戦カードと回戦数を付けた購読用 ICS カレンダーです。
+読売ジャイアンツの試合日程を購読できるカレンダーです。対戦カード、回戦数、試合結果を表示します。
 
 ## Google Calendar への追加
 
-Google Calendar の「他のカレンダー」から「URL で追加」を選び、次の URL を登録します。
+Google Calendar の「他のカレンダー」から「URL で追加」を選び、次の URL を登録してください。
 
 ```text
 https://raw.githubusercontent.com/radicalgrimoire/giants-calendar/main/giants.ics
 ```
 
-Google 側が URL を定期取得するため、ICS ファイルの更新は後から反映されます。反映時刻は Google Calendar に依存し、即時ではありません。
+予定は自動更新されますが、Google Calendar への反映には時間がかかる場合があります。開始時刻が未定の試合は終日予定として表示されます。
 
-## 更新ルール
-
-- 毎日 12:00 JST に公式カレンダーを取得し、試合の年度ごとに `data/snapshots/snapshot-giants-YYYY.json` へマージします。公式から消えた予定も削除せず、スナップショットに保持し続けます。
-- 1月1日を除く毎日 16:00 JST に **Update Giants calendar** が `data/calendar-year.txt` で指定した年度のスナップショットから `data/games.json` を更新し、`giants.ics` を全量再生成します。未設定の場合は当年を使います。
-- 毎年1月1日 16:00 JST に **Renew Giants calendar year** が前年の `giants.ics` を `backlog/giants-YYYY.ics` へ退避してから、新年を `data/calendar-year.txt` に設定し、新年分の `data/games.json` と `giants.ics` を再生成します。手動実行もできますが、前年ファイルを誤って退避しないよう1月1日以外は失敗します。
-- 毎日 16:30 JST に配信中の `giants.ics` を検査し、同一のJST日付に2試合以上がある場合は、該当イベントを表示して **Check duplicate Giants game dates** ワークフローを失敗させます。この検査はデータを変更しません。
-- `data/games.json` と `giants.ics` は配信年度のスナップショットを元に生成します。過去日時で得点情報のない予定は、中止または不成立の可能性があるため除外します。
-- `giants.ics` は配信年度の試合だけを収録します。NPB公式で日付は発表済みでも開始時刻が未定の試合は終日予定として収録します。
-- `away @ home` の予定タイトルを解析し、ホームチームを先にした `広島東洋カープ vs 読売ジャイアンツ 16回戦` 形式へ置き換えます。パ・リーグとの対戦には `【交流戦】` を付け、終了済み試合にはホーム・ビジター順の得点を `（2 - 8）` として末尾へ追加します。
-- 回戦数は年と対戦カードごとに、日付順で付与します。得点付きの試合を重複なく数え、セ・リーグ各5球団との25試合ずつ、パ・リーグ各6球団との3試合ずつ（計143試合）の消化を確認できた場合、その後の試合をクライマックスシリーズとして `【CS】読売ジャイアンツ vs 横浜DeNAベイスターズ 第1戦` 形式で付与します。CSの戦数は通常の回戦数とは別に対戦カードごとに数えます。消化を確認できない場合は通常の表記を維持し、全カードの消化前に特定カードが規定試合数を超えた場合は警告を出します。
-- ジャイアンツ主催試合の場所には `東京ドーム` を設定します。NPB日程に球場表記がある場合はその表記を使用し、地方開催日は `data/local-stadium.env` に `YYYY-MM-DD=球場名` を追記すると、JST の試合日で照合してその球場名を優先設定します。空行と `#` から始まるコメント行は無視します。
-
-## NPB日程からの補完
-
-公式Google Calendarにない期間は、GitHub Actions の **Import NPB schedule** を手動実行し、NPB日程詳細ページのHTTPS URLを `source_url` に入力します。ワークフローはHTMLを保存し、Geminiに巨人戦だけをJSONへ抽出させ、日付・時刻・チーム・得点を検証してから年度別スナップショットへマージします。開始時刻や得点が未発表の場合は省略でき、開始時刻未定の試合は終日予定になります。`data/games.json` と `giants.ics` はこのワークフローでは更新せず、既存の定時生成で更新します。
-
-2027年分は3月から10月までのNPB公式月別ページを取り込み済みです。取得HTMLと抽出JSONは `data/imports/2027/` に保存し、NPBで開始時刻が未発表の試合は終日予定として配信します。
-
-リポジトリのActions secretに `GEMINI_APIKEY` が必要です。たとえば2026年3月分は次のURLです。
-
-```text
-https://npb.jp/games/2027/schedule_03_detail.html
-```
-
-Geminiを呼ばずに、保存済みのJSONを検証して取り込む場合は次を実行します。
-
-```powershell
-py scripts/import_npb_schedule.py --games-json data/npb-schedule-games.json
-```
-
-ローカルで実行する場合は、Python 3.11 以降で次を実行します。
-
-```powershell
-py -m pip install -r requirements.txt
-py scripts/generate_calendar.py
-```
-
-### 過去年のカレンダー復元
-
-ローカル環境で、NPB公式の3月から11月までの月別日程ページを取得し、指定年の巨人戦スナップショットとICSをまとめて作成できます。Gemini APIキーを環境変数へ設定して実行します。
-
-```powershell
-$env:GEMINI_APIKEY = "..."
-py scripts/import_npb_year.py --year 2025
-py scripts/import_npb_year.py --year 2024
-```
-
-取得したHTMLとGemini出力JSONは `data/imports/YYYY/`、スナップショットは `data/snapshots/snapshot-giants-YYYY.json`、ICSは `backlog/giants-YYYY.ics` に保存されます。途中の月で取得・抽出・検証が失敗した場合、スナップショットとICSは更新しません。
-
-既存のスナップショットからICSだけを別名で生成する場合は、次を実行します。
-
-```powershell
-py scripts/generate_calendar.py --year 2025 --output backlog/giants-2025.ics
-```
-
-## 今後のデータ方針（引き継ぎ用）
-
-現在のGoogle Calendarを主な情報源とする方式では、試合結果の反映遅延または未反映により、終了後も得点のない予定が残ることがあります。生成処理は得点のない過去予定を配信対象から除外するため、この状態では試合が `data/games.json` と `giants.ics` から消えます。
-
-今後は、**NPB公式の日程詳細ページを試合データの正本**、Google Calendarを予定の補足情報とする構成へ移行する。
-
-```text
-NPB公式の日程詳細HTML
-  -> Geminiによる全12球団・全試合の統一JSON抽出
-  -> 検証済みの年度別NPBスナップショット（正本）
-  -> 読売ジャイアンツ戦だけを抽出
-  -> data/games.json / giants.ics
-
-Google Calendar
-  -> NPB正本にない予定の補足
-```
-
-### 統合の優先順位
-
-同一試合は、日付・ホームチーム・ビジターチームをキーとして照合する。チーム名は各情報源の表記を正規化して比較し、開始時刻が変更されても同一試合として扱う。NPBの得点付き結果を最優先とし、Google由来の得点なし予定で上書きしてはならない。
-
-```text
-NPB（得点あり） > Google（得点あり） > Google（得点なし）
-```
-
-NPB結果を取り込んだ際は、同一試合のGoogle由来イベントを得点付きNPBイベントで置換する。以後のGoogleカレンダー取得時も、NPB結果と一致するGoogle由来イベントは取り込まない。
-
-### Gemini出力の検証要件
-
-GeminiはNPB HTMLの表記揺れを統一JSONへ変換する役割に限定し、出力を無検証で正本にしてはならない。少なくとも次を検証する。
-
-- 日付・開始時刻・得点の形式と値
-- 12球団のチーム名への正規化、およびホームとビジターの相違
-- 同一試合の重複
-- 日ごとの試合数が6試合以下であること
-- HTML上の試合数と抽出JSONの件数が一致すること
-- 既存の確定結果・試合が不自然に消えないこと
-
-全試合JSONは過去シーズン分も保持する。配信用ICSはジャイアンツ戦だけを抽出するため、正本データを全12球団分に拡張しても、購読用 `giants.ics` の容量は大きく増えない。
+試合日程は変更される場合があります。最新情報は[読売ジャイアンツ公式サイト](https://www.giants.jp/game/)などをご確認ください。

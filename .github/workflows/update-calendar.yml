@@ -3,6 +3,7 @@ name: Update Giants calendar
 on:
   push:
     paths:
+      - ".github/workflows/save-snapshot.yml"
       - ".github/workflows/update-calendar.yml"
       - "requirements.txt"
       - "scripts/**"
@@ -16,10 +17,19 @@ permissions:
   contents: write
 
 jobs:
+  save-snapshot:
+    uses: ./.github/workflows/save-snapshot.yml
+
   update-calendar:
+    needs: save-snapshot
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - name: Restore updated snapshots
+        uses: actions/download-artifact@v4
+        with:
+          name: giants-calendar-snapshots
+          path: data/snapshots/
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"

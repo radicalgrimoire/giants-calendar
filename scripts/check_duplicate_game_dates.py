@@ -1,62 +1,86 @@
 #!/usr/bin/env python3
-"""配信用カレンダー内の同日複数試合を検出する。"""
+"""配信対象の試合データ内の同日複数試合を検出する。"""
 
 from __future__ import annotations
 
+import json
 import sys
 from collections import defaultdict
-from datetime import date, datetime, time, timezone
+from dataclasses import dataclass
+from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from icalendar import Calendar, Event
+from icalendar import Event
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CALENDAR_PATH = ROOT / "giants.ics"
+GAMES_PATH = ROOT / "data" / "games.json"
 JST = ZoneInfo("Asia/Tokyo")
 
 
-def event_start(event: Event) -> datetime:
-    value = event.decoded("DTSTART")
-    if isinstance(value, datetime):
-        if value.tzinfo is None:
-            return value.replace(tzinfo=timezone.utc)
-        return value.astimezone(timezone.utc)
-    if isinstance(value, date):
-        return datetime.combine(value, time.min, tzinfo=timezone.utc)
-    raise ValueError("VEVENT に DTSTART がありません")
+@dataclass(frozen=True)
+class Game:
+    uid: str
+    start: datetime
+    ical: str
 
 
-def duplicate_dates(calendar: Calendar) -> dict[date, list[Event]]:
-    events_by_date: dict[date, list[Event]] = defaultdict(list)
-    for component in calendar.walk():
-        if component.name == "VEVENT":
-            events_by_date[event_start(component).astimezone(JST).date()].append(component)
+def load_games(path: Path) -> list[Game]:
+    contents = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(contents, dict) or contents.get("schema_version") != 1:
+        raise ValueError("試合 JSON の schema_version が不正です")
+    records = contents.get("events")
+    if not isinstance(records, list):
+        raise ValueError("試合 JSON の events が不正です")
+
+    games = []
+    for index, record in enumerate(records, start=1):
+        if not isinstance(record, dict) or any(
+            not isinstance(record.get(field), str) or not record[field]
+            for field in ("uid", "start", "ical")
+        ):
+            raise ValueError(f"試合 JSON の events[{index}] が不正です")
+        try:
+            start = datetime.fromisoformat(record["start"])
+        except ValueError as error:
+            raise ValueError(f"試合 JSON の events[{index}] の開始日時が不正です") from error
+        if start.utcoffset() is None:
+            raise ValueError(f"試合 JSON の events[{index}] にタイムゾーンがありません")
+        games.append(Game(uid=record["uid"], start=start, ical=record["ical"]))
+    return games
+
+
+def duplicate_dates(games: list[Game]) -> dict[date, list[Game]]:
+    games_by_date: dict[date, list[Game]] = defaultdict(list)
+    for game in games:
+        games_by_date[game.start.astimezone(JST).date()].append(game)
     return {
         game_date: events
-        for game_date, events in events_by_date.items()
+        for game_date, events in games_by_date.items()
         if len(events) > 1
     }
 
 
 def main() -> None:
-    if not CALENDAR_PATH.exists():
-        raise FileNotFoundError(f"カレンダーファイルがありません: {CALENDAR_PATH.relative_to(ROOT)}")
-
-    duplicates = duplicate_dates(Calendar.from_ical(CALENDAR_PATH.read_bytes()))
+    duplicates = duplicate_dates(load_games(GAMES_PATH))
     if not duplicates:
         print("同一日に複数の試合はありません。")
         return
 
     print("同一日に複数の試合が検出されました:", file=sys.stderr)
-    for game_date, events in sorted(duplicates.items()):
+    for game_date, games in sorted(duplicates.items()):
         print(f"- {game_date}:", file=sys.stderr)
-        for event in sorted(events, key=event_start):
-            start = event_start(event).astimezone(JST).strftime("%H:%M")
+        for game in sorted(games, key=lambda item: item.start):
+            event = Event.from_ical(game.ical)
+            start = event.decoded("DTSTART")
+            label = (
+                game.start.astimezone(JST).strftime("%H:%M")
+                if isinstance(start, datetime)
+                else "終日"
+            )
             summary = str(event.get("SUMMARY", ""))
-            uid = str(event.get("UID", ""))
-            print(f"  - {start} {summary} (UID: {uid})", file=sys.stderr)
+            print(f"  - {label} {summary} (UID: {game.uid})", file=sys.stderr)
     raise SystemExit(1)
 
 
