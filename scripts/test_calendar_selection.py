@@ -107,14 +107,8 @@ class CalendarSelectionTests(unittest.TestCase):
             with (
                 patch.object(save_snapshot, "SNAPSHOT_DIRECTORY", root),
                 patch.object(generate_calendar, "SNAPSHOT_DIRECTORY", root),
+                patch.object(generate_calendar, "CANCELLATION_DIRECTORY", root),
                 patch.object(generate_calendar, "GAMES_PATH", root / "games.json"),
-                patch.object(
-                    generate_calendar,
-                    "filter_games",
-                    side_effect=lambda events, now: generate_calendar_filter(
-                        events, datetime(2026, 1, 1, tzinfo=timezone.utc)
-                    ),
-                ),
             ):
                 save_snapshot.save_snapshot([npb])
                 save_snapshot.save_snapshot([google])
@@ -129,9 +123,6 @@ class CalendarSelectionTests(unittest.TestCase):
                 events = [event for event in output.walk() if event.name == "VEVENT"]
                 self.assertEqual(len(events), 1)
                 self.assertEqual(events[0].decoded("DTSTART"), datetime(2027, 3, 26, 18, tzinfo=JST))
-
-
-generate_calendar_filter = generate_calendar.filter_games
 
 
 if __name__ == "__main__":

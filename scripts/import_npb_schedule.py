@@ -83,6 +83,10 @@ def request_games(source: str, year: int, api_key: str) -> dict:
             source,
         )
     )
+    return request_gemini_json(prompt, api_key)
+
+
+def request_gemini_json(prompt: str, api_key: str) -> dict:
     payload = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": 0, "responseMimeType": "application/json"},

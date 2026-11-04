@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT / "giants.ics"
 GAMES_PATH = ROOT / "data" / "games.json"
 SNAPSHOT_DIRECTORY = ROOT / "data" / "snapshots"
+CANCELLATION_DIRECTORY = ROOT / "data" / "cancellations"
 CALENDAR_YEAR_PATH = ROOT / "data" / "calendar-year.txt"
 LOCAL_STADIUM_PATH = ROOT / "data" / "local-stadium.env"
 JST = ZoneInfo("Asia/Tokyo")
@@ -227,23 +228,57 @@ def select_games(events: dict[str, Event]) -> dict[str, Event]:
     return selected
 
 
-def is_unplayed_past_event(event, now: datetime) -> bool:
-    if event_start(event) >= now:
-        return False
+def validate_cancellations(contents: object, year: int) -> list[dict[str, str]]:
+    if not isinstance(contents, dict) or contents.get("schema_version") != 1:
+        raise ValueError("中止試合 JSON の schema_version が不正です")
+    records = contents.get("games")
+    if not isinstance(records, list):
+        raise ValueError("中止試合 JSON に games がありません")
+    games: list[dict[str, str]] = []
+    seen: set[tuple[str, str, str]] = set()
+    for record in records:
+        if not isinstance(record, dict) or any(
+            not isinstance(record.get(field), str)
+            for field in ("date", "away", "home", "status")
+        ):
+            raise ValueError("中止試合 JSON の試合情報が不正です")
+        game_date, away, home, status = (
+            record["date"], record["away"], record["home"], record["status"]
+        )
+        try:
+            parsed_date = date.fromisoformat(game_date)
+        except ValueError as error:
+            raise ValueError("中止試合 JSON の日付が不正です") from error
+        if (
+            parsed_date.isoformat() != game_date
+            or parsed_date.year != year
+            or away not in TEAM_NAMES.values()
+            or home not in TEAM_NAMES.values()
+            or away == home
+            or status != "中止"
+        ):
+            raise ValueError("中止試合 JSON の日付、対戦カード、または状態が不正です")
+        key = (game_date, away, home)
+        if key in seen:
+            raise ValueError("中止試合 JSON に重複があります")
+        seen.add(key)
+        games.append({"date": game_date, "away": away, "home": home, "status": status})
+    return games
 
-    match = MATCHUP_PATTERN.match(str(event.get("SUMMARY", "")))
-    if not match:
-        return False
-    raw_away, raw_home = match.groups()
-    return extract_score(raw_away) is None or extract_score(raw_home) is None
+
+def load_cancellations(year: int) -> list[dict[str, str]]:
+    path = CANCELLATION_DIRECTORY / f"cancellations-{year}.json"
+    if not path.exists():
+        print(f"No cancellation data for {year}; no confirmed cancellations will be excluded.", file=sys.stderr)
+        return []
+    return validate_cancellations(json.loads(path.read_text(encoding="utf-8")), year)
 
 
-def filter_games(events: dict[str, Event], now: datetime) -> dict[str, Event]:
-    return {
-        uid: event
-        for uid, event in events.items()
-        if not is_unplayed_past_event(event, now)
-    }
+def filter_games(
+    events: dict[str, Event], cancellations: list[dict[str, str]]
+) -> dict[str, Event]:
+    cancelled = {(game["date"], game["away"], game["home"]) for game in cancellations}
+    return {uid: event for uid, event in events.items() if matchup_key(event) not in cancelled}
 
 
 def regular_season_end(events: list[Event]) -> datetime | None:
@@ -396,7 +431,7 @@ def build_calendar(
 
 
 def generate_calendar(year: int) -> tuple[dict[str, Event], Calendar]:
-    games = filter_games(select_games(load_snapshot(year)), datetime.now(timezone.utc))
+    games = filter_games(select_games(load_snapshot(year)), load_cancellations(year))
     calendar = build_calendar(
         list(games.values()), year, load_local_stadiums()
     )

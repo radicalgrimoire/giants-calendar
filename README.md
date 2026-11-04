@@ -10,6 +10,6 @@ Google Calendar の「他のカレンダー」から「URL で追加」を選び
 https://raw.githubusercontent.com/radicalgrimoire/giants-calendar/main/giants.ics
 ```
 
-予定は自動更新されますが、Google Calendar への反映には時間がかかる場合があります。開始時刻が未定の試合は終日予定として表示され、予備日は含まれません。
+予定は自動更新されますが、Google Calendar への反映には時間がかかる場合があります。開始時刻が未定の試合は終日予定として表示され、予備日は含まれません。中止情報は原則として毎日確認するため、反映まで時間がかかる場合があります。
 
 試合日程は変更される場合があります。最新情報は[読売ジャイアンツ公式サイト](https://www.giants.jp/game/)などをご確認ください。
