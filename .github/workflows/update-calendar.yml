@@ -8,14 +8,34 @@ on:
       - "scripts/**"
       - "data/calendar-year.txt"
   schedule:
-    - cron: "0 19 * * *"
+    - cron: "0 19 28-29 2 *"
+    - cron: "0 19 * 3-10 *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
+  check-season:
+    runs-on: ubuntu-latest
+    outputs:
+      run_update: ${{ steps.season.outputs.run_update }}
+    steps:
+      - id: season
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            case "$(TZ=Asia/Tokyo date +%m-%d)" in
+              03-*|04-*|05-*|06-*|07-*|08-*|09-*|10-*|11-01) ;;
+              *) echo "run_update=false" >> "$GITHUB_OUTPUT"; exit 0 ;;
+            esac
+          fi
+          echo "run_update=true" >> "$GITHUB_OUTPUT"
+
   update-calendar:
+    needs: check-season
+    if: ${{ needs.check-season.outputs.run_update == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
