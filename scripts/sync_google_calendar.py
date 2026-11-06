@@ -13,6 +13,7 @@ from icalendar import Calendar
 ROOT = Path(__file__).resolve().parents[1]
 ICS_PATH = ROOT / "giants.ics"
 SYNC_MARKER = "giantsCalendarSync"
+API_RETRIES = 6
 
 
 def google_event_id(uid: str) -> str:
@@ -82,7 +83,7 @@ def list_managed_events(service, calendar_id: str) -> dict[str, dict]:
                 maxResults=2500,
                 pageToken=page_token,
             )
-            .execute()
+            .execute(num_retries=API_RETRIES)
         )
         for event in response.get("items", []):
             events[event["id"]] = event
@@ -119,18 +120,22 @@ def sync_events(
 
         existing = existing_events.pop(event_id, None)
         if existing is None:
-            service.events().insert(calendarId=calendar_id, body=event).execute()
+            service.events().insert(
+                calendarId=calendar_id, body=event
+            ).execute(num_retries=API_RETRIES)
             created += 1
         elif not event_matches(existing, event):
             service.events().update(
                 calendarId=calendar_id,
                 eventId=event_id,
                 body=event,
-            ).execute()
+            ).execute(num_retries=API_RETRIES)
             updated += 1
 
     for event_id in existing_events:
-        service.events().delete(calendarId=calendar_id, eventId=event_id).execute()
+        service.events().delete(
+            calendarId=calendar_id, eventId=event_id
+        ).execute(num_retries=API_RETRIES)
 
     return created, updated, len(existing_events)
 

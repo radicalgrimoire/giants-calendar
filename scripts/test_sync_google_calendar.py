@@ -26,10 +26,13 @@ def make_ical_event(*, uid: str = "game-1@example.com") -> Event:
 
 
 class Request:
-    def __init__(self, response=None):
+    def __init__(self, response=None, calls=None):
         self.response = response or {}
+        self.calls = calls
 
-    def execute(self):
+    def execute(self, *, num_retries=0):
+        if self.calls is not None:
+            self.calls.append(("execute", num_retries))
         return self.response
 
 
@@ -40,19 +43,19 @@ class Events:
 
     def list(self, **kwargs):
         self.calls.append(("list", kwargs))
-        return Request({"items": self.existing})
+        return Request({"items": self.existing}, self.calls)
 
     def insert(self, **kwargs):
         self.calls.append(("insert", kwargs))
-        return Request()
+        return Request(calls=self.calls)
 
     def update(self, **kwargs):
         self.calls.append(("update", kwargs))
-        return Request()
+        return Request(calls=self.calls)
 
     def delete(self, **kwargs):
         self.calls.append(("delete", kwargs))
-        return Request()
+        return Request(calls=self.calls)
 
 
 class Service:
@@ -113,9 +116,22 @@ class SyncGoogleCalendarTests(unittest.TestCase):
         self.assertEqual(counts, (1, 1, 1))
         self.assertEqual(
             [call[0] for call in events.calls],
-            ["list", "update", "insert", "delete"],
+            [
+                "list",
+                "execute",
+                "update",
+                "execute",
+                "insert",
+                "execute",
+                "delete",
+                "execute",
+            ],
         )
-        self.assertEqual(events.calls[-1][1]["eventId"], "stale-event")
+        delete_call = next(call for call in events.calls if call[0] == "delete")
+        self.assertEqual(delete_call[1]["eventId"], "stale-event")
+        self.assertTrue(
+            all(call[1] == 6 for call in events.calls if call[0] == "execute")
+        )
 
 
 if __name__ == "__main__":
