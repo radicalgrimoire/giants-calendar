@@ -7,8 +7,7 @@ on:
       - "requirements.txt"
       - "scripts/**"
   schedule:
-    - cron: "0 19 28-29 2 *"
-    - cron: "0 19 * 3-10 *"
+    - cron: "0 19 * * *"
   workflow_dispatch:
 
 permissions:
@@ -55,3 +54,24 @@ jobs:
           git add -A
           git diff --cached --quiet || git commit -m "Update Giants calendar"
           git push
+      - name: Sync Google Calendar
+        env:
+          GIANTS_CALENDER_API: ${{ secrets.GIANTS_CALENDER_API }}
+          GIANTS_CALENDAR_ID: ${{ vars.GIANTS_CALENDAR_ID }}
+        run: python scripts/sync_google_calendar.py
+
+  sync-offseason:
+    needs: check-season
+    if: ${{ github.event_name == 'schedule' && needs.check-season.outputs.run_update == 'false' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements.txt
+      - name: Sync Google Calendar
+        env:
+          GIANTS_CALENDER_API: ${{ secrets.GIANTS_CALENDER_API }}
+          GIANTS_CALENDAR_ID: ${{ vars.GIANTS_CALENDAR_ID }}
+        run: python scripts/sync_google_calendar.py
