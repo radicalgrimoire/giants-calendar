@@ -1,0 +1,33 @@
+name: Sync Giants Google calendar
+
+on:
+  workflow_run:
+    workflows:
+      - Update Giants calendar
+    types:
+      - completed
+  workflow_dispatch:
+
+concurrency:
+  group: sync-giants-google-calendar
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements.txt
+      - name: Sync Google Calendar
+        env:
+          GIANTS_CALENDER_API: ${{ secrets.GIANTS_CALENDER_API }}
+          GIANTS_CALENDAR_ID: ${{ vars.GIANTS_CALENDAR_ID }}
+        run: python scripts/sync_google_calendar.py

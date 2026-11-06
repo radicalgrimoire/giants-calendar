@@ -18,7 +18,7 @@ https://raw.githubusercontent.com/radicalgrimoire/giants-calendar/main/giants.ic
 
 Google Cloud で Google Calendar API を有効にし、サービスアカウントを作成します。同期先カレンダーをそのサービスアカウントのメールアドレスと「予定の変更」権限で共有してください。サービスアカウントの JSON 鍵全体を GitHub リポジトリの **Settings → Secrets and variables → Actions → New repository secret** に `GIANTS_CALENDER_API` という名前で登録します（`CALENDER` の綴りで登録したSecret名に合わせています）。
 
-同じ Actions 設定の **Variables** タブで `GIANTS_CALENDAR_ID` を作成し、Google カレンダーの「設定と共有」→「カレンダーの統合」にあるカレンダーIDを値に設定してください。Workflowは毎日1回実行し、シーズン中はICSを更新してから、シーズン外は既存ICSを使ってGoogle Calendar APIで予定を追加・更新します。ICSからなくなった同期済み予定は削除します。サービスアカウントの JSON 鍵は公開せず、GitHub Secretにのみ保存してください。
+同じ Actions 設定の **Variables** タブで `GIANTS_CALENDAR_ID` を作成し、Google カレンダーの「設定と共有」→「カレンダーの統合」にあるカレンダーIDを値に設定してください。日程更新Workflowの完了後に、別の同期WorkflowがGoogle Calendar APIで予定を追加・更新します。日程更新がない日も既存ICSで同期し、ICSからなくなった同期済み予定は削除します。同期WorkflowはActionsから手動実行することもできます。サービスアカウントの JSON 鍵は公開せず、GitHub Secretにのみ保存してください。
 
 同期先をGoogleカレンダーとして一般公開する場合は、Google カレンダーの「設定と共有」→「アクセス権限」で一般公開を有効にし、「カレンダーの統合」から公開URLを取得してください。
 
