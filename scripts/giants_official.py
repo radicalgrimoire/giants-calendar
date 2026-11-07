@@ -81,11 +81,11 @@ def detail_times(game_id: str, game_date: str) -> tuple[datetime, datetime] | No
     return start.astimezone(JST), end.astimezone(JST)
 
 
-def description(day: dict) -> str:
+def description(day: dict, url_overrides: dict[str, str]) -> str:
     lines = []
     game = day["game"]
     if game.get("url"):
-        lines.extend(["試合詳細：", game["url"]])
+        lines.extend(["試合詳細：", url_overrides.get(game["url"], game["url"])])
     events = day.get("events", [])
     if not isinstance(events, list):
         raise ValueError(f"イベント情報が不正です: {day['date']}")
@@ -98,7 +98,7 @@ def description(day: dict) -> str:
                 raise ValueError(f"イベント名が不正です: {day['date']}")
             lines.append(f"・{event['title']}")
             if event.get("url"):
-                lines.append(event["url"])
+                lines.append(url_overrides.get(event["url"], event["url"]))
     return "\n".join(lines)
 
 
@@ -148,10 +148,14 @@ def scheduled_start(day: dict) -> datetime | None:
     return start if start.time() != time.min else None
 
 
-def merge_games(games: dict, days: list[dict], matchup_key, previous: dict | None = None) -> tuple[dict, dict[str, str]]:
+def merge_games(
+    games: dict, days: list[dict], matchup_key, previous: dict | None = None,
+    url_overrides: dict[str, str] | None = None,
+) -> tuple[dict, dict[str, str]]:
     result = dict(games)
     by_match = {key: uid for uid, event in result.items() if (key := matchup_key(event))}
     previous = previous or {}
+    url_overrides = url_overrides or {}
     descriptions = {}
     seen = set()
     for day in days:
@@ -208,11 +212,15 @@ def merge_games(games: dict, days: list[dict], matchup_key, previous: dict | Non
             away, home = key[1:]
             event["SUMMARY"] = f"{away} ({scores[0]}) @ {home} ({scores[1]})"
         result[uid] = event
-        descriptions[uid] = description(day)
+        descriptions[uid] = description(day, url_overrides)
     return result, descriptions
 
 
-def add_calendar_details(calendar, days: list[dict], descriptions: dict[str, str]) -> None:
+def add_calendar_details(
+    calendar, days: list[dict], descriptions: dict[str, str],
+    url_overrides: dict[str, str] | None = None,
+) -> None:
+    url_overrides = url_overrides or {}
     for event in calendar.walk("VEVENT"):
         text = descriptions.get(str(event.get("UID")), "")
         if text:
@@ -238,6 +246,6 @@ def add_calendar_details(calendar, days: list[dict], descriptions: dict[str, str
         if info.get("location"):
             event.add("LOCATION", info["location"])
         if info.get("url"):
-            event.add("DESCRIPTION", info["url"])
+            event.add("DESCRIPTION", url_overrides.get(info["url"], info["url"]))
         event.add("STATUS", "CONFIRMED")
         calendar.add_component(event)
