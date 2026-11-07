@@ -37,6 +37,7 @@ class GiantsOfficialTests(unittest.TestCase):
             "game": {
                 "id": "20270326_8003_1", "home": "巨人", "away": "中日",
                 "status": "after", "home_score": 4, "away_score": 3,
+                "location": "東京ドーム",
                 "url": "https://www.giants.jp/game/20270326_8003_1/",
             },
             "events": [{"title": "イベント", "url": "https://example.com/"}],
@@ -52,6 +53,7 @@ class GiantsOfficialTests(unittest.TestCase):
         giants_official.add_calendar_details(calendar, [day], descriptions)
         output = Calendar.from_ical(calendar.to_ical()).walk("VEVENT")[0]
         self.assertEqual(str(output["UID"]), uid)
+        self.assertEqual(str(output["LOCATION"]), generate_calendar.HOME_STADIUMS["Yomiuri"])
         self.assertIn("（4 - 3）", str(output["SUMMARY"]))
         self.assertIn("試合結果：G4 - D3 勝利", str(output["DESCRIPTION"]))
         self.assertIn("https://www.giants.jp/game/20270326_8003_1/", str(output["DESCRIPTION"]))

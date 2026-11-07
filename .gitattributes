@@ -1,1 +1,2 @@
+# Preserve iCalendar CRLF line endings in Git and the working tree.
 *.ics -text

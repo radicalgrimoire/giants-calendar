@@ -14,6 +14,8 @@ https://raw.githubusercontent.com/radicalgrimoire/giants-calendar/main/giants.ic
 
 試合日程は変更される場合があります。最新情報は[読売ジャイアンツ公式サイト](https://www.giants.jp/game/)などをご確認ください。
 
+ICS は iCalendar の仕様に合わせて CRLF で生成します。Git の改行変換は無効にし、配信用・アーカイブともに保存時の CRLF を維持します。
+
 ## 球団公式の日程取得テスト
 
 GitHub Actions の「Probe Giants schedule」は、Playwright で球団公式の日程ページを開き、指定月（`YYYYMM`）のイベント名をログに表示する手動実行用のテストです。ICS や Google カレンダーは更新しません。取得できない場合やデータ形式が変わった場合は失敗します。

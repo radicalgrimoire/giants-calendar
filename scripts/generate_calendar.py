@@ -54,6 +54,9 @@ TEAM_NAMES = {
     "Orix": "オリックス・バファローズ",
     "Seibu": "埼玉西武ライオンズ",
 }
+HOME_STADIUMS_BY_TEAM = {
+    TEAM_NAMES[team]: stadium for team, stadium in HOME_STADIUMS.items()
+}
 PACIFIC_LEAGUE_TEAMS = {
     "福岡ソフトバンクホークス",
     "北海道日本ハムファイターズ",
@@ -375,7 +378,11 @@ def update_location(event, local_stadiums: dict[date, str]) -> None:
     stadium = local_stadiums.get(game_date)
     if stadium is not None:
         event["LOCATION"] = stadium
-    elif (
+        return
+
+    home = normalize_team_name(raw_home)
+    home_stadium = HOME_STADIUMS.get(home) or HOME_STADIUMS_BY_TEAM.get(home)
+    if (
         (
             str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) == "npb"
             or str(event.get("X-GIANTS-CALENDAR-NPB-LOCATION", "")) == "true"
@@ -383,9 +390,11 @@ def update_location(event, local_stadiums: dict[date, str]) -> None:
         )
         and event.get("LOCATION")
     ):
+        if home_stadium and str(event["LOCATION"]) == home_stadium.partition(",")[0]:
+            event["LOCATION"] = home_stadium
         return
-    elif stadium := HOME_STADIUMS.get(normalize_team_name(raw_home)):
-        event["LOCATION"] = stadium
+    if home_stadium:
+        event["LOCATION"] = home_stadium
 
 
 def build_calendar(

@@ -69,6 +69,30 @@ class CalendarSelectionTests(unittest.TestCase):
         event_override = next(item for item in output_override.walk() if item.name == "VEVENT")
         self.assertEqual(str(event_override["LOCATION"]), "local override")
 
+    def test_known_official_home_venue_keeps_full_address(self):
+        for home in ("Yomiuri", "読売ジャイアンツ"):
+            for source in ("X-GIANTS-CALENDAR-OFFICIAL-LOCATION", "X-GIANTS-CALENDAR-NPB-LOCATION"):
+                with self.subTest(home=home, source=source):
+                    game = google_event(summary=f"Chunichi @ {home}")
+                    game.add("LOCATION", "東京ドーム")
+                    game.add(source, "true")
+                    output = generate_calendar.build_calendar([game], 2027, {})
+                    event = output.walk("VEVENT")[0]
+                    self.assertEqual(str(event["LOCATION"]), generate_calendar.HOME_STADIUMS["Yomiuri"])
+
+    def test_official_other_or_detailed_venue_is_preserved(self):
+        for venue in ("別の球場", "東京ドーム, 詳細な住所"):
+            with self.subTest(venue=venue):
+                game = google_event()
+                game.add("LOCATION", venue)
+                game.add("X-GIANTS-CALENDAR-OFFICIAL-LOCATION", "true")
+                output = generate_calendar.build_calendar([game], 2027, {})
+                self.assertEqual(str(output.walk("VEVENT")[0]["LOCATION"]), venue)
+                output_override = generate_calendar.build_calendar(
+                    [game], 2027, {date(2027, 3, 26): "local override"}
+                )
+                self.assertEqual(str(output_override.walk("VEVENT")[0]["LOCATION"]), "local override")
+
     def test_scored_game_wins_over_timed_even_if_all_day(self):
         scored = google_event("result", None, "Chunichi (3) @ Yomiuri (5)")
         timed = npb_event(start_at="18:00")
