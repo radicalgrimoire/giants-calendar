@@ -10,6 +10,7 @@ from icalendar import Event
 
 import check_npb_cancellations as checker
 import generate_calendar
+import giants_official
 import save_snapshot
 from generate_calendar import JST
 
@@ -109,6 +110,7 @@ class CancellationTests(unittest.TestCase):
                 patch.object(generate_calendar, "CANCELLATION_DIRECTORY", root),
                 patch.object(generate_calendar, "SNAPSHOT_DIRECTORY", root),
                 patch.object(generate_calendar, "GAMES_PATH", root / "games.json"),
+                patch.object(giants_official, "DIRECTORY", root / "official"),
                 patch.object(save_snapshot, "SNAPSHOT_DIRECTORY", root),
                 patch.object(checker, "fetch_schedule", return_value="source"),
                 patch.object(checker, "request_gemini_json", return_value=response),

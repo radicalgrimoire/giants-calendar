@@ -9,6 +9,19 @@ on:
   schedule:
     - cron: "0 19 * * *"
   workflow_dispatch:
+    inputs:
+      month:
+        description: 球団公式の日程を手動取得する月（YYYYMM、任意）
+        required: false
+        type: string
+      game_date:
+        description: 試合詳細を手動再取得する日（YYYY-MM-DD、任意）
+        required: false
+        type: string
+
+concurrency:
+  group: update-giants-calendar
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -41,8 +54,32 @@ jobs:
         with:
           python-version: "3.13"
       - run: pip install -r requirements.txt
+      - name: Set up Node
+        id: node
+        uses: actions/setup-node@v4
+        continue-on-error: true
+        with:
+          node-version: "22"
+      - name: Fetch Giants official schedule
+        id: giants
+        if: steps.node.outcome == 'success'
+        continue-on-error: true
+        env:
+          SCHEDULE_MONTH: ${{ inputs.month }}
+          GAME_DATE: ${{ inputs.game_date }}
+        run: |
+          set -euo pipefail
+          npm install --prefix "$RUNNER_TEMP/giants-schedule" --no-save --no-package-lock playwright@1.56.1
+          "$RUNNER_TEMP/giants-schedule/node_modules/.bin/playwright" install --with-deps chromium
+          export NODE_PATH="$RUNNER_TEMP/giants-schedule/node_modules"
+          args=()
+          if [ -n "$SCHEDULE_MONTH" ]; then args+=(--month "$SCHEDULE_MONTH"); fi
+          if [ -n "$GAME_DATE" ]; then args+=(--date "$GAME_DATE"); fi
+          node scripts/fetch_giants_schedule.cjs "${args[@]}"
       - run: python scripts/save_snapshot.py
+        if: ${{ !inputs.month && !inputs.game_date }}
       - name: Check NPB cancellations
+        if: ${{ !inputs.month && !inputs.game_date }}
         env:
           GEMINI_APIKEY: ${{ secrets.GEMINI_APIKEY }}
         run: python scripts/check_npb_cancellations.py
@@ -54,3 +91,8 @@ jobs:
           git add -A
           git diff --cached --quiet || git commit -m "Update Giants calendar"
           git push
+      - name: Report official schedule fetch failure
+        if: steps.node.outcome == 'failure' || steps.giants.outcome == 'failure'
+        run: |
+          echo "::error::球団公式の取得に失敗しました。既存のデータを維持しました。"
+          exit 1

@@ -9,6 +9,7 @@ from unittest.mock import patch
 from icalendar import Calendar
 
 import generate_calendar as generator
+import giants_official
 import save_snapshot
 from import_npb_schedule import build_event
 
@@ -20,6 +21,13 @@ def game(year: int, day: int = 26):
 
 
 class CalendarAggregationTests(unittest.TestCase):
+    def setUp(self):
+        directory = TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        patcher = patch.object(giants_official, "DIRECTORY", Path(directory.name))
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
     def test_multi_year_selection_and_yearly_archive(self):
         with TemporaryDirectory() as directory:
             root = Path(directory)

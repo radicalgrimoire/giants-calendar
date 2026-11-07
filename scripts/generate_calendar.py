@@ -11,6 +11,8 @@ from zoneinfo import ZoneInfo
 
 from icalendar import Calendar, Event, Timezone
 
+import giants_official
+
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT / "giants.ics"
@@ -377,6 +379,7 @@ def update_location(event, local_stadiums: dict[date, str]) -> None:
         (
             str(event.get("X-GIANTS-CALENDAR-SOURCE", "")) == "npb"
             or str(event.get("X-GIANTS-CALENDAR-NPB-LOCATION", "")) == "true"
+            or str(event.get("X-GIANTS-CALENDAR-OFFICIAL-LOCATION", "")) == "true"
         )
         and event.get("LOCATION")
     ):
@@ -416,12 +419,20 @@ def build_calendar(
 
 
 def generate_calendar(year: int) -> tuple[dict[str, Event], Calendar]:
-    games = filter_games(select_games(load_snapshot(year)), load_cancellations(year))
+    days = giants_official.load_months(year)
+    if days and not (SNAPSHOT_DIRECTORY / f"snapshot-giants-{year}.json").exists():
+        games = {}
+    else:
+        games = select_games(load_snapshot(year))
     if any(event_start(event).astimezone(JST).year != year for event in games.values()):
         raise ValueError(f"{year}年のスナップショットに別の年の試合があります")
+    previous = giants_official.previous_uids(GAMES_PATH, matchup_key) if days else {}
+    games, descriptions = giants_official.merge_games(games, days, matchup_key, previous)
+    games = filter_games(games, load_cancellations(year))
     calendar = build_calendar(
         list(games.values()), year, load_local_stadiums()
     )
+    giants_official.add_calendar_details(calendar, days, descriptions)
     return games, calendar
 
 
@@ -432,9 +443,10 @@ def snapshot_years() -> list[int]:
         if match is None:
             raise ValueError(f"スナップショットのファイル名が不正です: {path.name}")
         years.append(int(match.group(1)))
+    years = sorted(set(years) | giants_official.snapshot_years())
     if not years:
         raise FileNotFoundError(f"スナップショットがありません: {SNAPSHOT_DIRECTORY}")
-    return sorted(years)
+    return years
 
 
 def generate_all_calendars() -> tuple[dict[str, Event], Calendar]:

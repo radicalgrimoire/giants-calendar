@@ -18,6 +18,16 @@ https://raw.githubusercontent.com/radicalgrimoire/giants-calendar/main/giants.ic
 
 GitHub Actions の「Probe Giants schedule」は、Playwright で球団公式の日程ページを開き、指定月（`YYYYMM`）のイベント名をログに表示する手動実行用のテストです。ICS や Google カレンダーは更新しません。取得できない場合やデータ形式が変わった場合は失敗します。
 
+## 球団公式の日程と試合詳細
+
+日次更新では球団公式の一軍日程ページを当月と翌月の各1回取得し、`data/snapshots-giants/` に保存します。2026年は試験用の10月3日と11月、2027年以降は対象月を取り込みます。試合日のイベント名と詳細リンクは試合予定の詳細欄に追加し、試合詳細へのリンクも掲載します。キャンプや休養日など、試合のない日の球団イベントは終日予定として追加します。既存のNPB・Google提供カレンダーの取得と試合結果表示は維持します。
+
+前日の試合詳細も1回確認し、終了時刻が掲載されていれば既存予定の終了時刻を更新します。試合開始時刻が未定だった場合は公式の開始時刻も使用します。確認できるまでは従来の仮の終了時刻を使います。取得に失敗しても既存のデータを保持し、日次の他の更新を行ったうえでワークフローにエラーを表示します。過去の試合を自動で再取得しません。
+
+「Update Giants calendar」を手動実行するとき、`month` に `YYYYMM` を指定するとその月の日程だけを取得します。`game_date` に `YYYY-MM-DD` を指定すると、その月の日程と指定日の試合詳細を取得します。両方を指定する場合は同じ月にしてください。どちらも省略すると通常の日次更新を実行します。定期更新の期間は従来どおり3月1日から11月1日までです。
+
+対象テストは `node --test scripts/test_fetch_giants_schedule.cjs` と `python -m unittest discover -s scripts -p "test_*.py"` で実行できます。
+
 ## Google カレンダーへの自動同期
 
 Google Cloud で Google Calendar API を有効にし、サービスアカウントを作成します。同期先カレンダーをそのサービスアカウントのメールアドレスと「予定の変更」権限で共有してください。サービスアカウントの JSON 鍵全体を GitHub リポジトリの **Settings → Secrets and variables → Actions → New repository secret** に `GIANTS_CALENDER_API` という名前で登録します（`CALENDER` の綴りで登録したSecret名に合わせています）。

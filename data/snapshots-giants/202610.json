@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "month": "202610",
+  "days": [
+    {
+      "date": "2026-10-03",
+      "game": {
+        "id": "20261003_8003_1",
+        "home": "巨人",
+        "away": "DeNA",
+        "status": "after",
+        "start": "2026-10-3 18:00:00",
+        "location": "東京ドーム",
+        "home_score": 2,
+        "away_score": 5,
+        "url": "https://www.giants.jp/game/20261003_8003_1/"
+      },
+      "events": [
+        {
+          "title": "最終戦セレモニー",
+          "url": "https://www.giants.jp/news/31451/"
+        },
+        {
+          "title": "ジャイアンツクイズラリー Supported by プロスピA",
+          "url": "https://www.giants.jp/news/29158/"
+        },
+        {
+          "title": "ジャイアンツスクエア",
+          "url": null
+        }
+      ]
+    }
+  ]
+}

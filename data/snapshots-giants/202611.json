@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "month": "202611",
+  "days": [
+    {
+      "date": "2026-11-01",
+      "event": {
+        "title": "秋季キャンプ",
+        "location": "Gタウン、G球場",
+        "url": "https://www.giants.jp/column/autumncamp2026/autumncamp2026/"
+      }
+    },
+    {
+      "date": "2026-11-02",
+      "event": {
+        "title": "休養日",
+        "location": "",
+        "url": null
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "event": {
+        "title": "秋季キャンプ",
+        "location": "Gタウン、G球場",
+        "url": "https://www.giants.jp/column/autumncamp2026/autumncamp2026/"
+      }
+    },
+    {
+      "date": "2026-11-04",
+      "event": {
+        "title": "秋季キャンプ",
+        "location": "Gタウン、G球場",
+        "url": "https://www.giants.jp/column/autumncamp2026/autumncamp2026/"
+      }
+    },
+    {
+      "date": "2026-11-05",
+      "event": {
+        "title": "秋季キャンプ",
+        "location": "Gタウン、G球場",
+        "url": "https://www.giants.jp/column/autumncamp2026/autumncamp2026/"
+      }
+    },
+    {
+      "date": "2026-11-06",
+      "event": {
+        "title": "休養日",
+        "location": "",
+        "url": null
+      }
+    },
+    {
+      "date": "2026-11-07",
+      "event": {
+        "title": "秋季キャンプ",
+        "location": "Gタウン、G球場",
+        "url": "https://www.giants.jp/column/autumncamp2026/autumncamp2026/"
+      }
+    },
+    {
+      "date": "2026-11-08",
+      "event": {
+        "title": "秋季キャンプ",
+        "location": "Gタウン、G球場",
+        "url": "https://www.giants.jp/column/autumncamp2026/autumncamp2026/"
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "event": {
+        "title": "秋季キャンプ",
+        "location": "Gタウン、G球場",
+        "url": "https://www.giants.jp/column/autumncamp2026/autumncamp2026/"
+      }
+    },
+    {
+      "date": "2026-11-10",
+      "event": {
+        "title": "休養日",
+        "location": "",
+        "url": null
+      }
+    },
+    {
+      "date": "2026-11-11",
+      "event": {
+        "title": "秋季キャンプ",
+        "location": "Gタウン、G球場",
+        "url": "https://www.giants.jp/column/autumncamp2026/autumncamp2026/"
+      }
+    },
+    {
+      "date": "2026-11-12",
+      "event": {
+        "title": "秋季キャンプ",
+        "location": "Gタウン、G球場",
+        "url": "https://www.giants.jp/column/autumncamp2026/autumncamp2026/"
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "event": {
+        "title": "秋季キャンプ",
+        "location": "G球場",
+        "url": "https://www.giants.jp/column/autumncamp2026/autumncamp2026/"
+      }
+    },
+    {
+      "date": "2026-11-14"
+    },
+    {
+      "date": "2026-11-15"
+    },
+    {
+      "date": "2026-11-16"
+    },
+    {
+      "date": "2026-11-17"
+    },
+    {
+      "date": "2026-11-18"
+    },
+    {
+      "date": "2026-11-19"
+    },
+    {
+      "date": "2026-11-20"
+    },
+    {
+      "date": "2026-11-21"
+    },
+    {
+      "date": "2026-11-22"
+    },
+    {
+      "date": "2026-11-23",
+      "event": {
+        "title": "ファンフェスタ",
+        "location": "東京ドーム",
+        "url": "https://giantsfanfesta.com/"
+      }
+    },
+    {
+      "date": "2026-11-24"
+    },
+    {
+      "date": "2026-11-25"
+    },
+    {
+      "date": "2026-11-26"
+    },
+    {
+      "date": "2026-11-27"
+    },
+    {
+      "date": "2026-11-28"
+    },
+    {
+      "date": "2026-11-29"
+    },
+    {
+      "date": "2026-11-30"
+    }
+  ]
+}

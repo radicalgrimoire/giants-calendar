@@ -2181,7 +2181,7 @@
       "uid": "npb-dec9320d7f24bd76041e404a@giants-calendar.local"
     },
     {
-      "ical": "BEGIN:VEVENT\r\nSUMMARY:DeNA (5) @ Yomiuri (2)\r\nDTSTART;TZID=Asia/Tokyo:20261003T180000\r\nDTEND;TZID=Asia/Tokyo:20261003T210000\r\nDTSTAMP:20261014T092651Z\r\nUID:npb-de05d522b7b128ab53074504@giants-calendar.local\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
+      "ical": "BEGIN:VEVENT\r\nSUMMARY:横浜DeNAベイスターズ (5) @ 読売ジャイアンツ (2)\r\nDTSTART;TZID=Asia/Tokyo:20261003T180000\r\nDTEND;TZID=Asia/Tokyo:20261003T212900\r\nDTSTAMP:20261014T092651Z\r\nUID:npb-de05d522b7b128ab53074504@giants-calendar.local\r\nLOCATION:東京ドーム\r\nSTATUS:CONFIRMED\r\nTRANSP:TRANSPARENT\r\nX-GIANTS-CALENDAR-OFFICIAL-LOCATION:true\r\nX-GIANTS-CALENDAR-SOURCE:npb\r\nEND:VEVENT\r\n",
       "start": "2026-10-03T09:00:00+00:00",
       "uid": "npb-de05d522b7b128ab53074504@giants-calendar.local"
     },
