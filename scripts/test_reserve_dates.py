@@ -15,8 +15,23 @@ import save_snapshot
 from import_npb_schedule import build_event, reserve_matchups, validate_games
 
 
-ROOT = Path(__file__).resolve().parents[1]
-SEPTEMBER = ROOT / "data" / "imports" / "2027" / "schedule_09_detail.html"
+SEPTEMBER_HTML = """
+<link rel="canonical" href="https://npb.jp/games/2027/schedule_09_detail.html">
+<div id="schedule_detail"><table>
+<tr id="date0910"><td><div class="team1">広島</div>
+<div class="cancel">(予備日)</div><div class="team2">巨人</div></td></tr>
+<tr id="date0926"><td><div class="team1">ヤクルト</div>
+<div class="cancel">(予備日)</div><div class="team2">巨人</div></td></tr>
+<tr id="date0911"><td><div class="team1">広島</div>
+<div class="state">-</div><div class="team2">巨人</div></td></tr>
+</table></div>
+"""
+
+
+def september_source(root: Path) -> Path:
+    source = root / "schedule_09_detail.html"
+    source.write_text(SEPTEMBER_HTML, encoding="utf-8")
+    return source
 
 
 def google_event(uid: str, summary: str) -> Event:
@@ -29,8 +44,8 @@ def google_event(uid: str, summary: str) -> Event:
 
 
 class ReserveDateTests(unittest.TestCase):
-    def test_real_september_page_identifies_both_reserve_games(self):
-        reserves = reserve_matchups(SEPTEMBER.read_text(encoding="utf-8"))
+    def test_september_page_identifies_both_reserve_games(self):
+        reserves = reserve_matchups(SEPTEMBER_HTML)
         self.assertEqual(
             reserves,
             {
@@ -104,13 +119,14 @@ class ReserveDateTests(unittest.TestCase):
         with TemporaryDirectory() as directory:
             root = Path(directory)
             output = root / "games.json"
+            source = september_source(root)
             with patch.object(save_snapshot, "SNAPSHOT_DIRECTORY", root):
                 save_snapshot.save_snapshot([result])
                 with (
                     patch.object(import_npb_schedule, "request_games", return_value={"schema_version": 1, "games": []}),
                     patch.object(import_npb_schedule, "ROOT", root),
                     patch.dict("os.environ", {"GEMINI_APIKEY": "test-key"}),
-                    patch.object(sys, "argv", ["import_npb_schedule.py", "--source", str(SEPTEMBER), "--json-output", str(output)]),
+                    patch.object(sys, "argv", ["import_npb_schedule.py", "--source", str(source), "--json-output", str(output)]),
                     redirect_stdout(StringIO()),
                 ):
                     import_npb_schedule.main()
@@ -131,13 +147,14 @@ class ReserveDateTests(unittest.TestCase):
         with TemporaryDirectory() as directory:
             root = Path(directory)
             output = root / "games.json"
+            source = september_source(root)
             with patch.object(save_snapshot, "SNAPSHOT_DIRECTORY", root):
                 save_snapshot.save_snapshot([reserve])
                 with (
                     patch.object(import_npb_schedule, "request_games", return_value=ai_output),
                     patch.object(import_npb_schedule, "ROOT", root),
                     patch.dict("os.environ", {"GEMINI_APIKEY": "test-key"}),
-                    patch.object(sys, "argv", ["import_npb_schedule.py", "--source", str(SEPTEMBER), "--json-output", str(output)]),
+                    patch.object(sys, "argv", ["import_npb_schedule.py", "--source", str(source), "--json-output", str(output)]),
                     redirect_stdout(StringIO()),
                 ):
                     import_npb_schedule.main()
