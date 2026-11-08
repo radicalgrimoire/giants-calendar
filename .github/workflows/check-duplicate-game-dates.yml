@@ -1,5 +1,7 @@
 name: Check duplicate Giants game dates
 
+# 目的: 日程データ内に同一日の重複試合がないかを検査し、不整合を早期に検出する。
+# 実行時刻: 毎日 07:30 UTC（日本時間 16:30）。
 on:
   schedule:
     - cron: "30 7 * * *"

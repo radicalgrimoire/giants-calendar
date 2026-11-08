@@ -1,11 +1,10 @@
 name: Sync Giants Google calendar
 
+# 目的: リポジトリ内の最新の試合日程を Google カレンダーへ同期する。
+# 実行時刻: 毎日 22:00 UTC（日本時間の翌日 07:00）。
 on:
-  workflow_run:
-    workflows:
-      - Update Giants calendar
-    types:
-      - completed
+  schedule:
+    - cron: "0 22 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -16,7 +15,6 @@ permissions:
 
 jobs:
   sync:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5

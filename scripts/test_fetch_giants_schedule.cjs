@@ -39,10 +39,20 @@ test("extracts camp, rest, games, campaign links and validates month", () => {
 
 test("validates the specific game and its actual end time", () => {
   const props = { response: { bipGameDetailResponse: { gameInfo: {
-    gameScoreInfo: { gameId: "20261103_8003_1", gameStartDate: "2026-11-03T14:00:00+09:00" },
+    gameScoreInfo: {
+      gameId: "20261103_8003_1", gameStartDate: "2026-11-03T14:00:00+09:00",
+      homeStarterPitcherName: "井上 温大", visitorStarterPitcherName: "島田 舜也"
+    },
     gameScoreInfoSub: { gameEndDate: "2026-11-03T16:45:00+09:00" }
   } } } };
   assert.equal(normalizeDetail(props, "20261103_8003_1").end, "2026-11-03T16:45:00+09:00");
+  assert.equal(normalizeDetail(props, "20261103_8003_1").home_starter, "井上 温大");
+  assert.equal(normalizeDetail(props, "20261103_8003_1").away_starter, "島田 舜也");
+  props.response.bipGameDetailResponse.gameInfo.gameScoreInfo.visitorStarterPitcherName = null;
+  assert.equal(normalizeDetail(props, "20261103_8003_1").away_starter, null);
+  props.response.bipGameDetailResponse.gameInfo.gameScoreInfo.visitorStarterPitcherName = 123;
+  assert.throws(() => normalizeDetail(props, "20261103_8003_1"), /Invalid starting pitcher/);
+  props.response.bipGameDetailResponse.gameInfo.gameScoreInfo.visitorStarterPitcherName = "島田 舜也";
   assert.throws(() => normalizeDetail(props, "20261104_8003_1"), /Unexpected/);
   props.response.bipGameDetailResponse.gameInfo.gameScoreInfoSub.gameEndDate = null;
   assert.throws(() => normalizeDetail(props, "20261103_8003_1"), /not available/);

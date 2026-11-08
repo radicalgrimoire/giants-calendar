@@ -85,14 +85,24 @@ function normalizeSchedule(props, month) {
 function normalizeDetail(props, gameId) {
   const info = props?.response?.bipGameDetailResponse?.gameInfo;
   if (info?.gameScoreInfo?.gameId !== gameId) throw new Error(`Unexpected game detail: ${gameId}`);
+  const score = info.gameScoreInfo;
   const end = info.gameScoreInfoSub?.gameEndDate;
-  const start = info.gameScoreInfo?.gameStartDate;
+  const start = score.gameStartDate;
   const pattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+09:00$/;
   if (!pattern.test(start || "") || !pattern.test(end || "") || Number.isNaN(Date.parse(start)) ||
       Number.isNaN(Date.parse(end)) || Date.parse(end) <= Date.parse(start)) {
     throw new Error(`Game end time is not available: ${gameId}`);
   }
-  return { id: gameId, start, end };
+  function pitcher(value) {
+    if (value == null || value === "") return null;
+    if (typeof value !== "string" || !value.trim()) throw new Error(`Invalid starting pitcher: ${gameId}`);
+    return value.trim();
+  }
+  return {
+    id: gameId, start, end,
+    home_starter: pitcher(score.homeStarterPitcherName),
+    away_starter: pitcher(score.visitorStarterPitcherName)
+  };
 }
 
 function writeJson(file, data) {

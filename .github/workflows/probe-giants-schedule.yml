@@ -1,5 +1,7 @@
 name: Probe Giants schedule
 
+# 目的: 指定月の球団公式日程ページを取得・検査し、ページ構造やイベント情報を確認する。
+# 実行時刻: 定期実行なし。GitHub Actions の画面から手動で起動したときにのみ処理する。
 on:
   workflow_dispatch:
     inputs:

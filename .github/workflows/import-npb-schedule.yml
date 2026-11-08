@@ -1,5 +1,7 @@
 name: Import NPB schedule
 
+# 目的: 指定した NPB 日程詳細ページからジャイアンツ戦を取り込み、日程スナップショットを更新する。
+# 実行時刻: 定期実行なし。GitHub Actions の画面から対象ページの URL を指定して手動で起動する。
 on:
   workflow_dispatch:
     inputs:

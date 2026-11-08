@@ -7,7 +7,6 @@ import re
 import sys
 from datetime import date, datetime, time, timezone
 from pathlib import Path
-from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
 from icalendar import Calendar, Event, Timezone
@@ -21,7 +20,6 @@ GAMES_PATH = ROOT / "data" / "games.json"
 SNAPSHOT_DIRECTORY = ROOT / "data" / "snapshots"
 CANCELLATION_DIRECTORY = ROOT / "data" / "cancellations"
 LOCAL_STADIUM_PATH = ROOT / "data" / "local-stadium.env"
-LOCAL_URL_PATH = ROOT / "data" / "local-url.env"
 JST = ZoneInfo("Asia/Tokyo")
 MATCHUP_PATTERN = re.compile(r"^\s*(.+?)\s+@\s+(.+?)\s*$")
 LOCAL_STADIUM_PATTERN = re.compile(r"(\d{4}-\d{2}-\d{2})\s*=\s*(.+)")
@@ -153,35 +151,6 @@ def load_local_stadiums() -> dict[date, str]:
         game_date, stadium = match.groups()
         stadiums[date.fromisoformat(game_date)] = stadium.strip()
     return stadiums
-
-
-def load_local_url_overrides() -> dict[str, str]:
-    if not LOCAL_URL_PATH.exists():
-        return {}
-
-    overrides: dict[str, str] = {}
-    for line_number, raw_line in enumerate(
-        LOCAL_URL_PATH.read_text(encoding="utf-8").splitlines(), start=1
-    ):
-        line = raw_line.strip()
-        if not line or line.startswith("#"):
-            continue
-        parts = re.split(r"\s+=\s+", line)
-        if len(parts) != 2:
-            raise ValueError(f"{LOCAL_URL_PATH.name}:{line_number} の形式が不正です")
-        for value in parts:
-            try:
-                url = urlsplit(value)
-                valid = url.scheme in {"http", "https"} and url.hostname and url.port != 0
-            except ValueError as error:
-                raise ValueError(f"{LOCAL_URL_PATH.name}:{line_number} のURLが不正です") from error
-            if not valid or any(char.isspace() for char in value):
-                raise ValueError(f"{LOCAL_URL_PATH.name}:{line_number} のURLが不正です")
-        source, replacement = parts
-        if source in overrides:
-            raise ValueError(f"{LOCAL_URL_PATH.name}:{line_number} の元URLが重複しています")
-        overrides[source] = replacement
-    return overrides
 
 
 def normalize_team_name(team: str) -> str:
@@ -351,6 +320,8 @@ def regular_season_end(events: list[Event]) -> datetime | None:
 def update_summary(
     event, counters: dict[tuple[int, tuple[str, str]], int], *, is_cs: bool = False
 ) -> None:
+    home_starter = event.pop("X-GIANTS-CALENDAR-HOME-STARTER", None)
+    away_starter = event.pop("X-GIANTS-CALENDAR-AWAY-STARTER", None)
     summary = str(event.get("SUMMARY", ""))
     match = MATCHUP_PATTERN.match(summary)
     if not match:
@@ -390,8 +361,8 @@ def update_summary(
         result = "\n".join(
             [
                 f"試合結果：{home_abbreviation}{home_score} - {away_abbreviation}{away_score} {result_status}",
-                f"（HOME）{home_name}",
-                f"（VISIT）{away_name}",
+                f"{home_name}" + (f"　（先発：{home_starter}）" if home_starter else ""),
+                f"{away_name}" + (f"　（先発：{away_starter}）" if away_starter else ""),
             ]
         )
         event["DESCRIPTION"] = f"{description}\n\n{result}".strip()
@@ -467,15 +438,14 @@ def generate_calendar(year: int) -> tuple[dict[str, Event], Calendar]:
     if any(event_start(event).astimezone(JST).year != year for event in games.values()):
         raise ValueError(f"{year}年のスナップショットに別の年の試合があります")
     previous = giants_official.previous_uids(GAMES_PATH, matchup_key) if days else {}
-    url_overrides = load_local_url_overrides()
     games, descriptions = giants_official.merge_games(
-        games, days, matchup_key, previous, url_overrides
+        games, days, matchup_key, previous
     )
     games = filter_games(games, load_cancellations(year))
     calendar = build_calendar(
         list(games.values()), year, load_local_stadiums()
     )
-    giants_official.add_calendar_details(calendar, days, descriptions, url_overrides)
+    giants_official.add_calendar_details(calendar, days, descriptions)
     return games, calendar
 
 

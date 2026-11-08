@@ -1,5 +1,7 @@
 name: Archive Giants calendar
 
+# 目的: 当年分のカレンダーを年次アーカイブとして backlog に保存する。
+# 実行時刻: 毎年 11月30日 19:00 UTC（日本時間では 12月1日 04:00）。
 on:
   schedule:
     - cron: "0 19 30 11 *"
